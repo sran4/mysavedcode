@@ -11,8 +11,8 @@ from django.conf.urls import (
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    # path('admin/', include('admin_honeypot.urls',
-    #      namespace='admin_honeypot')),  # add this line
+    path('admin/', include('admin_honeypot.urls',
+         namespace='admin_honeypot')),  # add this line
     # change this to securelogin instead of admin
     path('securelogin/', admin.site.urls),
     path('', include('dashboard.urls')),
