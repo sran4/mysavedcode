@@ -29,7 +29,7 @@ class Notes(models.Model):
 class Homework(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     customer = models.CharField(max_length=50)
-    assembly = models.CharField(max_length=100)
+    assembly = models.CharField(max_length=50)
     qty = models.PositiveIntegerField()
     comments = models.TextField()
     due = models.DateTimeField()

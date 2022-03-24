@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ckeditor',
     'ckeditor_uploader',
-    # 'admin_honeypot',
+    'admin_honeypot',
 
 
 ]

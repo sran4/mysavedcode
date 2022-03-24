@@ -8,11 +8,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    # path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),# add this line
+    path('admin/', include('admin_honeypot.urls',
+         namespace='admin_honeypot')),  # add this line
     # change this to securelogin instead of admin
     path('securelogin/', admin.site.urls),
     path('', include('dashboard.urls')),
-    # path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('register/', dash_views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name="dashboard/login.html"), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name="dashboard/logout.html"), name='logout'),
