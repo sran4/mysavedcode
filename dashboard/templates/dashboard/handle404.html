@@ -1,0 +1,20 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+
+<section class="container text-center">
+  <h2> Page Not Found </h2>
+
+  <hr />
+  <br />
+  <div class="text-center">
+    <div >
+      <a href="{% url "home" %}">
+        <div class="card">          
+          <div class="card-footer">
+            <h1 class="card-title"> Back to Home </h1>          
+          </div>
+        </div>
+      </a>
+    </div>   
+
+</section>
+{% endblock content %}

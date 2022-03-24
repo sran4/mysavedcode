@@ -1,0 +1,49 @@
+{% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+<div class="container">
+  <form style="margin: auto; max-width: 600px" class="mb-5" method="GET" action="{% url 'notes' %}">
+    <input style="width: 25em" name="q" placeholder="Search Signals Card Filters Views Forms urls etc..." />
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  <a href="{% url 'favs-notes' %}"><button type="button" class="btn btn-info">Favourites Snippets</button> </a>
+  <a href="{% url 'create-note' %}"> <img class="add float-right" src="{% static 'images/add.svg' %}" alt="Add Code" height="40" width="40" /></a>
+
+  <h5 style="text-align: center; color: red; margin-bottom: 30px">Found {{notes_count}} Code Snippets</h5>
+  <div class="row">
+    {% for note in notes %}
+    <div class="col-md-3 mb-4">
+      <a href="{% url 'notes_detail' note.id %}">
+        <div class="card">
+          <div class="card-header text-center">{{note.language}}</div>
+
+          <div class="card-body">{{note.noted }}</div>
+
+          <div class="card-footer mt-auto">
+            <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: red"></i></a>
+            <small class="text-muted" style="font-size: 10px">{{ note.created_at|date:"F d, Y" }}</small>
+            <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: red"></i></a>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+    <br /><br />
+  </div>
+  <div class="row">
+    <div class="mx-auto">
+      {% if notes.has_previous %}
+      <a class="btn btn-secondary mb-5 btn-lg" href="?page=1">First</a>
+      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ notes.previous_page_number }}">Previous</a>
+      {% endif %} {% for num in notes.paginator.page_range %} {% if notes.number == num %}
+      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ num }}">{{ num }}</a>
+      {% elif num > notes.number|add:'-3' and num < notes.number|add:'3' %}
+      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ num }}">{{ num }}</a>
+      {% endif %} {% endfor %} {% if notes.has_next %}
+      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ notes.next_page_number }}">Next</a>
+      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ notes.paginator.num_pages }}">Last</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% endblock content %}
+</div>

@@ -1,0 +1,25 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+
+<section class="card container">
+  <div class="container">
+    <div class="content-section p-0 mt-5">
+      <div class="m-3">
+        <a href="{{request.META.HTTP_REFERER}}"> <i class="fa fa-arrow-left" style="font-size: 35px; float: left; color: blue"></i> </a>
+        <h2 class="text-center">{{notes.language}}</h2>
+        <hr />
+
+        <a href="{% url 'update-note' notes.pk %}"> <i class="fa fa-edit fa-2x" style="font-size: 30px; float: middle; color: green"></i></a>
+        <a href="{% url 'delete-note' notes.pk %}"> <i class="fa fa-trash fa-2x" style="font-size: 30px; float: right; color: red"></i></a>
+      </div>
+
+      <hr class="p-0 m-0" />
+      <div class="m-3">
+        <h2>{{notes.notes_for_yourself | safe}}</h2>
+      </div>
+      <hr class="p-0 m-0" />
+      <p>{{notes.code_here | safe}}</p>
+    </div>
+  </div>
+</section>
+
+{% endblock content %} language = models.CharField(max_length=200) code_here = RichTextField(blank=True) notes_for_yourself = models.TextField()

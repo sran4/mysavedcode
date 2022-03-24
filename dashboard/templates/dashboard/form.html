@@ -1,0 +1,23 @@
+{% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+<div class="container">
+  <a class="btn btn-outline-info" href="{{request.META.HTTP_REFERER}}">Go Back</a><br />
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom text-center mb-4">Create</legend>
+      {{form.media}} {{ form|crispy }}
+    </fieldset>
+    {% if page == "update" %}
+    <div class="form-group">
+      <button href="" class="btn btn-outline-info" type="submit">Update</button>
+    </div>
+    {% else %}
+    <div class="form-group">
+      <button href="" class="btn btn-outline-info" type="submit">Create</button>
+    </div>
+    {% endif %}
+  </form>
+</div>
+
+{% endblock content %}

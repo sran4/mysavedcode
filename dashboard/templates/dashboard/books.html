@@ -1,0 +1,48 @@
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+
+<section class="text-center container">
+  <h2>Search books and browse your favorite</h2>
+  <p>just enter the search query to obtain the results</p>
+  <b></b>
+  <form action="" method="post">
+    {% csrf_token %} {{ form }}
+    <input class="btn btn-danger" type="submit" value="Submit" />
+  </form>
+  <br />
+  {% for obj in results %}
+  <a href="{{ obj.preview}}" target="_blank">
+    <div class="card">
+      <div class="card-header">
+        <div class="row">
+          <div class="col-md-3">
+            <img class="img-fluid" src="{{ obj.thumbnail }}" alt="" />
+          </div>
+          <div class="col-md-9">
+            <h3 class="p-0 m-0">{{obj.title}}</h3>
+            <b>
+              <u>
+                <h5 class="p-0 m-0">{{obj.subtitle}}</h5>
+              </u>
+            </b>
+            {% if obj.description %}
+            <h6 class="p-0 m-1">{{obj.description}}</h6>
+            {% endif %}
+            <b>
+              {% if obj.categories %}
+              <h6 class="ml-0 mt-3">Category: {% for cat in result.categories %} {{ category }} {% endfor %}</h6>
+              {% endif %} {% if obj.count %}
+              <h6 class="ml-0 mt-1">Pages:{{obj.count }} {% endif %}</h6>
+
+              {% if obj.rating %}
+              <h6 class="ml-0 mt-1">Rating: {{obj.rating}} {% endif %}</h6>
+            </b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+  <br />
+</section>
+
+{% endblock content %}

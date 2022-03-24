@@ -1,0 +1,115 @@
+{% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+<div class="container">
+  {% if not homework_done %}
+  <legend class="border-bottom mb-4 text-center">
+    In Process Assemblies <a href="{% url 'create-assembly' %}"> <img class="add float-right" src="{% static 'images/add.svg' %}" alt="Add Code" height="10" width="10" /></a>
+  </legend>
+  <div class="form-group"></div>
+  <table class="table table-striped table-bordered table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Assembly</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Due</th>
+        <th scope="col">Status</th>
+        <th scope="col">Created</th>
+        <th scope="col">Comments</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for obj in homeworks %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{ obj.customer }}</td>
+        <td>{{ obj.assembly }}</td>
+        <td>{{ obj.qty }}</td>
+        <td>{{obj.due |date:"F d, Y"}}</td>
+        <td>
+          <a href="{% url 'complete-homework' obj.pk %}">
+            <div class="form-check">
+              {%if obj.is_finished == True %}
+              <input class="form-check-input" type="checkbox" value="" checked />
+              {% else %}
+              <input class="form-check-input" type="checkbox" value="" />
+              {% endif %}
+              <label class="form-check-label text-light" for="flexCheckDefault"> Mark as Completed </label>
+            </div>
+          </a>
+        </td>
+        <td>{{obj.created_at|date:"F d, Y"}}</td>
+        <td>{{ obj.comments }}</td>
+        <td>
+          <a href="{% url 'update-homework' obj.pk %}"><i class="fa fa-edit fa-1x"></i></a>
+        </td>
+        <td>
+          <a href="{% url 'delete-homework' obj.pk %}"><i class="fa fa-trash fa-1x"></i></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  {% else %}
+  <h4 class="text-center">
+    No Assembly data Found!! <br /><a href="{% url 'create-assembly' %}"><b> Add Assemblies here...</b></a>
+  </h4>
+  <h5></h5>
+
+  {% endif %} {% if homeworks_completed %}
+  <hr />
+  <legend class="border-bottom mb-4 text-center">Completed Assemblies</legend>
+  <table class="table table-striped table-bordered table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Assembly</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Due</th>
+        <th scope="col">Status</th>
+        <th scope="col">Created</th>
+        <th scope="col">Comments</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for obj in homeworks_completed %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{ obj.customer }}</td>
+        <td>{{ obj.assembly }}</td>
+        <td>{{ obj.qty }}</td>
+        <td>{{obj.due |date:"F d, Y"}}</td>
+        <td>
+          <a href="{% url 'complete-homework' obj.pk %}">
+            <div class="form-check">
+              {%if obj.is_finished == True %}
+              <input class="form-check-input" type="checkbox" value="" checked />
+              {% else %}
+              <input class="form-check-input" type="checkbox" value="" />
+              {% endif %}
+              <label class="form-check-label text-light" for="flexCheckDefault"> Mark as Completed </label>
+            </div>
+          </a>
+        </td>
+        <td>{{obj.created_at|date:"F d, Y"}}</td>
+        <td>{{ obj.comments }}</td>
+        <td>
+          <a href="{% url 'update-homework' obj.pk %}"><i class="fa fa-edit fa-1x"></i></a>
+        </td>
+        <td>
+          <a href="{% url 'delete-homework' obj.pk %}"><i class="fa fa-trash fa-1x"></i></a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</div>
+{% endblock content %}

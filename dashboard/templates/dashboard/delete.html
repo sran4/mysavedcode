@@ -1,0 +1,15 @@
+{% extends 'dashboard/base.html' %} {% load static %}  {% block content %}
+
+<div class="container card text-center mb-5">    
+  <form method="POST" action="">
+    {% csrf_token %}
+    <p><h3>Are you sure you want to delete "{{obj}}"?</h3></p>
+
+    <a class="btn btn-outline-info mb-5" href="{{request.META.HTTP_REFERER}}">Cancel</a><br>
+    <input class="btn btn-danger mb-5" type="submit" value="Confirm" />
+  </form>
+
+
+</div>
+
+{% endblock content %}
