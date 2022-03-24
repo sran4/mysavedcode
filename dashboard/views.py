@@ -28,7 +28,7 @@ def notes(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     notes = Notes.objects.filter(user=request.user).filter(
         Q(language__icontains=q) |
-        Q(notes_for_yourself__icontains=q)).order_by('-pk')
+        Q(notes_for_yourself__icontains=q)).order_by('-updated_at')
 
     notes_count = notes.count()
 
