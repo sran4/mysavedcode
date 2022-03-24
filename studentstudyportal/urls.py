@@ -11,7 +11,7 @@ urlpatterns = [
     # path('admin/', include('admin_honeypot.urls',
     #      namespace='admin_honeypot')),  # add this line
     # change this to securelogin instead of admin
-    path('admin/', admin.site.urls),
+    path('securelogin/', admin.site.urls),
     path('', include('dashboard.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('register/', dash_views.register, name='register'),
