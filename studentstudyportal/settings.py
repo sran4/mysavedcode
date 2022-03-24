@@ -270,5 +270,6 @@ CKEDITOR_CONFIGS = {
 
 # Heroku local settings
 django_heroku.settings(locals())
+SITE_ID = 1
 
 STATIC_ROOT = os.path.join(BASE_DIRR, 'staticfiles')
