@@ -4,6 +4,9 @@ from dashboard import views as dash_views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls import (
+    handler400, handler403, handler404, handler500
+)
 
 
 urlpatterns = [

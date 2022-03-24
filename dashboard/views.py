@@ -20,7 +20,7 @@ def home(request):
 
 
 def handle404(request, exception):
-    return render(request, 'dashboard/handle404.html', )
+    return render(request, 'dashboard/404.html', )
 
 
 @login_required
