@@ -457,21 +457,21 @@ def conversion(request):
                 second = request.POST['measure2']
                 input = request.POST['input']
                 answer = ''
-                if input and int(input) >= 0:
+                if input and (int(float(input))) >= 0:
                     if first == 'yard' and second == 'foot':
-                        answer = f'{input} yard = {int(input)*3} foot'
+                        answer = f'{input} yard = {float(input)*3} foot'
                     if first == 'foot' and second == 'yard':
-                        answer = f'{input} foot = {int(input)/3} yard'
+                        answer = f'{input} foot = {float(input)/3} yard'
 
                     if first == 'meter' and second == 'foot':
-                        answer = f'{input} meter = {int(input)*3.28084} foot'
+                        answer = f'{input} meter = {float(input)*3.28084} foot'
                     if first == 'foot' and second == 'meter':
-                        answer = f'{input} meter = {int(input)/3.28084} foot'
+                        answer = f'{input} meter = {float(input)/3.28084} foot'
 
                     if first == 'meter' and second == 'inch':
-                        answer = f'{input} meter = {int(input)*39.3701} inch'
+                        answer = f'{input} meter = {float(input)*39.3701} inch'
                     if first == 'inch' and second == 'meter':
-                        answer = f'{input} meter = {int(input)/39.3701} inch'
+                        answer = f'{input} meter = {float(input)/39.3701} inch'
 
                     context = {
                         'form': form,
