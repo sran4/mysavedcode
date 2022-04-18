@@ -32,7 +32,7 @@ def notes(request):
 
     notes_count = notes.count()
 
-    paginator = Paginator(notes, 20)
+    paginator = Paginator(notes, 24)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
 
