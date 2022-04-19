@@ -81,7 +81,7 @@ def create_note(request):
                 user=request.user, language=request.POST['language'], code_here=form.cleaned_data['code_here'], notes_for_yourself=request.POST['notes_for_yourself'],)
             notes.save()
             messages.success(
-                request, f"{request.user.username} Code  Added  Succcessfully!!!")
+                request, f"{request.user.username.upper()} Code  Added  Succcessfully!!!")
             return redirect("notes")
     else:
         form = NotesForm()
@@ -100,7 +100,7 @@ def update_note(request, pk):
         if form.is_valid():
             form.save()
             messages.success(
-                request, f"{request.user.username} Code has been Updated Succcessfully!!!")
+                request, f"{request.user.username.upper()} Code has been Updated Succcessfully!!!")
             return redirect("notes")
     else:
         form = NotesForm(instance=obj)
@@ -118,7 +118,7 @@ def delete_note(request, pk=None):
     if request.method == 'POST':
         note.delete()
         messages.success(
-            request, f" {request.user.username} Code has been deleted Succcessfully!!!")
+            request, f" {request.user.username.upper()} Code has been deleted Succcessfully!!!")
         return redirect("notes")
 
     context = {'obj': note,
@@ -159,7 +159,7 @@ def homework(request):
             )
             homework.save()
             messages.success(
-                request, f"Assembly Added from {request.user.username} Succcessfully!!!")
+                request, f"{request.user.username.upper()} Assembly Added Succcessfully!!!")
             return redirect('home-work')
     else:
         form = HomeworkForm()
@@ -196,7 +196,7 @@ def create_assembly(request):
             )
             homework.save()
             messages.success(
-                request, f"Assembly Added from {request.user.username} Succcessfully!!!")
+                request, f"Assembly Added from {request.user.username.upper()} Succcessfully!!!")
             return redirect('home-work')
     else:
         form = HomeworkForm()
@@ -216,7 +216,7 @@ def update_homework(request, pk=None):
         if form.is_valid():
             homework.save()
             messages.success(
-                request, f"{request.user.username} Homework has beed updated Succcessfully!!!")
+                request, f"{request.user.username.upper()} Homework has beed updated Succcessfully!!!")
             return redirect('home-work')
     else:
         form = HomeworkForm(instance=homework)
@@ -236,7 +236,7 @@ def complete_homework(request, pk=None):
         homework.is_finished = True
     homework.save()
     messages.success(
-        request, f"{request.user.username} Homework has beed completed Succcessfully!!!")
+        request, f"{request.user.username.upper()} Homework has beed completed Succcessfully!!!")
     return redirect("home-work")
 
 
@@ -246,7 +246,7 @@ def delete_homework(request, pk=None):
     if request.method == 'POST':
         homework.delete()
         messages.success(
-            request, f"{request.user.username} Homework has beed deleted Succcessfully!!!")
+            request, f"{request.user.username.upper()} Homework has beed deleted Succcessfully!!!")
         return redirect("home-work")
     context = {'obj': homework,
                }
@@ -318,7 +318,7 @@ def todo(request):
             )
             todo.save()
             messages.success(
-                request, f"Todo Added from {request.user.username} Succcessfully!!!")
+                request, f"Todo Added from {request.user.username.upper()} Succcessfully!!!")
             return redirect('todo')
     else:
         form = TodoForm()
@@ -339,7 +339,7 @@ def update_todo(request, pk=None):
         todo.is_finished = True
     todo.save()
     messages.success(
-        request, f"{request.user.username} Todo ({todo.title}) has beed updated Succcessfully!!!")
+        request, f"{request.user.username.upper()} Todo ({todo.title}) has beed updated Succcessfully!!!")
     return redirect("todo")
 
 
@@ -347,7 +347,7 @@ def update_todo(request, pk=None):
 def delete_todo(request, pk=None):
     todo = Todo.objects.get(id=pk).delete()
     messages.success(
-        request, f"{request.user.username} Todo has beed deleted Succcessfully!!!")
+        request, f"{request.user.username.upper()} Todo has beed deleted Succcessfully!!!")
     return redirect("todo")
 
 
@@ -522,7 +522,7 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(
-                request, f"{username}  Account has been created!!!")
+                request, f"{username.upper()}  Account has been created!!!")
             return redirect('login')
         else:
             messages.error(request, f"Some thing went wrong. pls try again")
