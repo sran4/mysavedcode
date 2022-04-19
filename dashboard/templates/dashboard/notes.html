@@ -14,9 +14,9 @@
     <div class="col-md-3 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card">
-          <div class="card-header text-center">{{note.language}}</div>
+          <div class="card-header text-center">{{note.language|striptags}}</div>
 
-          <div class="card-body">{{note.noted }}</div>
+          <div class="card-body">{{note.noted|striptags }}</div>
 
           <div class="card-footer mt-auto">
             <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: red"></i></a>
