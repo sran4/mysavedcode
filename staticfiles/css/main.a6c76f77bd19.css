@@ -192,9 +192,9 @@ footer .column a + a {
   margin-left: 25px;
   /* margin-top: 20px; */
 
-  width: 60px;
-  height: 60px;
-  border-radius: 60%;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
   overflow: hidden;
   background-color: rgb(14, 12, 46);
 }

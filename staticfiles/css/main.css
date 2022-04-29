@@ -194,9 +194,9 @@ footer .column a + a {
 
   width: 60px;
   height: 60px;
-  border-radius: 100%;
+  border-radius: 60%;
   overflow: hidden;
-  background-color: rgb(245, 10, 10);
+  background-color: rgb(14, 12, 46);
 }
 
 .add:hover {

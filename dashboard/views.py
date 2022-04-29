@@ -81,7 +81,7 @@ def create_note(request):
                 user=request.user, language=request.POST['language'], code_here=form.cleaned_data['code_here'], notes_for_yourself=request.POST['notes_for_yourself'],)
             notes.save()
             messages.success(
-                request, f"{request.user.username.upper()} Code  Added  Succcessfully!!!")
+                request, f"{request.user.username.upper()} {request.POST['language']} Code  Added  Succcessfully!!!")
             return redirect("notes")
     else:
         form = NotesForm()
@@ -100,7 +100,7 @@ def update_note(request, pk):
         if form.is_valid():
             form.save()
             messages.success(
-                request, f"{request.user.username.upper()} Code has been Updated Succcessfully!!!")
+                request, f"{request.user.username.upper()} {obj} Code has been Updated Succcessfully!!!")
             return redirect("notes")
     else:
         form = NotesForm(instance=obj)
@@ -118,7 +118,7 @@ def delete_note(request, pk=None):
     if request.method == 'POST':
         note.delete()
         messages.success(
-            request, f" {request.user.username.upper()} Code has been deleted Succcessfully!!!")
+            request, f" {request.user.username.upper()} {note} Code has been deleted Succcessfully!!!")
         return redirect("notes")
 
     context = {'obj': note,
@@ -216,7 +216,7 @@ def update_homework(request, pk=None):
         if form.is_valid():
             homework.save()
             messages.success(
-                request, f"{request.user.username.upper()} Homework has beed updated Succcessfully!!!")
+                request, f"{request.user.username.upper()} Assembly has beed updated Succcessfully!!!")
             return redirect('home-work')
     else:
         form = HomeworkForm(instance=homework)
@@ -236,7 +236,7 @@ def complete_homework(request, pk=None):
         homework.is_finished = True
     homework.save()
     messages.success(
-        request, f"{request.user.username.upper()} Homework has beed completed Succcessfully!!!")
+        request, f"{request.user.username.upper()} Assembly has beed completed Succcessfully!!!")
     return redirect("home-work")
 
 
@@ -246,7 +246,7 @@ def delete_homework(request, pk=None):
     if request.method == 'POST':
         homework.delete()
         messages.success(
-            request, f"{request.user.username.upper()} Homework has beed deleted Succcessfully!!!")
+            request, f"{request.user.username.upper()} Assembly has beed deleted Succcessfully!!!")
         return redirect("home-work")
     context = {'obj': homework,
                }
