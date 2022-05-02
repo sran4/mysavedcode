@@ -13,13 +13,18 @@
     <div class="col-md-3 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card">
-          <div class="card-header text-center">{{note.language|striptags}}</div>
+          <div class="card-header text-center">
+            {{note.language|striptags}} {% if note.fav %}
+            <small class="text-muted" style="font-size: 18px"><i class="fa fa-heart fa-2x" style="font-size: 10px; float: right; color: red"></i></small>
+            {% endif %}
+          </div>
 
           <div class="card-body">{{note.noted|striptags }}</div>
 
           <div class="card-footer mt-auto">
             <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: red"></i></a>
             <small class="text-muted" style="font-size: 10px">{{ note.created_at|date:"F d, Y" }}</small>
+
             <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: red"></i></a>
           </div>
         </div>

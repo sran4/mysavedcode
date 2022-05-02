@@ -29,16 +29,12 @@ def notes(request):
     notes = Notes.objects.filter(user=request.user).filter(
         Q(language__icontains=q) |
         Q(notes_for_yourself__icontains=q)).order_by('-updated_at')
-
     notes_count = notes.count()
-
     paginator = Paginator(notes, 24)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
-
     context = {'notes': notes,
                'notes_count': notes_count,
-
                }
     return render(request, 'dashboard/notes.html', context)
 
