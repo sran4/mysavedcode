@@ -1,17 +1,24 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
 <section class="container" style="background-color: gray; border-radius: 2em">
-  <div class="content-section p-0 mt-5" style="background-color: gray; border-radius: 2em; border: None">
+  <div class="content-section p-0 mt-1" style="background-color: gray; border-radius: 2em; border: None">
     <div class="m-3" style="background-color: gray; color: black">
-      <a href="{{request.META.HTTP_REFERER}}"> <i class="fa fa-arrow-left" style="font-size: 35px; float: left; color: blue"></i> </a>
+      <a href="{{request.META.HTTP_REFERER}}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: blue"></i> </a>
       <h2 class="text-center">{{notes.language}}</h2>
-      <hr />
-      <a href="{% url 'update-note' notes.pk %}"> <i class="fa fa-edit fa-2x" style="font-size: 30px; float: middle; color: green"></i></a>
-      <a href="{% url 'delete-note' notes.pk %}"> <i class="fa fa-trash fa-2x" style="font-size: 30px; float: right; color: red"></i></a>
+      <div class="row">
+        <div class="col mx-auto">
+          <a href="{% url 'delete-note' notes.pk %}">
+            <i class="fa fa-trash fa-2x" style="font-size: 30px; float: right; margin: 15px; color: red"></i>
+          </a>
+          <a href="{% url 'update-note' notes.pk %}">
+            <i class="fa fa-edit fa-2x" style="font-size: 30px; float: right; margin: 15px; color: green"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <hr class="p-0 m-0" />
+
     <div class="m-3" style="background-color: gray; color: black">
       <h2>{{notes.notes_for_yourself | safe}}</h2>
-      <hr class="p-0 m-0" />
+
       <p>{{notes.code_here | safe}}</p>
     </div>
   </div>

@@ -5,8 +5,11 @@
   <form method="POST">
     {% csrf_token %}
     <fieldset class="form-group">
+      {% if page == "update" %}
+      <legend class="border-bottom text-center mb-4">Update</legend>
+      {% else %}
       <legend class="border-bottom text-center mb-4">Create</legend>
-      {{form.media}} {{ form|crispy }}
+      {% endif %} {{form.media}} {{ form|crispy }}
     </fieldset>
     {% if page == "update" %}
     <div class="form-group">
