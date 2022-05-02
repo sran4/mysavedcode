@@ -1,4 +1,4 @@
-Updated Site in 4 steps
+Updated Site in 4 steps First Activate Virtual environment\_ VENV\Scripts\activate
 git add .
 git commit -m "message"
 git push origin main
