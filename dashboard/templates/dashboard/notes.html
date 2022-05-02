@@ -14,9 +14,8 @@
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card">
           <div class="card-header text-center">
-            {{note.language|striptags}} {% if note.fav %}
             <small class="text-muted" style="font-size: 18px"><i class="fa fa-heart fa-2x" style="font-size: 10px; float: right; color: red"></i></small>
-            {% endif %}
+            {{note.language|striptags}} {% if note.fav %} {% endif %}
           </div>
           <p class="text-muted mx-auto" style="font-size: 10px; color: red mb-0">{{ note.created_at|date:"F d, Y" }}</p>
 
