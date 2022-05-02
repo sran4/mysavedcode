@@ -198,10 +198,26 @@ footer .column a + a {
   height: 60px;
   border-radius: 60%;
   overflow: hidden;
-  background-color: rgb(181, 25, 25);
+  background-color: rgb(236, 14, 14);
 }
 
 .add:hover {
+  opacity: 0.9;
+  transform: scale(1.25);
+  transition: 0.2s ease;
+}
+.add1 {
+  float: right !important;
+  margin-left: 25px;
+  /* margin-top: 20px; */
+
+  width: 60px;
+  height: 60px;
+  border-radius: 60%;
+  overflow: hidden;
+  background-color: rgb(34, 25, 135);
+}
+.add1:hover {
   opacity: 0.9;
   transform: scale(1.25);
   transition: 0.2s ease;

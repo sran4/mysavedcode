@@ -7,16 +7,15 @@
   </form>
   <a href="{% url 'favs-notes' %}"><button type="button" class="btn btn-info" style="border-radius: 20px">Go To Favourites Snippets</button> </a>
   <a href="{% url 'create-note' %}"> <i class="add1 fas fa-plus-circle fa-4x float-right" style="color: red"></i></a>
-  <h5 style="text-align: center; color: red; margin-bottom: 30px">All {{notes_count}} Code Snippets were Found</h5>
+  <h3 style="text-align: center; color: blue; margin-bottom: 30px">Found {{notes_count}} Code Snippets</h3>
   <div class="row">
     {% for note in notes %}
     <div class="col-md-3 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
-        
         <div class="card">
           <div class="card-header text-center">
             {% if note.fav %}
-            <small class="text-muted" style="font-size: 18px"><i class="fa fa-heart fa-2x" style="font-size: 10px; float: right; color: red"></i></small>
+            <small class="text-muted" style="font-size: 18px"><i class="fa fa-heart fa-2x" style="font-size: 10px; float: right; color: blue"></i></small>
             {% endif %} {{note.language|striptags}}
           </div>
           <p class="text-muted mx-auto" style="font-size: 10px; color: red mb-0">{{ note.created_at|date:"F d, Y" }}</p>

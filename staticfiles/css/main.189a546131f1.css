@@ -215,7 +215,7 @@ footer .column a + a {
   height: 60px;
   border-radius: 60%;
   overflow: hidden;
-  background-color: rgb(34, 25, 135);
+  background-color: rgb(236, 14, 14);
 }
 .add1:hover {
   opacity: 0.9;
