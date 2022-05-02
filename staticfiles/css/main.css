@@ -25,6 +25,7 @@ footer {
 
 .card {
   box-shadow: 15px 15px 10px rgb(78, 77, 77);
+  background-color: #4b3d3d !important;
 }
 
 .card-header:hover {
