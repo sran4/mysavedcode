@@ -3,7 +3,9 @@
   <div class="content-section p-0 mt-1" style="background-color: gray; border-radius: 2em; border: None">
     <div class="m-3" style="background-color: gray; color: black">
       <a href="{{request.META.HTTP_REFERER}}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: blue"></i> </a>
-      <h2 class="text-center">{{notes.language}}</h2>
+      <p style="font-size: 15px; float: right; color: red">{{ notes.created_at|date:"F d, Y" }}</p>
+      <h2 class="text-center">{{notes.language|upper}}</h2>
+
       <div class="row">
         <div class="col mx-auto">
           <a href="{% url 'delete-note' notes.pk %}">
