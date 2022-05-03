@@ -15,12 +15,12 @@
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card">
           <div class="card-header text-center">{{note.language|upper|truncatechars:20}}</div>
-          <p class="mx-auto" style="font-size: 10px; color: blue">{{ note.created_at|date:"F d, Y" }}</p>
+          <p class="mx-auto" style="font-size: 10px; color: darkred">{{ note.created_at|date:"F d, Y" }}</p>
           <div class="card-body">{{note.noted | safe}}</div>
 
           <div class="card-footer mt-auto">
             <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: green"></i></a>
-            <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: red"></i></a>
+            <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: darkred"></i></a>
           </div>
         </div>
       </a>
