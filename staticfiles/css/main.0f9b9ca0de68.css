@@ -237,11 +237,3 @@ footer .column a + a {
   transform: translateX(-10px); // translateX, translateY, translateZ works well
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
-
-.searchRounded {
-    border-radius: 25px;
-    border: 2px solid #609;
-    padding: 20px; 
-    width: 200px;
-    height: 15px;    
-}

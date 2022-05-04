@@ -28,7 +28,8 @@ def notes(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     notes = Notes.objects.filter(user=request.user).filter(
         Q(language__icontains=q) |
-        Q(notes_for_yourself__icontains=q)).order_by('-updated_at')
+        Q(notes_for_yourself__icontains=q) |
+        Q(code_here__icontains=q)).order_by('-updated_at')
     notes_count = notes.count()
     paginator = Paginator(notes, 24)
     page = request.GET.get('page')
@@ -44,7 +45,8 @@ def favs_notes(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     favs = Notes.objects.filter(user=request.user, fav=True).filter(
         Q(language__icontains=q) |
-        Q(notes_for_yourself__icontains=q)).order_by('-updated_at')
+        Q(notes_for_yourself__icontains=q) |
+        Q(code_here__icontains=q)).order_by('-updated_at')
 
     favs_count = favs.count()
 
@@ -64,6 +66,14 @@ def favs_notes(request):
 
 def NotesDetailView(request, code_id):
     notes = get_object_or_404(Notes, pk=code_id)
+    if request.method == "POST":
+        if notes.fav == True:
+            notes.fav = False
+            notes.save()
+        else:
+            notes.fav = True
+            notes.save()
+        return redirect('notes_detail', notes.pk)
     context = {'notes': notes}
     return render(request, 'dashboard/notes_detail.html', context)
 

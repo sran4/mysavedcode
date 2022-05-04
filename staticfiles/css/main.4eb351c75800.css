@@ -190,14 +190,31 @@ footer .column a + a {
   font-size: 2.5rem;
 }
 
+.add {
+  float: right !important;
+  margin-left: 25px;
+  /* margin-top: 20px; */
+
+  width: 60px;
+  height: 60px;
+  border-radius: 60%;
+  overflow: hidden;
+  background-color: rgb(236, 14, 14);
+}
+
+.add:hover {
+  opacity: 0.9;
+  transform: scale(1.25);
+  transition: 0.2s ease;
+}
 .add1 {
   float: right !important;
   margin-left: 25px;
   /* margin-top: 20px; */
 
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 80%;
   overflow: hidden;
   background-color: rgb(203, 202, 215);
 }
@@ -205,22 +222,6 @@ footer .column a + a {
   opacity: 0.9;
   transform: scale(1.25);
   transition: 0.2s ease;
-}
-.myPlus {
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 15px 25px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 50%;
-  float: right;
-}
-.myPlus:hover {
-  opacity: 0.9;
-  transform: scale(1.5);
-  transition: 0.2s ease;
-  background-color: RoyalBlue;
 }
 
 .alert {
@@ -236,12 +237,4 @@ footer .column a + a {
   visibility: hidden;
   transform: translateX(-10px); // translateX, translateY, translateZ works well
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
-}
-
-.searchRounded {
-    border-radius: 25px;
-    border: 2px solid #609;
-    padding: 20px; 
-    width: 200px;
-    height: 15px;    
 }

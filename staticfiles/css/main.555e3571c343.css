@@ -210,7 +210,7 @@ footer .column a + a {
   background-color: DodgerBlue;
   border: none;
   color: white;
-  padding: 15px 25px;
+  padding: 20px 30px;
   font-size: 20px;
   cursor: pointer;
   border-radius: 50%;
@@ -236,12 +236,4 @@ footer .column a + a {
   visibility: hidden;
   transform: translateX(-10px); // translateX, translateY, translateZ works well
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
-}
-
-.searchRounded {
-    border-radius: 25px;
-    border: 2px solid #609;
-    padding: 20px; 
-    width: 200px;
-    height: 15px;    
 }

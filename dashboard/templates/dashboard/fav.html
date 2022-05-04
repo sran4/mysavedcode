@@ -2,22 +2,22 @@
 
 <div class="container">
   <form style="margin: auto; max-width: 600px" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'favs-notes' %}">
-    <input style="width: 18em" name="q" placeholder="Search anchor,models,views,forms,settings,staticfiles..." />
-    <button type="submit" style="border-radius: 7px"><i class="fa fa-search"></i></button>
+    <input class="searchRounded" style="width: 18em" name="q" placeholder="Search anchor,models,views,forms,settings,staticfiles..." />
+    <button type="submit" style="border-radius: 50px"><i class="fa fa-search"></i></button>
   </form>
-  <a href="{% url 'notes' %}"><button type="button" class="btn btn-info" style="border-radius: 20px">All Snippets Here</button> </a>
-  <a href="{% url 'create-note' %}"> <i class="add1 fas fa-plus-circle fa-4x float-right" style="color: green"></i></a>
-
-  <h3 style="text-align: center; color: ashwhite; margin-bottom: 30px">Found {{favs_count}} Notes in Favs</h3>
+  <a href="{% url 'notes' %}"><button type="button" class="btn btn-info" style="border-radius: 20px">Code Home Here</button> </a>
+  <a href="{% url 'create-note' %}"
+    ><button class="myPlus"><i class="fa fa-plus"></i></button
+  ></a>
+  <h3 style="text-align: center; color: ashwhite; margin-top: 30px; margin-bottom: 30px">Found {{favs_count}} Notes in Favs</h3>
   <div class="row">
     {% for note in favs %}
     <div class="col-md-3 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card">
           <div class="card-header text-center">{{note.language|upper|truncatechars:20}}</div>
-          <p class="mx-auto" style="font-size: 10px; color: darkred">{{ note.created_at|date:"F d, Y" }}</p>
+          <p class="mx-auto" style="font-size: 10px; color: black">{{ note.created_at|date:"F d, Y" }}</p>
           <div class="card-body">{{note.noted | safe}}</div>
-
           <div class="card-footer mt-auto">
             <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: darkgreen"></i></a>
             <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: darkred"></i></a>

@@ -1,13 +1,30 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
 <section class="container" style="background-color: gray; border-radius: 2em">
+  <div class="text-center mt-5 mb-5">
+    {% if notes.fav %}
+    <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <button class="btn btn-success btn-sm" style="border-radius: " 50px;>Remove from Favourites <i class="far fa-heart fa-sm"></i></button>
+      </div>
+    </form>
+    {% else %}
+    <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <button class="btn btn-danger btn-sm" style="border-radius: " 50px>Add To Favourites <i class="fas fa-heart-broken fa-sm"></i></button>
+      </div>
+    </form>
+    {% endif %}
+  </div>
   <div class="content-section p-0 mt-1" style="background-color: gray; border-radius: 2em; border: None">
     <div class="m-3" style="background-color: gray; color: black">
-      <a href="{{request.META.HTTP_REFERER}}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: blue"></i> </a>
+      <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: blue"></i> </a>
       <p style="font-size: 15px; float: right; color: darkred">{{ notes.created_at|date:"F d, Y" }}</p>
       <h2 class="text-center">{{notes.language|upper}}</h2>
 
       <div class="row">
-        <div class="col mx-auto">
+        <div class="col">
           <a href="{% url 'delete-note' notes.pk %}">
             <i class="fa fa-trash fa-2x" style="font-size: 30px; float: right; margin: 15px; color: darkred"></i>
           </a>

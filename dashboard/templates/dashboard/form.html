@@ -1,7 +1,7 @@
 {% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
 
 <div class="container">
-  <a class="btn btn-outline-info" href="{% url 'notes' %}">All Notes</a><br />
+  <a class="btn btn-outline-info" href="{{request.META.HTTP_REFERER}}">Cancel</a><br />
   <form method="POST">
     {% csrf_token %}
     <fieldset class="form-group">
@@ -18,6 +18,7 @@
     {% else %}
     <div class="form-group">
       <button href="" class="btn btn-outline-info" type="submit">Create</button>
+      <a class="btn btn-outline-info" href="{{request.META.HTTP_REFERER}}">Cancel</a>
     </div>
     {% endif %}
   </form>
