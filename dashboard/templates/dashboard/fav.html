@@ -16,7 +16,7 @@
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card">
           <div class="card-header text-center">{{note.language|upper|truncatechars:20}}</div>
-          <p class="mx-auto" style="font-size: 10px; color: black">{{ note.created_at|date:"F d, Y" }}</p>
+          <p class="mx-auto font-weight-bold" style="font-size: 10px; padding-top: 5px; color: darkbrown">{{ note.updated_at|date:"F d, Y" }}</p>
           <div class="card-body">{{note.noted | safe}}</div>
           <div class="card-footer mt-auto">
             <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: darkgreen"></i></a>

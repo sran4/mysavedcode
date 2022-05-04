@@ -20,7 +20,7 @@
             <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0; color: darkred"></i>
             {% endif %}
           </div>
-          <p class="mx-auto" style="font-size: 10px; color: black">{{ note.created_at|date:"F d, Y" }}</p>
+          <p class="mx-auto font-weight-bold" style="font-size: 10px; padding-top: 5px; color: DarkBrown">{{ note.updated_at|date:"F d, Y" }}</p>
 
           <div class="card-body p-0 m-2">{{note.noted|striptags }}</div>
 
