@@ -4,11 +4,12 @@
   <a class="btn btn-outline-info" href="{{request.META.HTTP_REFERER}}">Cancel</a><br />
   <form method="POST">
     {% csrf_token %}
+    <button href="" class="btn btn-outline-info mt-2 float-right" type="submit">Create/Update</button>
     <fieldset class="form-group">
       {% if page == "update" %}
-      <legend class="border-bottom text-center mb-4">Update</legend>
+      <legend class="text-center mb-4">Update</legend>
       {% else %}
-      <legend class="border-bottom text-center mb-4">Create</legend>
+      <legend class="text-center mb-4">Create</legend>
       {% endif %} {{form.media}} {{ form|crispy }}
     </fieldset>
     {% if page == "update" %}

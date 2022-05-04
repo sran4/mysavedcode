@@ -5,14 +5,14 @@
     <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
       {% csrf_token %}
       <div class="form-group">
-        <button class="btn btn-success btn-sm" style="border-radius: " 50px;>Remove from Favourites <i class="far fa-heart fa-sm"></i></button>
+        <button class="btn btn-success btn-sm" style="border-radius: " 50px;>Remove from Favourites <i class="far fa-heart fa-lg"></i></button>
       </div>
     </form>
     {% else %}
     <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
       {% csrf_token %}
       <div class="form-group">
-        <button class="btn btn-danger btn-sm" style="border-radius: " 50px>Add To Favourites <i class="fas fa-heart-broken fa-sm"></i></button>
+        <button class="btn btn-danger btn-sm" style="border-radius: " 50px>Add To Favourites <i class="fas fa-heart-broken fa-lg"></i></button>
       </div>
     </form>
     {% endif %}
