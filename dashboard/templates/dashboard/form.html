@@ -15,6 +15,7 @@
     {% if page == "update" %}
     <div class="form-group">
       <button href="" class="btn btn-outline-info" type="submit">Update</button>
+      <a class="btn btn-outline-info" href="{{request.META.HTTP_REFERER}}">Cancel</a>
     </div>
     {% else %}
     <div class="form-group">
