@@ -239,14 +239,14 @@ footer .column a + a {
 }
 
 
-
 .searchRounded {
   border-radius: 25px;
   border: 2px solid #609;
-  padding: 20px;
+  padding: 25px;
   width: 200px;
-  height: 15px;
+  height: 20px;
   background: none;
+  position: absolute;  
 }
 
 

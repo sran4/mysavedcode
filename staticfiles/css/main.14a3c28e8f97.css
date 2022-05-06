@@ -238,18 +238,24 @@ footer .column a + a {
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
 
-
-
-.searchRounded {
-  border-radius: 25px;
-  border: 2px solid #609;
-  padding: 20px;
-  width: 200px;
-  height: 15px;
-  background: none;
+.searchRounded {  
+  width: 0em;  
+  position: absolute; 
+  background: #2f3640;
+ 
 }
 
-
+.searchHover:hover {
+    width: 18em;
+    padding: 0 6px;
+    top: 50px;
+    height: 15px;
+    border: 2px solid #609;
+    border-radius: 25px; 
+    background: none;
+    padding: 20px;
+    transition: 0.4s;  
+}
 
 .fa {
   color: #ecdfdf;
