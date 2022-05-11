@@ -21,9 +21,7 @@
             {% endif %}
           </div>
           <p class="mx-auto font-weight-bold" style="font-size: 10px; margin-bottom: 0rem; padding-top: 5px; color: DarkBrown">{{ note.updated_at|date:"F d, Y" }}</p>
-
           <div class="card-body pt-2 pb-2">{{note.noted|striptags }}</div>
-
           <div class="card-footer mt-auto pt-2 pb-2">
             <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: darkgreen"></i></a>
             <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: darkred"></i></a>

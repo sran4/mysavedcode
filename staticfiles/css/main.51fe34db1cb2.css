@@ -229,7 +229,6 @@ footer .column a + a {
   visibility: visible;
   transform: translateX(0px);
   transition: visibility 0s, opacity 250ms, transform 250ms;
-  padding: 0rem 0rem !important;
 }
 .alert.hide {
   positition: relative;
@@ -238,11 +237,8 @@ footer .column a + a {
   transform: translateX(-10px); // translateX, translateY, translateZ works well
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
-.alert-success {
-  color: #5a5596;
-  background-color: #166c19;
-  border-color: #641814;
-}
+
+
 
 .searchRounded {
   border-radius: 25px;
@@ -253,6 +249,15 @@ footer .column a + a {
   background: none;
 }
 
+
+
 .fa {
-  color: #ecdfdf;
+  color: #ecdfdf;}
+
+.card{
+  border-radius: 1.5rem !important;
 }
+.card-header:first-child {
+    border-radius: calc(1.5rem - 1.75px) calc(1.5rem - 1.75px) !important;
+}
+

@@ -92,7 +92,7 @@
     <main>
       <center>
       {% if messages %} {% for msg in messages %}
-      <div class="container red alert alert-{{msg.tags}}  alert-dismissible fade show"><p style="font-size:18px; color:red; font-weight:bold; font-style:italic;">{{msg}}</p>
+      <div class="container alert alert-{{msg.tags}}  alert-dismissible fade show"><p style="font-size:22px; color:DodgerBlue; font-weight:bold; font-style:italic;">{{msg}}</p>
  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>  </div>
@@ -114,12 +114,11 @@
     ></script>
 <script>
 var m = document.getElementsByClassName("alert");  // hide out messages
-
 setTimeout(function(){
    if (m && m.length) {
        m[0].classList.add('hide');
    }
-}, 5000);
+}, 10000);
 </script>
 
   </body>

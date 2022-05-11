@@ -238,11 +238,6 @@ footer .column a + a {
   transform: translateX(-10px); // translateX, translateY, translateZ works well
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
-.alert-success {
-  color: #5a5596;
-  background-color: #166c19;
-  border-color: #641814;
-}
 
 .searchRounded {
   border-radius: 25px;
