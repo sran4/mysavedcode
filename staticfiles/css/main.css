@@ -41,7 +41,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: rgb(95, 120, 202);
+  color: rgb(21, 19, 95);
 }
 
 .custom-header:hover {
@@ -261,4 +261,8 @@ footer .column a + a {
   margin-right: 0px;
   line-height: 13px;
   margin: 0;
+}
+
+pre {
+  color: #010004 !important;
 }
