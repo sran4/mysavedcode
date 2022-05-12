@@ -29,7 +29,6 @@ footer {
 }
 
 .card-header:hover {
-  background: rgb(46, 67, 172) !important;
   color: whitesmoke !important;
   transition: 0.1s ease-in;
 }
