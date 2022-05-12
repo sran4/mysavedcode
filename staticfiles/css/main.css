@@ -25,7 +25,7 @@ footer {
 
 .card {
   box-shadow: 15px 15px 10px rgb(78, 77, 77);
-  background-color: #766363 !important;
+  background-color: #3d4953 !important;
 }
 
 .card-header:hover {
@@ -36,12 +36,12 @@ footer {
 
 a {
   text-decoration: none !important;
-  color: black;
+  color: rgb(5, 5, 5);
 }
 
 a:hover {
-  text-decoration: none;
-  color: rgb(21, 19, 95);
+  background: rgb(46, 67, 172) !important;
+  color: whitesmoke !important;
 }
 
 .custom-header:hover {

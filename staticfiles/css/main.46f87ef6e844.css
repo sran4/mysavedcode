@@ -40,8 +40,8 @@ a {
 }
 
 a:hover {
-  background: rgb(46, 67, 172) !important;
-  color: whitesmoke !important;
+  text-decoration: none;
+  color: rgb(21, 19, 95);
 }
 
 .custom-header:hover {
