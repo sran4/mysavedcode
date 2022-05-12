@@ -50,7 +50,7 @@ def favs_notes(request):
 
     favs_count = favs.count()
 
-    paginator = Paginator(favs, 24)
+    paginator = Paginator(favs, 30)
     page = request.GET.get('page')
     favs = paginator.get_page(page)
 

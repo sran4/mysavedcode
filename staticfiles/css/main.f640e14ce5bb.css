@@ -240,7 +240,7 @@ footer .column a + a {
 }
 .alert-success {
   color: #5a5596;
-  background-color: #93a3d2;
+  background-color: #d43e3e;
   border-color: #641814;
 }
 
@@ -259,6 +259,5 @@ footer .column a + a {
 
 .card p {
   margin-right: 0px;
-  line-height: 13px;
-  margin: 0;
+  line-height: 10px;
 }

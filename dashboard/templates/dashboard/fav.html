@@ -2,7 +2,7 @@
 
 <div class="container">
   <form style="margin: auto; max-width: 600px" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
-    <input class="searchRounded form-control" style="width: 18em" name="q" placeholder="Search Cart,form etc..." />
+    <input class="searchRounded form-control" style="width: 18em" name="q" placeholder="Search Code Snippets..." />
     <span class="input-group-btn">
       <button class="btn btn-sm" type="submit" style="border-radius: 8px"><i class="fa fa-search" style="height: 40; font-size: 27px; color: darkgreen"></i></button>
     </span>
@@ -14,15 +14,12 @@
   <h3 style="text-align: center; color: ashwhite; margin-top: 30px; margin-bottom: 30px">Found {{favs_count}} Snippets in Favourites</h3>
   <div class="row">
     {% for note in favs %}
-    <div class="col-md-3 mb-4">
+    <div class="col-12 col-sm-6 col-md-2 col-md-6 col-lg-2 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
-        <div class="card">
-          <div class="card-header text-center">{{note.language|upper|truncatechars:20}}</div>
-          <p class="mx-auto font-weight-bold" style="font-size: 10px; margin-bottom: 0rem; padding-top: 5px; color: darkbrown">{{ note.updated_at|date:"F d, Y" }}</p>
-          <div class="card-body pt-2 pb-2">{{note.noted | safe}}</div>
-          <div class="card-footer pt-2 pb-2 mt-auto">
-            <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: darkgreen"></i></a>
-            <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: darkred"></i></a>
+        <div class="card" style="margin-right: 0px; height: 100px">
+          <div class="card-body" style="padding: 0px">
+            <p style="text-align: left; font-size: 14px">{{note.language|upper|truncatechars:18}}</p>
+            <p style="text-align: left; font-size: 12px">{{note.notes_for_yourself|safe|truncatechars:100 }}</p>
           </div>
         </div>
       </a>
