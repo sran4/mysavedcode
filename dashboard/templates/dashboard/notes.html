@@ -15,9 +15,9 @@
     <div class="col-md-3 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card">
-          <div class="card-header">
+          <div class="card-header" style="letter-spacing: 0.2em">
             {{note.language|striptags|upper|truncatechars:20}} {% if note.fav %}
-            <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0; color: DarkRed"></i>
+            <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: DarkRed"></i>
             {% endif %}
           </div>
           <p class="mx-auto font-weight-bold" style="font-size: 10px; margin-bottom: 0rem; padding-top: 5px; color: DarkBrown">{{ note.updated_at|date:"F d, Y" }}</p>

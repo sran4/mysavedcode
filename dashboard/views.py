@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django import contrib
 from django.core.checks import messages
 from django.forms.widgets import FileInput
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render, redirect
 # from .models import Notes, Homework
 from .forms import *
@@ -107,7 +108,8 @@ def update_note(request, pk):
             form.save()
             messages.success(
                 request, f"{request.user.username.upper()} **{obj}** Code has been Updated Succcessfully!!!")
-            return redirect("notes")
+            return redirect("notes_detail", obj.id)
+            # return HttpResponseRedirect(request.path_info)
     else:
         form = NotesForm(instance=obj)
     notes = Notes.objects.filter(user=request.user)
