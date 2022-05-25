@@ -14,7 +14,7 @@
     {% for note in notes %}
     <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
-        <div class="card">
+        <div class="card" style="height: 192px">
           <div class="card-header" style="letter-spacing: 0.1em">
             {{note.language|striptags|upper|truncatechars:20}} {% if note.fav %}
             <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: DarkRed"></i>
