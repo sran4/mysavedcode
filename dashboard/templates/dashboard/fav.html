@@ -18,14 +18,14 @@
       <a href="{% url 'notes_detail' note.id %}">
         <div
           class="card"
-          style="margin-right: 0px; padding: 0.2em; background-color: ashwhite; height: 100px"
+          style="margin-right: 0px; padding: 0.2em; background-color: ashwhite; color: DarkBrown; height: 100px"
           onmouseover="this.style.color='darkred';"
           onmouseout="this.style.color='';"
         >
           <div class="card-body" style="padding: 0.2em">
-            <p style="text-align: center; padding: 0.2em; font-size: 14px">{{note.language|upper|truncatechars:16}}</p>
+            <p style="text-align: center; padding: 0.2em; font-weight: bold; font-size: 14px">{{note.language|upper|truncatechars:16}}</p>
             <hr style="margin: 1px" />
-            <p style="text-align: left; font-size: 14px">{{note.notes_for_yourself|safe|truncatechars:75 }}</p>
+            <p style="text-align: left; text-transform: capitalize; font-size: 11px">{{note.notes_for_yourself|safe|truncatechars:110 }}</p>
           </div>
         </div>
       </a>
