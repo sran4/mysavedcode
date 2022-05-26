@@ -12,7 +12,7 @@
   <h3 style="text-align: center; color: ashwhite; margin-top: 30px; margin-bottom: 30px">Found {{notes_count}} Snippets in Home</h3>
   <div class="row">
     {% for note in notes %}
-    <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 mb-4">
       <a href="{% url 'notes_detail' note.id %}">
         <div class="card" style="height: 192px">
           <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; font-weight: bold; text-align: center; font-size: 14px">

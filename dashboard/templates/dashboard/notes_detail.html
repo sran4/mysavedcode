@@ -1,43 +1,44 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
-<section style="background-color: gray; margin-top: 0; padding-top: 0; border-radius: 2em">
+<section style="background-color: #212529; margin-top: 0; padding-top: 0; border-radius: 2em">
   <div class="text-center">
     {% if notes.fav %}
     <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
       {% csrf_token %}
       <div class="form-group">
-        <button class="btn btn-info btn-block" style="background: darkgreen; color: ashwhite">Remove from Favourites <i class="far fa-heart fa-lg"></i></button>
+        <button class="btn btn-info btn-block" style="background: #265b25; color: ashwhite">Remove from Favourites <i class="far fa-heart fa-lg"></i></button>
       </div>
     </form>
     {% else %}
     <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
       {% csrf_token %}
       <div class="form-group">
-        <button class="btn btn-danger btn-block" style="background: darkred; color: ashwhite">Add To Favourites <i class="fas fa-heart-broken fa-lg"></i></button>
+        <button class="btn btn-danger btn-block" style="background: #962323; color: ashwhite">Add To Favourites <i class="fas fa-heart-broken fa-lg"></i></button>
       </div>
     </form>
     {% endif %}
   </div>
-  <div class="content-section p-0 mt-1" style="background-color: gray; border-radius: 2em; border: None">
-    <div class="m-3" style="background-color: gray; color: black">
-      <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: darkblue"></i> </a>
-      <p class="font-weight-bold" style="font-size: 15px; float: right; padding-top: 5px; color: darkred">{{ notes.updated_at|date:"F d, Y" }}</p>
+  <div class="content-section p-0 mt-1" style="background-color: #212529; border-radius: 2em; border: None">
+    <div class="m-3" style="background-color: #212529; color: ashwhite">
+      <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: #962323"></i> </a>
+      <p class="font-weight-bold" style="font-size: 15px; float: right; padding-top: 5px; color: ashwhite">{{ notes.updated_at|date:"F d, Y" }}</p>
       <h2 class="text-center" style="letter-spacing: 0.1em; font-weight: bold; text-decoration: underline; text-underline-offset: 3px; font-size: 32px">{{notes.language|upper}}</h2>
 
       <div class="row">
         <div class="col">
           <a href="{% url 'delete-note' notes.pk %}">
-            <i class="fa fa-trash fa-2x" style="font-size: 35px; float: right; margin: 15px; color: darkred"></i>
+            <i class="fa fa-trash fa-2x" style="font-size: 35px; float: right; margin: 15px; color: #962323"></i>
           </a>
           <a href="{% url 'update-note' notes.pk %}">
             <i class="fa fa-edit fa-2x" style="font-size: 35px; float: right; margin: 15px; color: darkgreen"></i>
           </a>
         </div>
       </div>
+      <hr style="height: 2px; color: rgb(227 212 212 / 10%); background-color: rgb(227 212 212 / 10%)" />
     </div>
-    <hr />
-    <div class="m-3" style="background-color: gray; color: black">
-      <h2 style="font-size: 15px; font-weight: bold; text-transform: capitalize">{{notes.notes_for_yourself | safe}}</h2>
-      <hr />
+
+    <div class="m-3" style="background-color: #212529; color: ashwhite">
+      <h2 style="font-size: 15px; text-transform: capitalize">{{notes.notes_for_yourself | safe}}</h2>
+      <hr style="height: 2px; color: rgb(227 212 212 / 10%); background-color: rgb(227 212 212 / 10%)" />
       <p style="font-size: 14px">{{notes.code_here | safe}}</p>
     </div>
   </div>
