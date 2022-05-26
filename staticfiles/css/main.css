@@ -231,7 +231,7 @@ footer .column a + a {
   padding: 0rem 0rem !important;
 }
 .alert.hide {
-  positition: relative;
+  position: relative;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-10px); // translateX, translateY, translateZ works well
@@ -263,5 +263,5 @@ footer .column a + a {
 }
 
 pre {
-  color: #010004 !important;
+  color: #b1aac5 !important;
 }
