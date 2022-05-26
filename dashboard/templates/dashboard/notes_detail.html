@@ -1,6 +1,6 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
-<section class="container" style="background-color: gray; border-radius: 2em">
-  <div class="text-center mt-5 mb-5">
+<section style="background-color: gray; margin-top: 0; padding-top: 0; border-radius: 2em">
+  <div class="text-center">
     {% if notes.fav %}
     <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
       {% csrf_token %}

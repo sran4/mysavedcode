@@ -109,7 +109,7 @@ def update_note(request, pk):
             messages.success(
                 request, f"{request.user.username.upper()} **{obj}** Code has been Updated Succcessfully!!!")
             return redirect("notes_detail", obj.id)
-            # return HttpResponseRedirect(request.path_info)
+        # return HttpResponseRedirect(request.path_info)
     else:
         form = NotesForm(instance=obj)
     notes = Notes.objects.filter(user=request.user)
