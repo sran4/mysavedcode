@@ -129,9 +129,9 @@ body {
 }
 
 .card:hover {
-  opacity: 1.1;
-  transform: scale(1.1);
-  transition: 0.3s ease;
+  opacity: 0.6;
+  transform: scale(1.15);
+  transition: 0.2s ease;
 }
 
 /* .col-md-3 .card {
