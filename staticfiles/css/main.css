@@ -146,7 +146,7 @@ body {
 }
 
 .fa:hover {
-  color: red;
+  color: rgb(170, 170, 65);
 }
 
 .fa {
