@@ -19,17 +19,23 @@
   </div>
   <div class="content-section p-0 mt-1" style="background-color: #212529; border-radius: 2em; border: None">
     <div class="m-3" style="background-color: #212529; color: ashwhite">
-      <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: #962323"></i> </a>
+      <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: #1f37ee"></i> </a>
       <p class="font-weight-bold" style="font-size: 15px; float: right; padding-top: 5px; color: ashwhite">{{ notes.updated_at|date:"F d, Y" }}</p>
       <h2 class="text-center" style="letter-spacing: 0.1em; font-weight: bold; text-decoration: underline; text-underline-offset: 3px; font-size: 32px">{{notes.language|upper}}</h2>
 
       <div class="row">
         <div class="col">
+          <a href="{% url 'notes' %}">
+            <i class="fa fa-home fa-1x" style="font-size: 25px; float: left; margin: 15px; color: #d97cee"></i>
+          </a>
+          <a href="{% url 'favs-notes' %}">
+            <i class="fa fa-heart fa-1x" style="font-size: 25px; float: left; margin: 15px; color: #ee3d07"></i>
+          </a>
           <a href="{% url 'delete-note' notes.pk %}">
-            <i class="fa fa-trash fa-2x" style="font-size: 35px; float: right; margin: 15px; color: #962323"></i>
+            <i class="fa fa-trash fa-1x" style="font-size: 25px; float: right; margin: 15px; color: #962323"></i>
           </a>
           <a href="{% url 'update-note' notes.pk %}">
-            <i class="fa fa-edit fa-2x" style="font-size: 35px; float: right; margin: 15px; color: darkgreen"></i>
+            <i class="fa fa-edit fa-1x" style="font-size: 25px; float: right; margin: 15px; color: darkgreen"></i>
           </a>
         </div>
       </div>
