@@ -29,7 +29,7 @@ footer {
 }
 
 .card-header:hover {
-  background: rgb(46, 67, 172) !important;
+  background: rgb(45, 55, 112) !important;
   color: whitesmoke !important;
   transition: 0.1s ease-in;
 }
@@ -44,7 +44,7 @@ a:hover {
 }
 
 .custom-header:hover {
-  background: rgb(76, 131, 127) !important;
+  background: rgb(55, 70, 154) !important;
 }
 
 .card-header {
@@ -118,7 +118,7 @@ body {
 }
 
 .card-header {
-  background-color: rgb(133, 204, 231);
+  background-color: rgb(55, 70, 154) !important;
 }
 
 .myimage {
@@ -147,10 +147,6 @@ body {
 
 .fa:hover {
   color: rgb(170, 170, 65);
-}
-
-.fa {
-  color: black;
 }
 
 .profa {

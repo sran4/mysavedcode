@@ -119,7 +119,6 @@ body {
 
 .card-header {
   background-color: rgb(55, 70, 154) !important;
-}
 
 .myimage {
   opacity: 1;
@@ -147,6 +146,10 @@ body {
 
 .fa:hover {
   color: rgb(170, 170, 65);
+}
+
+.fa {
+  color: black;
 }
 
 .profa {
