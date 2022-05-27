@@ -266,12 +266,12 @@ pre {
   color: #b1aac5 !important;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 580px) {
   .container {
     width: 80%;
   }
   html {
     /* font-size: 8px; */
-    font-size: 105%;
+    font-size: 125%;
   }
 }

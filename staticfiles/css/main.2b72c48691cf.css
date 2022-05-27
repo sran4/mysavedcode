@@ -266,12 +266,8 @@ pre {
   color: #b1aac5 !important;
 }
 
-@media (max-width: 575px) {
-  .container {
-    width: 80%;
-  }
-  html {
-    /* font-size: 8px; */
-    font-size: 105%;
-  }
+.col-12 .container {
+  max-width: 800px;
+  width: 80%;
+  margin: 0, auto;
 }

@@ -19,7 +19,7 @@ footer {
 }
 
 .navbar {
-  background-color: rgb(86, 93, 112) !important;
+  background-color: rgb(157, 163, 179) !important;
   /* background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%) !important; */
 }
 
@@ -91,7 +91,7 @@ a:hover {
 }
 
 .card img {
-  height: 120px;
+  height: auto;
 }
 
 /* .card:hover {
@@ -128,7 +128,7 @@ body {
   backface-visibility: hidden;
 }
 
-.card:hover {
+.card-img-top:hover {
   opacity: 0.9;
   transform: scale(1.15);
   transition: 0.2s ease;
@@ -264,14 +264,4 @@ footer .column a + a {
 
 pre {
   color: #b1aac5 !important;
-}
-
-@media (max-width: 575px) {
-  .container {
-    width: 80%;
-  }
-  html {
-    /* font-size: 8px; */
-    font-size: 105%;
-  }
 }

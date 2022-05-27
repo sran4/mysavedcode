@@ -3,99 +3,100 @@
 <section class="container text-center">
   <h3>Welcome</h3>
 
-  <hr />
+  <hr style="background-color: #f0dfe7" />
   <br />
   <div class="row">
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "notes" %}">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'notes' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/code.jpg' %}" alt="Notes image" />
           <div class="card-body">
-            <h5 class="card-title">Snippets</h5>
-            Create Code Snippets to refer them later.
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">Snippets</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Save Code Snippets to refer them later.</p>
           </div>
         </div>
       </a>
     </div>
 
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "home-work" %}">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'home-work' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/smt.jpg' %}" alt="Notes image" />
           <div class="card-body">
-            <h5 class="card-title">Assembly</h5>
-            Add Assembly and assign their deadlines. 
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">Assembly</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Add Assembly and assign their deadlines.</p>
           </div>
         </div>
       </a>
     </div>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "youtube" %}">
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'youtube' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/utube.jpg' %}" alt="Notes image" />
           <div class="card-body">
-            <h5 class="card-title">Youtube</h5>
-            Search Youtube & select desired video 
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">Youtube</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Search Youtube & select desired video</p>
           </div>
         </div>
       </a>
     </div>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "todo" %}">
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'todo' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/todoo.jpg' %}" alt="Notes image" />
           <div class="card-body">
-            <h5 class="card-title">To Do</h5>
-            Add/Delete your to-do lists for a day.
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">To Do</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Add/Delete your to-do lists for a day.</p>
           </div>
         </div>
       </a>
     </div>
-  </div>
-  <br /><br /><br />
-  <div class="row">
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "books" %}">
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'books' %}">
         <div class="card mt-20">
           <img class="card-img-top" src="{% static 'images/book.jpg' %}" alt="Notes image" />
           <div class="card-body">
-            <h5 class="card-title">Books</h5>
-            Browse books from a list book menu
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">Books</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Browse books from a list book menu</p>
           </div>
         </div>
       </a>
     </div>
 
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "dictionary" %}">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'dictionary' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/dic.jpg' %}" alt="Notes image" />
           <div class="card-body">
-            <h5 class="card-title">Dictionary</h5>
-           Enter the word,meaning will be displayed.
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "wiki" %}">
-        <div class="card">
-          <img class="card-img-top" src="{% static 'images/wiki.jpg' %}" alt="Notes image" />
-          <div class="card-body">
-            <h5 class="card-title">WikiPedia</h5>
-            Search wikipedia to get fast results
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">Dictionary</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Enter the word,find meaning.</p>
           </div>
         </div>
       </a>
     </div>
 
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4">
-      <a href="{% url "conversion" %}">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'wiki' %}">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'images/wiki.jpg' %}" alt="Notes image" />
+          <div class="card-body">
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">WikiPedia</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Search wikipedia to get fast results</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+      <a href="{% url 'conversion' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/conversion.jpg' %}" alt="Notes image" />
           <div class="card-body">
-            <h5 class="card-title">Conversion</h5>
-            Check out the conversion table.
+            <h5 class="card-title" style="margin-bottom: 0.5rem; margin-top: 0.5rem">Conversion</h5>
+            <p style="margin: 0.1rem; padding: 0.1em; text-align: left; line-height: 18px">Check out the conversion table.</p>
           </div>
         </div>
       </a>
