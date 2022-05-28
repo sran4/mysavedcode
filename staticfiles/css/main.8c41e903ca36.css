@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet|Quicksand|Barlow');
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
+}
+
+footer {
+  font-family: Rubik, sans-serif, serif, 'Times New Roman', Times, serif;
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  background-color: rgb(86, 93, 112) !important;
+  /* background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%) !important; */
+}
+
+.card {
+  box-shadow: 15px 15px 10px rgb(78, 77, 77);
+  background-color: #81909c !important;
+}
+
+.card-header:hover {
+  background: rgb(45, 55, 112) !important;
+  color: whitesmoke !important;
+  transition: 0.1s ease-in;
+}
+
+a {
+  text-decoration: none !important;
+  color: rgb(5, 5, 5);
+}
+
+a:hover {
+  color: whitesmoke !important;
+}
+
+.custom-header:hover {
+  background: rgb(13, 25, 91) !important;
+}
+
+.card-header {
+  color: black !important;
+  background: rgb(70, 87, 187) !important;
+  transition: 0.3s ease-in;
+}
+
+.nav-link:hover {
+  background: rgb(105, 97, 184) !important;
+  color: white !important;
+  transition: 0.7s ease;
+}
+
+.icon-bar {
+  color: black;
+}
+
+.card h4 {
+  margin: 40px 40px 0 40px;
+  text-align: left;
+}
+
+.card h6 {
+  margin: 25px 40px 0 40px;
+  text-align: left;
+}
+
+.card p {
+  text-align: right;
+  margin-right: 50px;
+  line-height: 10px;
+}
+
+.button {
+  display: inline-block;
+  font-family: 'Montserrat', 'Trebuchet MS', Helvetica, sans-serif;
+
+  padding: 0.8em 1.4em;
+  padding-right: 4.7em;
+  background: #009ed8;
+  border: none;
+  color: white;
+}
+
+.card img {
+  height: 120px;
+}
+
+/* .card:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: 0.5s ease;
+} */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  color: #aabbcb;
+}
+
+body {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5)); */
+  /*background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)*/
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-color: rgba(40, 38, 38, 0.9) !important;
+}
+
+.card-header {
+  background-color: rgb(90, 107, 202) !important;
+}
+
+.myimage {
+  opacity: 1;
+  display: block;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.card:hover {
+  opacity: 1.1;
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+
+/* .col-md-3 .card {
+  width: 100%;
+  height: 100%;
+} */
+
+.btn:hover {
+  background: rgb(139, 158, 30);
+  color: white;
+  border: 0.5px solid rgb(9, 5, 31);
+}
+
+.fa,
+.fas {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.fa:hover {
+  color: rgb(170, 170, 65);
+}
+
+.profa {
+  color: black;
+}
+
+footer .container-fluid {
+  padding: 10vmin 10vmin;
+}
+
+footer .column a + a {
+  padding: 0 0.7em;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* 
+.content-section a:hover {
+    background: red;
+} */
+
+.account-img {
+  height: 125px !important;
+  width: 125px !important;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.add1 {
+  float: right !important;
+  margin-left: 25px;
+  /* margin-top: 20px; */
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgb(203, 202, 215);
+}
+.add1:hover {
+  opacity: 0.9;
+  transform: scale(1.25);
+  transition: 0.2s ease;
+}
+.myPlus {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  float: right;
+}
+.myPlus:hover {
+  opacity: 0.9;
+  transform: scale(1.5);
+  transition: 0.2s ease;
+  background-color: RoyalBlue;
+}
+
+.alert {
+  positition: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+  transition: visibility 0s, opacity 250ms, transform 250ms;
+  padding: 0rem 0rem !important;
+}
+.alert.hide {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px); // translateX, translateY, translateZ works well
+  transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
+}
+.alert-success {
+  color: #9f1d1d;
+  background-color: #23871a;
+  border-color: #81950f;
+}
+
+.searchRounded {
+  border-radius: 25px;
+  border: 2px solid #609;
+  padding: 15px;
+  width: 350px;
+  height: 20px;
+  background: none;
+}
+
+.fa {
+  color: #ecdfdf;
+}
+
+.card p {
+  margin-right: 0px;
+  line-height: 13px;
+  margin: 0;
+}
+
+pre {
+  color: #b1aac5 !important;
+}
+
+@media (max-width: 575px) {
+  .container {
+    width: 80%;
+  }
+  html {
+    /* font-size: 8px; */
+    font-size: 90%;
+  }
+  .searchRounded {
+    padding: 15px;
+    width: 200px;
+    height: 10px;
+  }
+}
