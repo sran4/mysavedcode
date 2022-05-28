@@ -44,12 +44,12 @@ a:hover {
 }
 
 .custom-header:hover {
-  background: rgb(55, 70, 154) !important;
+  background: rgb(13, 25, 91) !important;
 }
 
 .card-header {
   color: black !important;
-  background: rgb(91, 137, 148) !important;
+  background: rgb(70, 87, 187) !important;
   transition: 0.3s ease-in;
 }
 
@@ -118,7 +118,7 @@ body {
 }
 
 .card-header {
-  background-color: rgb(55, 70, 154) !important;
+  background-color: rgb(90, 107, 202) !important;
 }
 
 .myimage {
