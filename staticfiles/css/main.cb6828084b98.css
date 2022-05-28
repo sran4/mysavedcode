@@ -234,9 +234,9 @@ footer .column a + a {
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
 .alert-success {
-  color: #9f1d1d;
+  color: #415f30;
   background-color: #23871a;
-  border-color: #81950f;
+  border-color: #641814;
 }
 
 .searchRounded {

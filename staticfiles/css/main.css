@@ -234,17 +234,17 @@ footer .column a + a {
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
 .alert-success {
-  color: #5a5596;
-  background-color: #93a3d2;
-  border-color: #641814;
+  color: #9f1d1d;
+  background-color: #23871a;
+  border-color: #81950f;
 }
 
 .searchRounded {
   border-radius: 25px;
   border: 2px solid #609;
-  padding: 20px;
-  width: 200px;
-  height: 15px;
+  padding: 15px;
+  width: 350px;
+  height: 20px;
   background: none;
 }
 
@@ -268,6 +268,11 @@ pre {
   }
   html {
     /* font-size: 8px; */
-    font-size: 105%;
+    font-size: 90%;
+  }
+  .searchRounded {
+    padding: 15px;
+    width: 200px;
+    height: 10px;
   }
 }
