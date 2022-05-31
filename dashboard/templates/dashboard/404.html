@@ -1,20 +1,53 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+<style>
+.transition { transition: all .1s ease; }
+.section {
+  padding: 2em;
+  text-align: center;
+}
+.btn {
+  @extend .transition;
+  position: relative;
+  display: inline-block;
+  margin: 1em;
+  padding: 1em 2em;
+  border: 0;
+  border-radius: 30px;
+  background-color: #739600;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;  
+  &:hover {
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,0.15);
+    background-color: #ff0000;
+  }  
+  &:active {
+    transform: translateY(1px);
+    box-shadow: inset 0 3px 0 0 rgba(0,0,0,0.15);
+  }  
+  &:focus {
+    outline: none;
+  }  
+  &--action {
+    background-color: #739600;
+    color: white;
+  } 
 
-<section class="container text-center">
-  <h2> Page Not Found </h2>
+</style>
 
-  <hr />
+<section class="container"> 
   <br />
-  <div class="text-center">
-    <div >
+  <div class="text-center">   
+     <h2> Page Not Found </h2> 
       <a href="{% url "home" %}">
-        <div class="card">          
-          <div class="card-footer">
-            <h1 class="card-title"> Back to Home </h1>          
-          </div>
+       <div class="section">
+           <button class="btn btn--action">Return To Home </button>            
         </div>
       </a>
     </div>   
 
 </section>
 {% endblock content %}
+
