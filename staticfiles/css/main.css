@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet|Quicksand|Barlow');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -7,11 +7,12 @@ html {
 }
 
 main {
-  font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.7;
 }
 
 footer {
-  font-family: Rubik, sans-serif, serif, 'Times New Roman', Times, serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .example::-webkit-scrollbar {
