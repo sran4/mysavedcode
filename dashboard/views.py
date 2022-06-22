@@ -64,7 +64,7 @@ def favs_notes(request):
 # class NotesDetailView(LoginRequiredMixin, generic.DetailView):
 #     model = Notes
 
-
+@login_required
 def NotesDetailView(request, code_id):
     notes = get_object_or_404(Notes, pk=code_id)
     print('notes', notes)
