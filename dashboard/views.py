@@ -67,6 +67,7 @@ def favs_notes(request):
 
 def NotesDetailView(request, code_id):
     notes = get_object_or_404(Notes, pk=code_id)
+    print('notes', notes)
     if request.method == "POST":
         if notes.fav == True:
             notes.fav = False

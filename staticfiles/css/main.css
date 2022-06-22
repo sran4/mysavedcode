@@ -271,7 +271,7 @@ pre {
   color: #17d4fe;
   font-size: 16px;
   font-family: Orbitron;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
@@ -289,7 +289,7 @@ pre {
   }
   .clock {
     font-size: 12px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     top: 35%;
   }
 }
