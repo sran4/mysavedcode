@@ -2,9 +2,14 @@
 
 <div class="container">
   <form style="margin: auto; max-width: 600px" class="row justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
-    <input class="searchRounded" name="q" placeholder="Search Snippets..." />
+    <input type="text" class="searchRounded form-control" list="notes" name="q" placeholder="Search Snippets..." />
     <button class="btn btn-sm" type="submit" style="border-radius: 8px"><i class="fa fa-search" style="height: 40; font-size: 27px; color: DodgerBlue"></i></button>
   </form>
+  <datalist id="notes">
+    {% for note in notes %}
+    <option value="{{note.language}}"></option>
+    {% endfor %}
+  </datalist>
   <a href="{% url 'favs-notes' %}"><button type="button" class="btn btn-info" style="border-radius: 20px">Favourites Codes Here</button> </a>
   <a href="{% url 'create-note' %}"
     ><button class="myPlus"><i class="fa fa-plus"></i></button
