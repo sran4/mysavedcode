@@ -263,18 +263,7 @@ pre {
   color: #b1aac5 !important;
 }
 
-.clock {
-  position: absolute;
-  top: 39%;
-  left: 82%;
-  transform: translateX(-50%) translateY(-50%);
-  color: #17d4fe;
-  font-size: 16px;
-  font-family: Orbitron;
-  letter-spacing: 3px;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 575px) {
   .container {
     width: 80%;
   }
@@ -287,9 +276,15 @@ pre {
     width: 200px;
     height: 10px;
   }
-  .clock {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    top: 35%;
-  }
+}
+
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #17D4FE;
+    font-size: 20px;
+    font-family: Orbitron;
+    letter-spacing: 3px;
 }

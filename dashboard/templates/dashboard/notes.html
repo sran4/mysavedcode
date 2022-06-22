@@ -10,11 +10,14 @@
     <option value="{{note.language}}"></option>
     {% endfor %}
   </datalist>
+
   <a href="{% url 'favs-notes' %}"><button type="button" class="btn btn-info" style="border-radius: 20px">Favourites Codes Here</button> </a>
+
   <a href="{% url 'create-note' %}"
     ><button class="myPlus"><i class="fa fa-plus"></i></button
   ></a>
   <h3 style="text-align: center; color: ashwhite; margin-top: 30px; margin-bottom: 30px">Found {{notes_count}} Snippets in Home</h3>
+  <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
   <div class="row">
     {% for note in notes %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
@@ -51,6 +54,36 @@
       {% endif %}
     </div>
   </div>
+  <script>
+    function showTime() {
+      var date = new Date();
+      var h = date.getHours(); // 0 - 23
+      var m = date.getMinutes(); // 0 - 59
+      var s = date.getSeconds(); // 0 - 59
+      var session = 'AM';
+
+      if (h == 0) {
+        h = 12;
+      }
+
+      if (h > 12) {
+        h = h - 12;
+        session = 'PM';
+      }
+
+      h = h < 10 ? '0' + h : h;
+      m = m < 10 ? '0' + m : m;
+      s = s < 10 ? '0' + s : s;
+
+      var time = h + ':' + m + ':' + s + ' ' + session;
+      document.getElementById('MyClockDisplay').innerText = time;
+      document.getElementById('MyClockDisplay').textContent = time;
+
+      setTimeout(showTime, 1000);
+    }
+
+    showTime();
+  </script>
 
   {% endblock content %}
 </div>

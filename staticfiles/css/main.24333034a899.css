@@ -265,8 +265,8 @@ pre {
 
 .clock {
   position: absolute;
-  top: 39%;
-  left: 82%;
+  top: 4%;
+  left: 50%;
   transform: translateX(-50%) translateY(-50%);
   color: #17d4fe;
   font-size: 16px;
@@ -274,7 +274,7 @@ pre {
   letter-spacing: 3px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 575px) {
   .container {
     width: 80%;
   }
@@ -288,8 +288,6 @@ pre {
     height: 10px;
   }
   .clock {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    top: 35%;
+    font-size: 15px;
   }
 }
