@@ -265,11 +265,11 @@ pre {
 
 .clock {
   position: absolute;
-  top: 90%;
-  left: 12%;
+  top: 65%;
+  left: 10%;
   transform: translateX(-50%) translateY(-50%);
   color: #17d4fe;
-  font-size: 12px;
+  font-size: 16px;
   font-family: Orbitron;
   letter-spacing: 1px;
 }
@@ -288,9 +288,8 @@ pre {
     height: 10px;
   }
   .clock {
-    left: 22%;
-  }
-  .myPlus {
-    font-size: 10px;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    top: 35%;
   }
 }
