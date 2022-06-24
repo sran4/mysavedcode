@@ -11,7 +11,9 @@
     {% endfor %}
   </datalist>
 
-  <a href="{% url 'favs-notes' %}"><button type="button" class="btn btn-info" style="border-radius: 20px">Favourites Codes Here</button> </a>
+  <a href="{% url 'favs-notes' %}"
+    ><button type="button" class="btn btn-info" style="border-radius: 20px"><i class="fa fa-heart fa-0x" style="float: left; mb-0; mt-0;  color: DarkRed"></i> Codes Here</button>
+  </a>
 
   <a href="{% url 'create-note' %}"
     ><button class="myPlus"><i class="fa fa-plus"></i></button
