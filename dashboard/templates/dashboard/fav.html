@@ -4,7 +4,7 @@
   <form style="margin: auto; appearance: none; max-width: 600px" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
     <input type="text" class="searchRounded form-control" list="favs" name="q" placeholder="Search Snippets..." />
     <span class="input-group-btn">
-      <button class="btn btn-sm" type="submit" style="border-radius: 8px"><i class="fa fa-search" style="height: 40; font-size: 27px; color: darkgreen"></i></button>
+      <button class="btn btn-sm" type="submit" style="border-radius: 8px"><i class="fa fa-search" style="height: 40; font-size: 24px; color: darkgreen"></i></button>
     </span>
   </form>
   <datalist id="favs">
@@ -13,7 +13,9 @@
     {% endfor %}
   </datalist>
   <a href="{% url 'notes' %}"
-    ><button type="button" class="btn btn-info" style="border-radius: 20px"><i class="fa fa-home fa-0x" style="float: left; mb-0; mt-0;  color: DarkRed"></i> Code Here</button>
+    ><button type="button" class="btn btn-info" style="border-radius: 20px">
+      <i class="fa fa-home fa-0x" style="float: left; margin-top: 3px; margin-right: 10px; color: DarkGreen"></i> Code Here
+    </button>
   </a>
   <a href="{% url 'create-note' %}"
     ><button class="myPlus"><i class="fa fa-plus"></i></button
