@@ -7,5 +7,5 @@ git push heroku main ( heroku login \_ if not authenticated)
 
 # In .env Shouldn't be any gap in words
 
-sran
-Mag34star$ // local
+satwant
+run4win // local

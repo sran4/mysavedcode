@@ -271,7 +271,7 @@ pre {
 .clock {
   position: absolute;
   top: 90%;
-  left: 12%;
+  left: 18%;
   transform: translateX(-50%) translateY(-50%);
   color: #17d4fe;
   font-size: 12px;
@@ -281,10 +281,10 @@ pre {
 
 @media (max-width: 768px) {
   .container {
-    width: 80%;
+    width: 90%;
   }
   .container1 {
-    width: 60%;
+    width: 90%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -298,8 +298,8 @@ pre {
     height: 10px;
   }
   .clock {
-    left: 42%;
-    top: 95%;
+    left: 22%;
+    top: 96%;
   }
   .myPlus {
     font-size: 10px;
