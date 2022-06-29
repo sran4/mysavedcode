@@ -61,7 +61,7 @@ a:hover {
 
 .nav-link:hover {
   background: dodgerblue !important;
-  color: white !important;
+  color: rgb(15, 10, 10) !important;
   transition: 0.8s ease;
 }
 
