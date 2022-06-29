@@ -55,12 +55,12 @@ a:hover {
 
 .card-header {
   color: black !important;
-  background: rgb(70, 87, 187) !important;
+  background: rgb(92, 103, 166) !important;
   transition: 0.8s ease-in;
 }
 
 .nav-link:hover {
-  background: rgb(105, 97, 184) !important;
+  background: dodgerblue !important;
   color: white !important;
   transition: 0.8s ease;
 }
