@@ -5,8 +5,8 @@ html {
   height: 100%;
   width: 100%;
 }
-.container1 {
-  width: 50%;
+.containerr {
+  width: 60%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -280,13 +280,11 @@ pre {
 }
 
 @media (max-width: 768px) {
-  .containerr {
-    width: 70%;
+  .container {
+    width: 80%;
   }
   .container1 {
     width: 60%;
-    margin-right: auto;
-    margin-left: auto;
   }
   html {
     /* font-size: 8px; */

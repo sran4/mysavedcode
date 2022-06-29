@@ -5,6 +5,11 @@ html {
   height: 100%;
   width: 100%;
 }
+.container1 {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 main {
   font-family: 'Montserrat', sans-serif;
@@ -275,8 +280,13 @@ pre {
 }
 
 @media (max-width: 768px) {
-  .container {
-    width: 80%;
+  .containerr {
+    width: 70%;
+  }
+  .container1 {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
   }
   html {
     /* font-size: 8px; */
