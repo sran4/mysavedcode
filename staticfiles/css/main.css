@@ -280,8 +280,8 @@ pre {
 }
 
 @media (max-width: 768px) {
-  .containerr {
-    width: 70%;
+  .container {
+    width: 80%;
   }
   .container1 {
     width: 60%;
@@ -298,7 +298,8 @@ pre {
     height: 10px;
   }
   .clock {
-    left: 22%;
+    left: 42%;
+    top: 95%;
   }
   .myPlus {
     font-size: 10px;
