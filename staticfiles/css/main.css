@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-  color: whitesmoke !important;
+  color: rgb(16, 11, 11) !important;
 }
 
 .custom-header:hover {
