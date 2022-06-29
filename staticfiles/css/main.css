@@ -314,6 +314,9 @@ pre {
   .myPlus {
     font-size: 10px;
   }
+  .codeCount {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 499px) {
@@ -321,5 +324,8 @@ pre {
     padding: 15px;
     width: 150px;
     height: 10px;
+  }
+  .codeCount {
+    font-size: 15px;
   }
 }
