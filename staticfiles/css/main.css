@@ -312,7 +312,7 @@ pre {
     top: 90%;
   }
   .myPlus {
-    font-size: 10px;
+    font-size: 15px;
   }
   .codeCount {
     font-size: 20px;
@@ -327,5 +327,12 @@ pre {
   }
   .codeCount {
     font-size: 12px;
+  }
+  .clock {
+    left: 22%;
+    top: 90%;
+  }
+  .myPlus {
+    font-size: 10px;
   }
 }
