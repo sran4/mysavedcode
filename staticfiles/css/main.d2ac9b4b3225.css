@@ -10,6 +10,11 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
+.container2 {
+  width: 40%;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 main {
   font-family: 'Montserrat', sans-serif;
@@ -292,7 +297,11 @@ pre {
     margin-right: auto;
     margin-left: auto;
   }
-
+  .container2 {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+  }
   html {
     /* font-size: 8px; */
     font-size: 90%;

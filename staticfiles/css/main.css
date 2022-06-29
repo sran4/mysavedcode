@@ -285,13 +285,14 @@ pre {
 
 @media (max-width: 768px) {
   .container {
-    width: 90%;
+    width: 80%;
   }
   .container1 {
-    width: 90%;
+    width: 80%;
     margin-right: auto;
     margin-left: auto;
   }
+
   html {
     /* font-size: 8px; */
     font-size: 90%;
