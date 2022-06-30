@@ -38,8 +38,12 @@ footer {
   background-color: #56636c !important;
 }
 
+.custom-header:hover {
+  background-color: rgb(44 145 162) !important;
+}
+
 .card-header:hover {
-  background: rgb(45, 55, 112) !important;
+  background: rgb(26, 80, 89) !important;
   color: whitesmoke !important;
   transition: 0.8s ease-in;
 }
@@ -51,10 +55,6 @@ a {
 
 a:hover {
   color: rgb(16, 11, 11) !important;
-}
-
-.custom-header:hover {
-  background: rgb(13, 25, 91) !important;
 }
 
 .card-header {
