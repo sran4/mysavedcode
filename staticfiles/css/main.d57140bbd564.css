@@ -31,6 +31,10 @@ footer {
 .navbar {
   background-color: rgb(86, 93, 112) !important;
   /* background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%) !important; */
+  position: fixed;
+  top: 0;
+  transition: all 0.3s ease-out;
+  background-color: rgba(86, 93, 112, 0.2);
 }
 
 .card {
