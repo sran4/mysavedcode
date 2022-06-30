@@ -32,7 +32,7 @@ def notes(request):
         Q(notes_for_yourself__icontains=q) |
         Q(code_here__icontains=q)).order_by('-updated_at')
     notes_count = notes.count()
-    paginator = Paginator(notes, 20)
+    paginator = Paginator(notes, 40)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
     context = {'notes': notes,
@@ -51,7 +51,7 @@ def favs_notes(request):
 
     favs_count = favs.count()
 
-    paginator = Paginator(favs, 28)
+    paginator = Paginator(favs, 40)
     page = request.GET.get('page')
     favs = paginator.get_page(page)
 
