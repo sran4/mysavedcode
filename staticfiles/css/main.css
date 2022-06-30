@@ -125,7 +125,7 @@ body {
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-color: rgba(40, 38, 38, 0.9) !important;
-  min-height: 100vh;
+  
 }
 
 .card-header {
