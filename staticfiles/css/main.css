@@ -155,7 +155,7 @@ body {
   color: white;
   border: 0.5px solid rgb(9, 5, 31);
   opacity: 1.1;
-  transform: scale(0.6);
+  transform: scale(1.2);
   transition: 0.8s ease;
   cursor: pointer;
 }
