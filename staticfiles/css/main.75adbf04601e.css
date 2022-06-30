@@ -292,12 +292,59 @@ pre {
   margin-bottom: 0.5rem !important;
 }
 
-/* Search Button */
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  .container1 {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  html {
+    /* font-size: 8px; */
+    font-size: 90%;
+  }
+  .searchRounded {
+    padding: 15px;
+    width: 210px;
+    height: 10px;
+  }
+  .clock {
+    left: 30%;
+    top: 90%;
+  }
+  .myPlus {
+    font-size: 15px;
+  }
+  .codeCount {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 499px) {
+  .searchRounded {
+    padding: 15px;
+    width: 150px;
+    height: 10px;
+  }
+  .codeCount {
+    font-size: 12px;
+  }
+  .clock {
+    left: 40%;
+    top: 93%;
+  }
+  .myPlus {
+    font-size: 10px;
+  }
+}
 
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
-  background-color: rgb(44 145 162);
+  background-color: #444;
   font-size: 14px;
   padding-left: 32px;
   padding-right: 32px;
@@ -326,7 +373,7 @@ pre {
 .search-containerr {
   position: relative;
   display: inline-block;
-  margin: 4px 100px;
+  margin: 4px 150px;
   height: 50px;
   width: 50px;
   vertical-align: bottom;
@@ -375,7 +422,7 @@ pre {
 }
 
 .searchh:focus {
-  width: 400px; /* Bar width+1px */
+  width: 363px; /* Bar width+1px */
   padding: 0 16px 0 0;
 }
 
@@ -386,93 +433,4 @@ pre {
 
 .expandright:focus {
   padding: 0 0 0 16px;
-}
-
-/* Media */
-
-@media (max-width: 768px) {
-  .container {
-    width: 80%;
-  }
-  .container1 {
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  html {
-    /* font-size: 8px; */
-    font-size: 90%;
-  }
-  .searchRounded {
-    padding: 15px;
-    width: 210px;
-    height: 10px;
-  }
-  .clock {
-    left: 30%;
-    top: 90%;
-  }
-  .myPlus {
-    font-size: 15px;
-  }
-  .codeCount {
-    font-size: 20px;
-  }
-
-  .search-containerr {
-    margin: 5px 20px;
-    height: 50px;
-    width: 50px;
-  }
-  .searchbuttonn {
-    position: absolute;
-    font-size: 22px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  .searchh:focus {
-    width: 300px; /* Bar width+1px */
-    padding: 0 16px 0 0;
-  }
-}
-
-@media (max-width: 499px) {
-  .searchRounded {
-    padding: 15px;
-    width: 150px;
-    height: 10px;
-  }
-  .codeCount {
-    font-size: 12px;
-  }
-  .clock {
-    left: 40%;
-    top: 93%;
-  }
-  .myPlus {
-    font-size: 10px;
-  }
-  .searchh:focus {
-    width: 100px; /* Bar width+1px */
-    padding: 0 16px 0 0;
-  }
-
-  .search-containerr {
-    margin: 5px 20px;
-    height: 50px;
-    width: 50px;
-  }
-  .searchbuttonn {
-    position: absolute;
-    font-size: 22px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  .searchh:focus {
-    width: 200px; /* Bar width+1px */
-    padding: 0 16px 0 0;
-  }
 }

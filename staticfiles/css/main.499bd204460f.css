@@ -292,104 +292,6 @@ pre {
   margin-bottom: 0.5rem !important;
 }
 
-/* Search Button */
-
-.buttonn {
-  display: inline-block;
-  margin: 4px 2px;
-  background-color: rgb(44 145 162);
-  font-size: 14px;
-  padding-left: 32px;
-  padding-right: 32px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.buttonn:hover {
-  transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  background-color: white;
-  color: black;
-}
-
-.search-containerr {
-  position: relative;
-  display: inline-block;
-  margin: 4px 100px;
-  height: 50px;
-  width: 50px;
-  vertical-align: bottom;
-}
-
-.mglass {
-  display: inline-block;
-  pointer-events: none;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-}
-
-.searchbuttonn {
-  position: absolute;
-  font-size: 22px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.searchh:focus + .searchbuttonn {
-  transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  background-color: white;
-  color: black;
-}
-
-.searchh {
-  position: absolute;
-  left: 49px; /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
-  background-color: white;
-  outline: none;
-  border: none;
-  padding: 0;
-  width: 0;
-  height: 100%;
-  z-index: 10;
-  transition-duration: 0.4s;
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-}
-
-.searchh:focus {
-  width: 400px; /* Bar width+1px */
-  padding: 0 16px 0 0;
-}
-
-.expandright {
-  left: auto;
-  right: 49px; /* Button width-1px */
-}
-
-.expandright:focus {
-  padding: 0 0 0 16px;
-}
-
-/* Media */
-
 @media (max-width: 768px) {
   .container {
     width: 80%;
@@ -419,23 +321,6 @@ pre {
   .codeCount {
     font-size: 20px;
   }
-
-  .search-containerr {
-    margin: 5px 20px;
-    height: 50px;
-    width: 50px;
-  }
-  .searchbuttonn {
-    position: absolute;
-    font-size: 22px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  .searchh:focus {
-    width: 300px; /* Bar width+1px */
-    padding: 0 16px 0 0;
-  }
 }
 
 @media (max-width: 499px) {
@@ -454,25 +339,45 @@ pre {
   .myPlus {
     font-size: 10px;
   }
-  .searchh:focus {
-    width: 100px; /* Bar width+1px */
-    padding: 0 16px 0 0;
-  }
+}
 
-  .search-containerr {
-    margin: 5px 20px;
-    height: 50px;
-    width: 50px;
-  }
-  .searchbuttonn {
-    position: absolute;
-    font-size: 22px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  .searchh:focus {
-    width: 200px; /* Bar width+1px */
-    padding: 0 16px 0 0;
-  }
+.searchh {
+  position: relative;
+  height: 50px;
+}
+
+.searchh .input {
+  background-color: #fff;
+  border: 0;
+  font-size: 18px;
+  padding: 15px;
+  height: 50px;
+  width: 50px;
+  transition: width 0.3s ease;
+}
+
+.btnn {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.btnn:focus,
+.input:focus {
+  outline: none;
+}
+
+.searchh.active .input {
+  width: 200px;
+  position: relative;
+}
+
+.searchh.active .btnn {
+  transform: translateX(198px);
 }

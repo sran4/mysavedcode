@@ -292,8 +292,6 @@ pre {
   margin-bottom: 0.5rem !important;
 }
 
-/* Search Button */
-
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
@@ -326,7 +324,7 @@ pre {
 .search-containerr {
   position: relative;
   display: inline-block;
-  margin: 4px 100px;
+  margin: 4px 150px;
   height: 50px;
   width: 50px;
   vertical-align: bottom;
@@ -375,7 +373,7 @@ pre {
 }
 
 .searchh:focus {
-  width: 400px; /* Bar width+1px */
+  width: 363px; /* Bar width+1px */
   padding: 0 16px 0 0;
 }
 
@@ -387,8 +385,6 @@ pre {
 .expandright:focus {
   padding: 0 0 0 16px;
 }
-
-/* Media */
 
 @media (max-width: 768px) {
   .container {
@@ -419,9 +415,12 @@ pre {
   .codeCount {
     font-size: 20px;
   }
-
+  .searchh:focus {
+    width: 253px; /* Bar width+1px */
+    padding: 0 16px 0 0;
+  }
   .search-containerr {
-    margin: 5px 20px;
+    margin: 2px 120px;
     height: 50px;
     width: 50px;
   }
@@ -431,10 +430,6 @@ pre {
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-  .searchh:focus {
-    width: 300px; /* Bar width+1px */
-    padding: 0 16px 0 0;
   }
 }
 
@@ -460,7 +455,7 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 20px;
+    margin: 1px 50px;
     height: 50px;
     width: 50px;
   }
@@ -470,9 +465,5 @@ pre {
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-  .searchh:focus {
-    width: 200px; /* Bar width+1px */
-    padding: 0 16px 0 0;
   }
 }

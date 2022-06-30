@@ -292,8 +292,6 @@ pre {
   margin-bottom: 0.5rem !important;
 }
 
-/* Search Button */
-
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
@@ -388,8 +386,6 @@ pre {
   padding: 0 0 0 16px;
 }
 
-/* Media */
-
 @media (max-width: 768px) {
   .container {
     width: 80%;
@@ -419,7 +415,10 @@ pre {
   .codeCount {
     font-size: 20px;
   }
-
+  .searchh:focus {
+    width: 253px; /* Bar width+1px */
+    padding: 0 16px 0 0;
+  }
   .search-containerr {
     margin: 5px 20px;
     height: 50px;
@@ -433,7 +432,7 @@ pre {
     padding: 0;
   }
   .searchh:focus {
-    width: 300px; /* Bar width+1px */
+    width: 200px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
 }
@@ -472,7 +471,7 @@ pre {
     padding: 0;
   }
   .searchh:focus {
-    width: 200px; /* Bar width+1px */
+    width: 153px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
 }
