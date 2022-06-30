@@ -5,6 +5,9 @@ html {
   height: 100%;
   width: 100%;
 }
+.container {
+  margin-bottom: 80px !important;
+}
 .container1 {
   width: 50%;
   margin-right: auto;
@@ -19,7 +22,6 @@ main {
 footer {
   font-family: 'Montserrat', sans-serif;
   background-color: rgba(86, 93, 112, 0.9);
-  clear: both;
 }
 
 .example::-webkit-scrollbar {
