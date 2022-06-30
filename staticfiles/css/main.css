@@ -131,10 +131,6 @@ body {
   background-color: rgba(40, 38, 38, 0.9) !important;
 }
 
-.card-header {
-  background-color: rgb(90, 107, 202) !important;
-}
-
 .myimage {
   opacity: 1;
   display: block;
@@ -158,6 +154,10 @@ body {
   background: rgb(139, 158, 30);
   color: white;
   border: 0.5px solid rgb(9, 5, 31);
+  opacity: 1.1;
+  transform: scale(0.6);
+  transition: 0.8s ease;
+  cursor: pointer;
 }
 
 .fa:hover {
