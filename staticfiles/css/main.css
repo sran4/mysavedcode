@@ -446,6 +446,13 @@ pre {
     width: 250px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
+  .font-weight-bold {
+    font-weight: 400!important;
+}
+element.style {
+    font-size: 8px;  
+}
+
 }
 
 @media (max-width: 499px) {
@@ -481,4 +488,11 @@ pre {
     width: 150px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
+  .font-weight-bold {
+    font-weight: 400!important;
+}
+element.style {
+    font-size: 8px;  
+}
+
 }
