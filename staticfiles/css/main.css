@@ -326,7 +326,7 @@ pre {
 .search-containerr {
   position: relative;
   display: inline-block;
-  margin: 4px 300px;
+  margin: 4px 250px;
   height: 50px;
   width: 50px;
   vertical-align: bottom;
@@ -421,7 +421,7 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 80px;
+    margin: 5px 20px;
     height: 50px;
     width: 50px;
   }
@@ -433,7 +433,7 @@ pre {
     padding: 0;
   }
   .searchh:focus {
-    width: 300px; /* Bar width+1px */
+    width: 250px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
 }
@@ -454,13 +454,9 @@ pre {
   .myPlus {
     font-size: 10px;
   }
-  .searchh:focus {
-    width: 100px; /* Bar width+1px */
-    padding: 0 16px 0 0;
-  }
 
   .search-containerr {
-    margin: 5px 20px;
+    margin: 5px 5px;
     height: 50px;
     width: 50px;
   }
@@ -472,7 +468,7 @@ pre {
     padding: 0;
   }
   .searchh:focus {
-    width: 180px; /* Bar width+1px */
+    width: 150px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
 }
