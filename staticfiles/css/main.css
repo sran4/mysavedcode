@@ -297,7 +297,7 @@ pre {
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
-  background-color: rgba(40, 38, 38, 0.9);
+  background-color: rgba(70, 54, 54, 0.9);
   font-size: 14px;
   padding-left: 32px;
   padding-right: 32px;
@@ -343,7 +343,7 @@ pre {
 
 .searchbuttonn {
   position: absolute;
-  font-size: 22px;
+  font-size: 42px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -421,13 +421,13 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 200px;
+    margin: 5px 80px;
     height: 50px;
     width: 50px;
   }
   .searchbuttonn {
     position: absolute;
-    font-size: 22px;
+    font-size: 32px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -460,19 +460,19 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 50px;
+    margin: 5px 20px;
     height: 50px;
     width: 50px;
   }
   .searchbuttonn {
     position: absolute;
-    font-size: 22px;
+    font-size: 32px;
     width: 100%;
     margin: 0;
     padding: 0;
   }
   .searchh:focus {
-    width: 200px; /* Bar width+1px */
+    width: 180px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
 }
