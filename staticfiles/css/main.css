@@ -447,12 +447,14 @@ pre {
     padding: 0 16px 0 0;
   }
   .font-weight-bold {
-    font-weight: 400!important;
-}
-element.style {
-    font-size: 8px;  
-}
-
+    font-weight: 400 !important;
+  }
+  element.style {
+    font-size: 8px;
+  }
+  .myh2 {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 499px) {
@@ -489,10 +491,12 @@ element.style {
     padding: 0 16px 0 0;
   }
   .font-weight-bold {
-    font-weight: 400!important;
-}
-element.style {
-    font-size: 8px;  
-}
-
+    font-weight: 400 !important;
+  }
+  .myh2 {
+    font-size: 10px;
+  }
+  element.style {
+    font-size: 8px;
+  }
 }
