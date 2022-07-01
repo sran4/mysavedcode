@@ -297,7 +297,7 @@ pre {
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
-  background-color:rgba(40, 38, 38, 0.9)
+  background-color: rgba(40, 38, 38, 0.9);
   font-size: 14px;
   padding-left: 32px;
   padding-right: 32px;
@@ -326,7 +326,7 @@ pre {
 .search-containerr {
   position: relative;
   display: inline-block;
-  margin: 4px 100px;
+  margin: 4px 300px;
   height: 50px;
   width: 50px;
   vertical-align: bottom;
@@ -421,7 +421,7 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 20px;
+    margin: 5px 200px;
     height: 50px;
     width: 50px;
   }
@@ -460,7 +460,7 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 20px;
+    margin: 5px 50px;
     height: 50px;
     width: 50px;
   }
