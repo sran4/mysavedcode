@@ -45,15 +45,15 @@
   <div class="row">
     <div class="mx-auto">
       {% if favs.has_previous %}
-      <a class="btn btn-secondary mb-5 btn-lg" href="?page=1">First</a>
-      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{favs.previous_page_number }}">Previous</a>
+      <a class="btn btn-info mb-5" href="?page=1">First</a>
+      <a class="btn btn-info mb-5" href="?page={{favs.previous_page_number }}">Previous</a>
       {% endif %} {% for num in favs.paginator.page_range %} {% if favs.number == num %}
-      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ num }}">{{ num }}</a>
+      <a class="btn btn-info mb-5" href="?page={{ num }}">{{ num }}</a>
       {% elif num > favs.number|add:'-3' and num < favs.number|add:'3' %}
-      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ num }}">{{ num }}</a>
+      <a class="btn btn-info mb-5" href="?page={{ num }}">{{ num }}</a>
       {% endif %} {% endfor %} {% if favs.has_next %}
-      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ favs.next_page_number }}">Next</a>
-      <a class="btn btn-secondary mb-5 btn-lg" href="?page={{ favs.paginator.num_pages }}">Last</a>
+      <a class="btn btn-info mb-5" href="?page={{ favs.next_page_number }}">Next</a>
+      <a class="btn btn-info mb-5" href="?page={{ favs.paginator.num_pages }}">Last</a>
       {% endif %}
     </div>
   </div>
