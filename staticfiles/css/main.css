@@ -168,7 +168,7 @@ body {
 } */
 
 .btn:hover {
-  background: rgb(139, 158, 30);
+  background: rgb(26, 80, 89);
   color: white;
   border: 0.5px solid rgb(9, 5, 31);
   opacity: 1.1;
@@ -178,7 +178,7 @@ body {
 }
 
 .fa:hover {
-  color: rgb(170, 170, 65);
+  color: rgb(26, 80, 89);
 }
 
 .profa {
