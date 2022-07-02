@@ -469,12 +469,12 @@ pre {
     white-space: nowrap;
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: darkred;
   }
   .PNF {
-    font-size: 25px;
-    color: darkred;
+    font-size: 30px;
+    color: #e9e4d4;
   }
 }
 
@@ -538,6 +538,6 @@ pre {
   }
   .PNF {
     font-size: 20px;
-    color: darkred;
+    color: #e9e4d4;
   }
 }
