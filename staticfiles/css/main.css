@@ -499,4 +499,22 @@ pre {
   element.style {
     font-size: 8px;
   }
+  .btnn {
+    @extend .transition:;
+    position: relative;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 0.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    background-color: #739600;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+  .PNF {
+    font-size: 16px;
+  }
 }
