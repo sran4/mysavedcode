@@ -470,9 +470,11 @@ pre {
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
+    color: darkred;
   }
   .PNF {
     font-size: 25px;
+    color: darkred;
   }
 }
 
@@ -531,9 +533,11 @@ pre {
     white-space: nowrap;
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
+    color: darkred;
   }
   .PNF {
-    font-size: 16px;
+    font-size: 20px;
+    color: darkred;
   }
 }
