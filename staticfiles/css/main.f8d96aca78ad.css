@@ -248,11 +248,11 @@ footer .column a + a {
   transition: 0.8s ease;
   background-color: rgb(34, 57, 125);
 }
-a .myP:hover {
+.myP:hover {
   opacity: 0.9;
   transform: scale(1);
   transition: 0.8s ease;
-  color: rgb(26, 81, 136) !important;
+  background-color: rgb(26, 81, 136);
 }
 
 .alert {

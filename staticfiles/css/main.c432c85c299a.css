@@ -252,7 +252,7 @@ a .myP:hover {
   opacity: 0.9;
   transform: scale(1);
   transition: 0.8s ease;
-  color: rgb(26, 81, 136) !important;
+  color: rgb(26, 81, 136);
 }
 
 .alert {
