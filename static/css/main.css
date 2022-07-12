@@ -362,6 +362,8 @@ pre {
   -o-transition-duration: 0.4s;
   background-color: rgb(24 38 40);
   color: black;
+  width: 400px; /* Bar width+1px */
+  padding: 0 16px 0 0;
 }
 
 .search-containerr {
