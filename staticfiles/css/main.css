@@ -18,7 +18,16 @@ main {
   font-family: 'Montserrat', sans-serif;
   line-height: 1.7;
 }
-
+.loader {
+  position: fixed;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(244, 236, 10);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
 footer {
   font-family: 'Montserrat', sans-serif;
   background-color: rgba(86, 93, 112, 0.2);
@@ -358,7 +367,7 @@ pre {
 .search-containerr {
   position: relative;
   display: inline-block;
-  margin: 50px 250px;
+  margin: 4px 250px;
   height: 50px;
   width: 50px;
   vertical-align: bottom;
@@ -375,14 +384,7 @@ pre {
 
 .searchbuttonn {
   position: absolute;
-  font-size: 25px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.searchbuttonnF {
-  position: relative;
-  font-size: 22px;
+  font-size: 42px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -463,20 +465,13 @@ pre {
   }
 
   .search-containerr {
-    margin: 70px 20px;
+    margin: 5px 20px;
     height: 50px;
     width: 50px;
   }
   .searchbuttonn {
-    position: relative;
-    font-size: 20px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  .searchbuttonnF {
-    position: relative;
-    font-size: 20px;
+    position: absolute;
+    font-size: 32px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -535,20 +530,13 @@ pre {
   }
 
   .search-containerr {
-    margin: 70px 5px;
+    margin: 5px 5px;
     height: 50px;
     width: 50px;
   }
   .searchbuttonn {
-    position: relative;
-    font-size: 18px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  .searchbuttonnF {
-    position: relative;
-    font-size: 18px;
+    position: absolute;
+    font-size: 32px;
     width: 100%;
     margin: 0;
     padding: 0;

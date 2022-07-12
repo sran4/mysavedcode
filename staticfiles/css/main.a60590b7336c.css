@@ -22,7 +22,7 @@ main {
   position: fixed;
   text-align: center;
   font-size: 30px;
-  color: rgb(244, 236, 10);
+  color: darkred;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
