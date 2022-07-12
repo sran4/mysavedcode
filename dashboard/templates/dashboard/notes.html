@@ -1,8 +1,8 @@
 {% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
 <div class="container">
-  <div class="search-containerr">
-    <form action="{% url 'notes' %}" method="GET">
-      <input class="searchh" id="searchleft" type="search" name="q" list="notes" placeholder="Search" />
+  <div  class="search-containerr">
+    <form class="search-form action="{% url 'notes' %}" method="GET">
+      <input class="searchh" id="searchleft" type="text" name="q" list="notes" placeholder="Search" />
       <label class="buttonn searchbuttonn" for="searchleft"><span class="mglass">&#9906;</span></label>
     </form>
   </div>
@@ -51,22 +51,14 @@
       {% if notes.has_previous %}
       <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
       <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
-      {% endif %}
-      
-      {% for num in notes.paginator.page_range %} 
-      {% if notes.number == num %}
+      {% endif %} {% for num in notes.paginator.page_range %} {% if notes.number == num %}
       <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
       {% elif num > notes.number|add:'-3' and num < notes.number|add:'3' %}
       <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
-      {% endif %}       
-      {% endfor %} 
-      
-      
-      {% if notes.has_next %}
+      {% endif %} {% endfor %} {% if notes.has_next %}
       <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
       <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
       {% endif %}
-
     </div>
   </div>
   {% endblock content %}

@@ -1,3 +1,4 @@
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django import contrib
 from django.core.checks import messages
@@ -27,6 +28,7 @@ def handle404(request, exception):
 @login_required
 def notes(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
+    print("q", q)
     notes = Notes.objects.filter(user=request.user).filter(
         Q(language__icontains=q) |
         Q(notes_for_yourself__icontains=q) |
@@ -63,6 +65,11 @@ def favs_notes(request):
 
 # class NotesDetailView(LoginRequiredMixin, generic.DetailView):
 #     model = Notes
+
+    # __icontains = field contains this
+    # __iexact = fields is exactly this
+    # '''
+
 
 @login_required
 def NotesDetailView(request, code_id):
