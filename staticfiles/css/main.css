@@ -375,7 +375,7 @@ pre {
 
 .searchbuttonn {
   position: absolute;
-  font-size: 42px;
+  font-size: 25px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -469,14 +469,14 @@ pre {
   }
   .searchbuttonn {
     position: relative;
-    font-size: 32px;
+    font-size: 20px;
     width: 100%;
     margin: 0;
     padding: 0;
   }
   .searchbuttonnF {
     position: relative;
-    font-size: 22px;
+    font-size: 20px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -541,14 +541,14 @@ pre {
   }
   .searchbuttonn {
     position: relative;
-    font-size: 25px;
+    font-size: 18px;
     width: 100%;
     margin: 0;
     padding: 0;
   }
   .searchbuttonnF {
     position: relative;
-    font-size: 22px;
+    font-size: 18px;
     width: 100%;
     margin: 0;
     padding: 0;
