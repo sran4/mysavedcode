@@ -358,7 +358,7 @@ pre {
 .search-containerr {
   position: relative;
   display: inline-block;
-  margin: 4px 250px;
+  margin: 50px 250px;
   height: 50px;
   width: 50px;
   vertical-align: bottom;
@@ -376,6 +376,13 @@ pre {
 .searchbuttonn {
   position: absolute;
   font-size: 42px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.searchbuttonnF {
+  position: relative;
+  font-size: 22px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -456,13 +463,20 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 20px;
+    margin: 70px 20px;
     height: 50px;
     width: 50px;
   }
   .searchbuttonn {
-    position: absolute;
+    position: relative;
     font-size: 32px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .searchbuttonnF {
+    position: relative;
+    font-size: 22px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -521,13 +535,20 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 5px;
+    margin: 70px 5px;
     height: 50px;
     width: 50px;
   }
   .searchbuttonn {
-    position: absolute;
-    font-size: 32px;
+    position: relative;
+    font-size: 25px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .searchbuttonnF {
+    position: relative;
+    font-size: 22px;
     width: 100%;
     margin: 0;
     padding: 0;

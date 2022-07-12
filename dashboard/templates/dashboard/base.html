@@ -161,11 +161,11 @@
     showTime();
   </script>
 
-  
+
   <script>
 // Auto Search
     var searchForm = $(".search-form")
-    var serchButton = $(".searchbuttonn")
+    var serchButton = $(".searchbuttonnF")
     var searchInput = searchForm.find("[name='q']") // input name='q'
     var typingTimer;
     var typingInterval = 500 // .5 seconds
@@ -184,7 +184,7 @@
 
     function displaySearching(){
       serchButton.addClass("disabled")
-      serchButton.html("<i class='fa fa-spin fa-spinner'></i> Searching...")
+      serchButton.html("<i class='fa fa-spin fa-spinner' style='border-radius: 8px'></i> Searching...")
     }
 
     function perfomSearch(){
