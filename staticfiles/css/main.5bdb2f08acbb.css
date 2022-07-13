@@ -362,12 +362,14 @@ pre {
   -o-transition-duration: 0.4s;
   background-color: rgb(24 38 40);
   color: black;
+  width: 400px; /* Bar width+1px */
+  padding: 0 16px 0 0;
 }
 
 .search-containerr {
   position: relative;
   display: inline-block;
-  margin: 4px 100px 50px;
+  margin: 4px 250px;
   height: 50px;
   width: 50px;
   vertical-align: bottom;
@@ -384,7 +386,7 @@ pre {
 
 .searchbuttonn {
   position: absolute;
-  font-size: 32px;
+  font-size: 42px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -465,22 +467,21 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 20px 30px;
+    margin: 5px 20px;
     height: 50px;
-    width: 100px;
+    width: 50px;
   }
   .searchbuttonn {
     position: absolute;
     font-size: 20px;
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
   .searchh:focus {
-    width: 250px; /* Bar width+1px */
+    width: 50px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
-
   .font-weight-bold {
     font-weight: 400 !important;
   }
@@ -531,22 +532,21 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 20px 20px;
+    margin: 5px 5px;
     height: 50px;
-    width: 100px;
+    width: 50px;
   }
   .searchbuttonn {
     position: absolute;
     font-size: 20px;
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
   .searchh:focus {
-    width: 150px; /* Bar width+1px */
+    width: 50px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
-
   .font-weight-bold {
     font-weight: 400 !important;
   }

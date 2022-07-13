@@ -465,20 +465,16 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 20px 30px;
+    margin: 5px 20px 20px;
     height: 50px;
     width: 100px;
   }
   .searchbuttonn {
     position: absolute;
     font-size: 20px;
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
-  }
-  .searchh:focus {
-    width: 250px; /* Bar width+1px */
-    padding: 0 16px 0 0;
   }
 
   .font-weight-bold {
@@ -538,13 +534,9 @@ pre {
   .searchbuttonn {
     position: absolute;
     font-size: 20px;
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
-  }
-  .searchh:focus {
-    width: 150px; /* Bar width+1px */
-    padding: 0 16px 0 0;
   }
 
   .font-weight-bold {

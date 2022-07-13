@@ -1,0 +1,68 @@
+{% load static %}
+<header style="margin-bottom: 8px">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0.2rem 2rem">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="color: dodgerblue" href="{% url 'home' %}"
+        ><h3 style="margin: 0; padding: 0; text-transform: uppercase">
+          <b><em class="myP">My Portal</em></b>
+        </h3></a
+      >
+      <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile'%}">Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href='{% url "notes" %}'>Code Snippets</a>
+              <a class="dropdown-item" href='{% url "todo" %}'>To-do</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href='{% url "conversion" %}'>Conversion</a>
+              <a class="dropdown-item" href='{% url "home-work" %}'>Assemblies</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'dictionary'%}">Dictionary</a>
+              <a class="dropdown-item" href="{% url 'youtube' %}">Youtube</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href='{% url "books" %}'>Books</a>
+              <a class="dropdown-item" href='{% url "wiki" %}'>Wikipedia</a>
+              <div class="dropdown-divider"></div>
+            </div>
+          </li>
+          <li class="nav-item nav-link">Welcome {{ request.user.username|capfirst}}!</li>
+
+          <li class="nav-item">
+            <a class="nav-link" href='{% url "logout" %}'>Logout</a>
+          </li>
+
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href='{% url "register" %}'>Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='{% url "login" %}'>Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

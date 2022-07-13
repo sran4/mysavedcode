@@ -5,16 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Code Saver dashboard</title>
-     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+    <title>Save Code dashboard</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    
+
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -25,88 +25,20 @@
   </head>
 
   <body>
-    <header style="margin-bottom:8px;">
-      <nav class="navbar navbar-expand-lg navbar-dark  bg-dark" style="padding: .2rem 2rem;">
-        <div class="container-fluid">
-        <a class="navbar-brand" style="color:dodgerblue" href="{% url 'home' %}"><h3 style="margin:0; padding:0;text-transform:uppercase;"><b><em class="myP">My Portal</em></b></h3></a>
-        <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-           
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent" >
-            <ul class="navbar-nav mb-2 mb-lg-0" >
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-              </li>
-              
-              {% if user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'profile'%}">Profile</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="{% url "notes" %}">Code Snippets</a>
-                      <a class="dropdown-item" href="{% url "todo" %}">To-do</a>  
-                  <div class="dropdown-divider"></div>
-                       <a class="dropdown-item" href="{% url "conversion" %}">Conversion</a>
-                      <a class="dropdown-item" href="{% url "home-work" %}">Assemblies</a>
-                  <div class="dropdown-divider"></div>                 
-                      <a class="dropdown-item" href="{% url 'dictionary'%}">Dictionary</a>
-                      <a class="dropdown-item" href="{% url "youtube" %}">Youtube</a>
-                  <div class="dropdown-divider"></div>                 
-                      <a class="dropdown-item" href="{% url "books" %}">Books</a>
-                      <a class="dropdown-item" href="{% url "wiki" %}">Wikipedia</a>
-                  <div class="dropdown-divider"></div>
-                </div>
-              </li>
-              <li class="nav-item nav-link">
-                Welcome {{ request.user.username|capfirst}}!
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="{% url "logout" %}">Logout</a>
-              </li>
-              
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url "register" %}">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url "login" %}">Login</a>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header> 
+    {% include "dashboard/navbar.html" %}
     <center>
-     {% if messages %} {% for msg in messages %}
-      <div id = "alert" class="container alert alert-{{msg.tags}}  alert-dismissible fade show margin-bottom:30px;"><p style="font-size:18px; text-align: center;font-weight:bold; ">{{msg}}</p>
- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>  </div> 
-                {% endfor %} {% endif %} </center>
-    <main>      
-      
-      {% block content %} {% endblock content %}
-    </main>
-    
-     <footer class="footer container-fluid text-center text-light" style="position: absolute; 
-    text-align: center; display: block;  bottom:0;  height:40px; clear: both;">
-     <p style="margin-top:.6rem"> &copy; Sran | {% now "Y" %}</p> 
-    </footer>
-   
+      {% if messages %} {% for msg in messages %}
+      <div id="alert" class="container alert alert-{{msg.tags}}  alert-dismissible fade show margin-bottom:30px;">
+        <p style="font-size: 18px; text-align: center; font-weight: bold">{{msg}}</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %} {% endif %}
+    </center>
+    <main>{% block content %} {% endblock content %}</main>
+
+    {% include "dashboard/footer.html" %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -118,104 +50,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-
-<script>
-  setTimeout(function () {
-   $('#alert').fadeOut('fast');
-   },5000);
-</script>
-
-<script>
-    function showTime() {
-      var date = new Date();
-      var h = date.getHours(); // 0 - 23
-      var m = date.getMinutes(); // 0 - 59
-      var s = date.getSeconds(); // 0 - 59
-      var session = 'AM';
-
-      var d = date.getDate();
-      var mn = date.getMonth();
-      var y = date.getFullYear();
-      var dS = d + "-" +(mn + 1) + "-" + y;
-
-      if (h == 0) {
-        h = 12;
-      }
-
-      if (h > 12) {
-        h = h - 12;
-        session = 'PM';
-      }
-
-      h = h < 10 ? '0' + h : h;
-      m = m < 10 ? '0' + m : m;
-      s = s < 10 ? '0' + s : s;
-
-      var time = h + ':' + m + ':' + s + ' ' + session + ' '+ ' '+ ' '+ '|  ' + dS;
-      document.getElementById('MyClockDisplay').innerText = time;
-      document.getElementById('MyClockDisplay').textContent = time;
-
-      setTimeout(showTime, 1000);
-    }
-
-    showTime();
-  </script>
-
-
-  <script>
-// Auto Search
-    var searchForm = $(".search-form")
-    var serchButton = $(".searchbuttonnF")
-    var searchInput = searchForm.find("[name='q']") // input name='q'
-    var typingTimer;
-    var typingInterval = 500 // .5 seconds
-    var searchBtn = searchForm.find("[type='submit']")
-    searchInput.keyup(function(event){
-      // key released
-      clearTimeout(typingTimer)
-
-      typingTimer = setTimeout(perfomSearch, typingInterval)
-    })
-
-    searchInput.keydown(function(event){
-      // key pressed
-      clearTimeout(typingTimer)
-    })
-
-    function displaySearching(){
-      serchButton.addClass("disabled")
-      serchButton.html("<i class='fa fa-spin fa-spinner' style='border-radius: 8px'></i> Searching...")
-    }
-
-    function perfomSearch(){
-      displaySearching()
-      var query = searchInput.val()
-      setTimeout(function(){
-        window.location.href='/codes-examples/?q=' + query
-      }, 1000)
-      
-    }
-
-
-  </script>
-  <script>
-    //Displaying Loading on every page
-    $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>');
-$(window).on('load', function(){
-  setTimeout(removeLoader, 500); //wait for page load PLUS two seconds.
-});
-function removeLoader(){
-    $( "#loadingDiv" ).fadeOut(500, function() {
-      // fadeOut complete. Remove the loading div
-      $( "#loadingDiv" ).remove(); //makes page more lightweight 
-  });  
-}
-
-  </script>
-      
-
-
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
-
-

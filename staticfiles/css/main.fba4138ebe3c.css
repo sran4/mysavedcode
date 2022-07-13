@@ -477,7 +477,7 @@ pre {
     padding: 0;
   }
   .searchh:focus {
-    width: 250px; /* Bar width+1px */
+    width: 150px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
 
