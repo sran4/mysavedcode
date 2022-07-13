@@ -83,24 +83,20 @@ function removeLoader() {
 }
 
 // favourite add remove refresh function
-// $(document).on('click', '#fav', function (event) {
-//   event.preventDefault();
-//   var pk = $(this).attr('value');
-//   console.log('PK', pk);
-//   $.ajax({
-//     type: 'POST',
-//     url: '{% url "notes_detail" %}',
-//     data: { id: pk, csrfmiddlewaretoken: '{{ csrf_token }}' },
-//     dataType: 'json',
-
-//     success: function (data) {
-//       consol.log('data', data);
-//       $('#fav-section').html(response['form']);
-//       console.log($('Success', '#fav-section').html(response['form']));
-//     },
-
-//     error: function (rs, e) {
-//       console.log('error', rs.responseText);
-//     },
-//   });
-// });
+ $(document).on('click', '#fav', function (event) {
+   event.preventDefault();
+   var pk = $(this).attr('value');
+   $.ajax({
+     type: 'POST',
+     url: '{% url "notes_detail" %}',
+     data: { id: pk, csrfmiddlewaretoken: '{{ csrf_token }}' },
+     dataType: 'json',
+     success: function (response) {
+       $('#notes_detail').html(response['form']);
+       console.log($('#notes_detail').html(response['form']));
+     },
+     error: function (rs, e) {
+       console.log(rs.responseText);
+     },
+   });
+ });

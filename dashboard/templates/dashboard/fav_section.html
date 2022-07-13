@@ -1,0 +1,22 @@
+{% load static %}
+<div class="text-center">
+  {% if notes.fav %}
+  <form action="{% url 'notes_detail'  notes.pk %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <button id="fav" value="{{ notes.pk }}" class="btn btn-info btn-block" style="background: #265b25; color: ashwhite">
+        Remove from Favourites <i class="far fa-heart fa-lg"></i>
+      </button>
+    </div>
+  </form>
+  {% else %}
+  <form action="{% url 'notes_detail' notes.pk %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <button id="fav" value="{{ notes.pk }}" class="btn btn-danger btn-block" style="background: #962323; color: ashwhite">
+        Add To Favourites <i class="fas fa-heart-broken fa-lg"></i>
+      </button>
+    </div>
+  </form>
+  {% endif %}
+</div>

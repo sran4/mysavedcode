@@ -3,7 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django import contrib
 from django.core.checks import messages
 from django.forms.widgets import FileInput
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse, Http404
 from django.shortcuts import get_object_or_404, render, redirect
 # from .models import Notes, Homework
 from .forms import *
@@ -15,6 +15,8 @@ import wikipedia
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+
+from django.template.loader import render_to_string
 
 
 def home(request):
@@ -69,8 +71,8 @@ def favs_notes(request):
     # __icontains = field contains this
     # __iexact = fields is exactly this
     # '''
-
-
+    
+    
 @login_required
 def NotesDetailView(request, code_id):
     notes = get_object_or_404(Notes, pk=code_id)
@@ -85,6 +87,8 @@ def NotesDetailView(request, code_id):
         return redirect('notes_detail', notes.pk)
     context = {'notes': notes}
     return render(request, 'dashboard/notes_detail.html', context)
+
+
 
 
 @login_required

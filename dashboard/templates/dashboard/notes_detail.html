@@ -1,22 +1,6 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
 <section style="background-color: #212529; margin-top: 0; padding-top: 0; border-radius: 2em">
-  <div class="text-center">
-    {% if notes.fav %}
-    <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
-      {% csrf_token %}
-      <div class="form-group">
-        <button class="btn btn-info btn-block" style="background: #265b25; color: ashwhite">Remove from Favourites <i class="far fa-heart fa-lg"></i></button>
-      </div>
-    </form>
-    {% else %}
-    <form auction="{% url 'notes_detail' notes.pk %}" method="POST">
-      {% csrf_token %}
-      <div class="form-group">
-        <button class="btn btn-danger btn-block" style="background: #962323; color: ashwhite">Add To Favourites <i class="fas fa-heart-broken fa-lg"></i></button>
-      </div>
-    </form>
-    {% endif %}
-  </div>
+  <div id="fav-section">{% include 'dashboard/fav_section.html' %}</div>
   <div class="content-section p-0 mt-1" style="background-color: #212529; border-radius: 2em; border: None">
     <div class="m-3" style="background-color: #212529; color: ashwhite">
       <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 30px; margin-top: 10px; float: left; color: #b8af61"></i> </a>

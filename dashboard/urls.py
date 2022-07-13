@@ -11,6 +11,7 @@ urlpatterns = [
     path('delete_code/<int:pk>', views.delete_note, name='delete-note'),
     # path('notes_detail/<int:pk>',
     #      views.NotesDetailView.as_view(), name='notes_detail'),
+
     path('Code_Detail/<int:code_id>/',
          views.NotesDetailView, name='notes_detail'),
 

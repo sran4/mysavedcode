@@ -33,8 +33,8 @@
         <a href="{% url 'notes_detail' note.id %}">
           <div class="card" style="height: 192px">
             <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; font-weight: bold; text-align: center; font-size: 11px">
-              <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: DarkRed"></i>
-              {{note.language|striptags|upper|truncatechars:25}} {% if note.fav %} {% endif %}
+             {% if note.fav %} <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: DarkRed"></i> {% endif %}
+              {{note.language|striptags|upper|truncatechars:25}} 
             </div>
             <div class="card-body pt-2 pb-2" style="font-size: 11px; padding: 0.5rem; text-transform: capitalize">{{note.noted|striptags }}</div>
             <div class="card-footer mt-auto pt-2 pb-2" style="padding: 1rem">
