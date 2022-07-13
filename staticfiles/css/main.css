@@ -384,7 +384,7 @@ pre {
 
 .searchbuttonn {
   position: absolute;
-  font-size: 32px;
+  font-size: 22px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -432,7 +432,7 @@ pre {
   padding: 0 0 0 16px;
 }
 
-/*        Media       */
+/* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
   .container {
