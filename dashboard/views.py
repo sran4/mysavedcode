@@ -28,7 +28,6 @@ def handle404(request, exception):
 @login_required
 def notes(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
-    print("q", q)
     notes = Notes.objects.filter(user=request.user).filter(
         Q(language__icontains=q) |
         Q(notes_for_yourself__icontains=q) |
@@ -38,6 +37,7 @@ def notes(request):
     page = request.GET.get('page')
     notes = paginator.get_page(page)
     context = {'notes': notes,
+               'Q': q,
                'notes_count': notes_count,
                }
     return render(request, 'dashboard/notes.html', context)

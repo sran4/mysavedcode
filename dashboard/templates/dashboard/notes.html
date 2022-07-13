@@ -22,7 +22,7 @@
     <a href="{% url 'create-note' %}"
       ><button class="myPlus"><i class="fa fa-plus"></i></button
     ></a>
-    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Found {{notes_count}} Snippets in Home</h3>
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Found {{notes_count}} {% if Q %} * {{Q}} * {% endif %} Snippets</h3>
 
     <div class="row">
       {% for note in notes %}
