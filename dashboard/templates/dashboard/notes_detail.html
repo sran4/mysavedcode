@@ -4,8 +4,8 @@
   <div class="content-section p-0 mt-1" style="background-color: #212529; border-radius: 2em; border: None">
     <div class="m-3" style="background-color: #212529; color: ashwhite">
       <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 30px; margin-top: 10px; float: left; color: #b8af61"></i> </a>
-      <p class="font-weight-bold" style="font-size: 8px; float: right; padding-top: 5px; color: ashwhite">{{ notes.updated_at|date:"F d, Y" }}</p>
-      <h2 class="myh2 text-center" style="letter-spacing: 0.1em; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">{{notes.language|upper}}</h2>
+      <p class="font-weight-bold" style="font-size: 8px; float: right; padding-top: 5px; color: ashwhite">{{ note.updated_at|date:"F d, Y" }}</p>
+      <h2 class="myh2 text-center" style="letter-spacing: 0.1em; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">{{note.language|upper}}</h2>
 
       <div class="row">
         <div class="col">
@@ -15,10 +15,10 @@
           <a href="{% url 'favs-notes' %}">
             <i class="fa fa-heart fa-1x" style="font-size: 25px; float: left; margin: 15px; color: #ee3d07"></i>
           </a>
-          <a href="{% url 'delete-note' notes.pk %}">
+          <a href="{% url 'delete-note' note.pk %}">
             <i class="fa fa-trash fa-1x" style="font-size: 25px; float: right; margin: 15px; color: #962323"></i>
           </a>
-          <a href="{% url 'update-note' notes.pk %}">
+          <a href="{% url 'update-note' note.pk %}">
             <i class="fa fa-edit fa-1x" style="font-size: 25px; float: right; margin: 15px; color: darkgreen"></i>
           </a>
         </div>
@@ -27,11 +27,38 @@
     </div>
 
     <div class="m-3" style="background-color: #212529; color: ashwhite">
-      <h2 style="font-size: 16px;color: ashwhite text-transform: capitalize">{{notes.notes_for_yourself | safe}}</h2>
+      <h2 style="font-size: 16px;color: ashwhite text-transform: capitalize">{{note.notes_for_yourself | safe}}</h2>
       <hr style="background-color: #f0dfe7" />
-      <p style="font-size: 16px; color: ashwhite">{{notes.code_here | safe}}</p>
+      <p style="font-size: 16px; color: ashwhite">{{note.code_here | safe}}</p>
     </div>
   </div>
 </section>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" language="javascript">
+
+  $(document).on('click', '#fav', function (event) {
+  event.preventDefault();
+  var pk = $(this).attr('value'); 
+  $.ajax({
+    type: 'POST',
+    url: '{% url "notes_detail"  note.pk %}',
+    data: { 'code_id': pk, 'csrfmiddlewaretoken': '{{ csrf_token }}' },    
+    dataType: 'json',
+    success: function (response) {     
+      $('#fav-section').html(response['form']);
+      console.log($('Success', '#fav-section').html(response['form']));
+    },
+    error: function (rs, e) {
+      console.log('error', rs.responseText);
+    },
+
+
+  });
+
+
+});
+
+    </script>
 
 {% endblock content %}

@@ -82,3 +82,20 @@ function removeLoader() {
   });
 }
 
+
+$(document).ready(function (event) {
+
+
+$(document).on('click', '#fav', function (event) {
+  event.preventDefault();
+  var pk = $(this).attr('value');
+  $.ajax({
+    type: 'POST',
+    url: '{% url "notes_detail" %}',
+  
+  });
+  
+});
+
+
+ });

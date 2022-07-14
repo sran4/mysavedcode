@@ -71,24 +71,42 @@ def favs_notes(request):
     # __icontains = field contains this
     # __iexact = fields is exactly this
     # '''
-    
-    
-@login_required
+
+
 def NotesDetailView(request, code_id):
-    notes = get_object_or_404(Notes, pk=code_id)
+    note = get_object_or_404(Notes, pk=code_id)
     print('notes', notes)
-    if request.method == "POST":
-        if notes.fav == True:
-            notes.fav = False
-            notes.save()
+    if request.method == "POST" and request.is_ajax():
+        print("passed post test")
+        if note.fav == True:
+            note.fav = False
+            note.save()
         else:
-            notes.fav = True
-            notes.save()
-        return redirect('notes_detail', notes.pk)
-    context = {'notes': notes}
+            note.fav = True
+            note.save()
+        return redirect('notes_detail', note.pk)
+    context = {'note': note}
+    if request.is_ajax():
+        html = render_to_string('dashboard/fav_section.html',
+                                context, request=request)
+        return JsonResponse({'form': html})
     return render(request, 'dashboard/notes_detail.html', context)
 
 
+@login_required
+def NotesDetailViewT(request, code_id):
+    note = get_object_or_404(Notes, pk=code_id)
+    print('note', note)
+    if request.method == "POST":
+        if note.fav == True:
+            note.fav = False
+            note.save()
+        else:
+            note.fav = True
+            note.save()
+        return redirect('notes_detail', note.pk)
+    context = {'note': note}
+    return render(request, 'dashboard/notes_detail.html', context)
 
 
 @login_required
