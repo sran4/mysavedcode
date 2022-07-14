@@ -50,6 +50,7 @@ def notes(request):
 @login_required
 def favs_notes(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
+    allNotes_count = Notes.objects.filter(user=request.user).count()
     favs = Notes.objects.filter(user=request.user, fav=True).filter(
         Q(language__icontains=q) |
         Q(notes_for_yourself__icontains=q) |
@@ -62,7 +63,8 @@ def favs_notes(request):
     favs = paginator.get_page(page)
 
     context = {'favs': favs,
-               'favs_count': favs_count
+               'favs_count': favs_count,
+               'allNotes_count': allNotes_count
                }
     return render(request, 'dashboard/fav.html', context)
 
