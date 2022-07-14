@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
   </head>
 
-  <body>
+<body onload='myLoading()'>
+
+    <div id="loading" class="spinner-border text-success"> </div>
     {% include "dashboard/navbar.html" %}
     <center>
       {% if messages %} {% for msg in messages %}

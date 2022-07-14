@@ -82,3 +82,12 @@ function removeLoader() {
   });
 }
 
+// bootstrap spinner on every page load
+
+var preloader = document.getElementById('loading');
+
+  function myLoading() {
+
+    preloader.style.display = 'none';
+
+  }

@@ -140,6 +140,17 @@ body {
   background-color: rgba(40, 38, 38, 0.9) !important;
 }
 
+/* bootrap spinner on every page div in base.html */
+ #loading {
+    position: fixed;
+    text-align: center;  
+    top: 42%;
+    left: 45%;  
+    z-index: 9999;
+    width:130px;
+    height:130px;  
+ }
+
 .btnn {
   @extend .transition:;
   position: relative;
