@@ -43,7 +43,7 @@ var searchForm = $('.search-form')
 var serchButton = $('.searchbuttonnF')
 var searchInput = searchForm.find("[name='q']") // input name='q'
 var typingTimer
-var typingInterval = 3000 // 2 seconds
+var typingInterval = 1000 // 1 seconds
 var searchBtn = searchForm.find("[type='submit']")
 searchInput.keyup(function (event) {
   // key released
@@ -67,9 +67,9 @@ function perfomSearch() {
   var query = searchInput.val()
   setTimeout(function () {
     window.location.href = '/codes-examples/?q=' + query
-  }, 1000)
+  }, 5000)
 }
-// timeout 1 sec means take 1 sec to display search result
+
 //Displaying Loading text on every page
 $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>')
 $(window).on('load', function () {
@@ -89,8 +89,3 @@ var preloader = document.getElementById('loading')
 function myLoading() {
   preloader.style.display = 'none'
 }
-
-
-
-
-

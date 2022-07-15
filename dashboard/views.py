@@ -599,3 +599,7 @@ def profile(request):
 
     }
     return render(request, 'dashboard/profile.html', context)
+
+
+def generatePassword(request):
+    return render(request, 'dashboard/password.html')

@@ -33,4 +33,5 @@ urlpatterns = [
 
     path('wikipedia/', views.wiki, name='wiki'),
     path('conversion/', views.conversion, name='conversion'),
+    path('generate-password/', views.generatePassword, name='password'),
 ]

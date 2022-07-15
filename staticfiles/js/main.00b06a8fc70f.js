@@ -43,7 +43,7 @@ var searchForm = $('.search-form')
 var serchButton = $('.searchbuttonnF')
 var searchInput = searchForm.find("[name='q']") // input name='q'
 var typingTimer
-var typingInterval = 3000 // 2 seconds
+var typingInterval = 3000 // 3 seconds
 var searchBtn = searchForm.find("[type='submit']")
 searchInput.keyup(function (event) {
   // key released
@@ -89,8 +89,3 @@ var preloader = document.getElementById('loading')
 function myLoading() {
   preloader.style.display = 'none'
 }
-
-
-
-
-

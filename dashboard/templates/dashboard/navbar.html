@@ -5,8 +5,8 @@
       <a class="navbar-brand" style="color: dodgerblue" href="{% url 'home' %}"
         ><h3 style="margin: 0; padding: 0; text-transform: uppercase">
           <b><em class="myP">My Portal</em></b>
-        </h3></a
-      >
+        </h3>
+     </a>
       <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
       <button
         class="navbar-toggler"
@@ -45,6 +45,7 @@
               <a class="dropdown-item" href='{% url "books" %}'>Books</a>
               <a class="dropdown-item" href='{% url "wiki" %}'>Wikipedia</a>
               <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href='{% url "password" %}'>Generate Password</a>
             </div>
           </li>
           <li class="nav-item nav-link">Welcome {{ request.user.username|capfirst}}!</li>
@@ -66,3 +67,4 @@
     </div>
   </nav>
 </header>
+ 

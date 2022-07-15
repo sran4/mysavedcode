@@ -89,8 +89,3 @@ var preloader = document.getElementById('loading')
 function myLoading() {
   preloader.style.display = 'none'
 }
-
-
-
-
-
