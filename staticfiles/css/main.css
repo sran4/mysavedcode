@@ -17,10 +17,10 @@ html {
 main {
   color: #aabbcb !important;
   font-family: monospace !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  font-size: 1.2em !important;
+  font-size: 1em !important;
 }
 .loader {
   position: fixed;
@@ -135,10 +135,10 @@ body {
   width: 100%;
   color: #aabbcb !important;
   font-family: monospace !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  font-size: 1.2em !important;
+  font-size: 1em !important;
 }
 
 body {
@@ -149,10 +149,10 @@ body {
   background-color: rgba(40, 38, 38, 0.9) !important;
   color: #c4bcda !important;
   font-family: monospace !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  font-size: 1.2em !important;
+  font-size: 1em !important;
 }
 
 /* bootrap spinner on every page div in base.html */
@@ -462,10 +462,10 @@ pre {
 pre {
   color: #c4bcda !important;
   font-family: monospace !important;
-  letter-spacing: 0.12em !important;
+  letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  font-size: 1.2em !important;
+  font-size: 1em !important;
   display: block !important;
   white-space: pre !important;
   margin: 10px 10px !important;
