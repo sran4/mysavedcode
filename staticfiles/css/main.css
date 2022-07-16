@@ -648,7 +648,7 @@ pre {
     @extend .transition:;
     position: relative;
     display: inline-block;
-    padding: 0.1em 0.1em;
+    padding: 0.3em 0.3em;
     border-radius: 30px;
     border: 1px solid;
     text-align: center;
