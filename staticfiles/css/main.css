@@ -590,7 +590,7 @@ pre {
     font-size: 12px;
   }
   .clock {
-    left: 60%;
+    left: 50%;
     top: 93%;
   }
   .myPlus {
@@ -619,7 +619,7 @@ pre {
     font-weight: 400 !important;
   }
   .myh2 {
-    font-size: 14px;
+    font-size: 10px;
   }
   element.style {
     font-size: 8px;
