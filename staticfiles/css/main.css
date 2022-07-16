@@ -20,6 +20,7 @@ main {
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
+  font-size: 1.5em !important;
 }
 .loader {
   position: fixed;
@@ -137,6 +138,7 @@ body {
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
+  font-size: 1.5em !important;
 }
 
 body {
@@ -150,6 +152,7 @@ body {
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
+  font-size: 1.5em !important;
 }
 
 /* bootrap spinner on every page div in base.html */
@@ -460,7 +463,7 @@ pre {
   color: #c4bcda !important;
   font-family: monospace !important;
   letter-spacing: 0.1em !important;
-  font-size: 75% !important;
+  font-size: 125% !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
   display: block !important;
