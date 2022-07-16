@@ -15,7 +15,7 @@ html {
 }
 
 main {
-  color: #aabbcb !important;
+  color: #a49abf !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.12em !important;
   font-weight: 500 !important;
@@ -134,7 +134,7 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
-  color: #aabbcb !important;
+  color: #a49abf !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
@@ -148,7 +148,7 @@ body {
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-color: rgba(40, 38, 38, 0.9) !important;
-  color: #c4bcda !important;
+  color: #a49abf !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
@@ -461,7 +461,7 @@ pre {
 }
 
 pre {
-  color: #c4bcda !important;
+  color: #a49abf !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
