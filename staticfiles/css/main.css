@@ -444,6 +444,21 @@ pre {
   padding: 0 0 0 16px;
 }
 
+pre {
+
+ color: #c4bcda !important;
+ font-family: monospace!important;
+ letter-spacing: .10em!important;
+ font-size: 75%!important;
+ font-weight: 500!important;
+ line-height: 1.5!important;
+ display: block!important;
+ white-space: pre!important;
+ margin:10px 10px!important;
+ text-align: lef!important;
+ overflow: auto!important;
+}
+
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
@@ -591,3 +606,6 @@ pre {
     color: #e9e4d4;
   }
 }
+
+
+

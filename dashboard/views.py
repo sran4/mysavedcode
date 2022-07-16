@@ -36,7 +36,7 @@ def notes(request):
         Q(notes_for_yourself__icontains=q) |
         Q(code_here__icontains=q)).order_by('-updated_at')
     notes_count = notes.count()
-    paginator = Paginator(notes, 30)
+    paginator = Paginator(notes, 36)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
     context = {'notes': notes,
