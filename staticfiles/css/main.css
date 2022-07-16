@@ -17,10 +17,11 @@ html {
 main {
   color: #aabbcb !important;
   font-family: 'Montserrat', sans-serif !important;
-  letter-spacing: 0.1em !important;
+  letter-spacing: 0.12em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
   font-size: 1em !important;
+  margin: 10px 30px;
 }
 .loader {
   position: fixed;
