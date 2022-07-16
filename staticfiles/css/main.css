@@ -197,7 +197,7 @@ body {
   white-space: nowrap;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   color: rgb(20, 19, 19);
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -643,5 +643,21 @@ pre {
   .PNF {
     font-size: 20px;
     color: #e9e4d4;
+  }
+  .btnnn {
+    @extend .transition:;
+    position: relative;
+    display: inline-block;
+    padding: 0.1em 0.1em;
+    border-radius: 30px;
+    border: 1px solid;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: rgb(20, 19, 19);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 }
