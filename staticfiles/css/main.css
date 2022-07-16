@@ -129,7 +129,11 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
-  color: #aabbcb;
+  color: #aabbcb !important;
+  font-family: monospace !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
 }
 
 body {
@@ -138,18 +142,23 @@ body {
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-color: rgba(40, 38, 38, 0.9) !important;
+  color: #c4bcda !important;
+  font-family: monospace !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
 }
 
 /* bootrap spinner on every page div in base.html */
- #loading {
-    position: fixed;
-    text-align: center;  
-    top: 42%;
-    left: 45%;  
-    z-index: 9999;
-    width:130px;
-    height:130px;  
- }
+#loading {
+  position: fixed;
+  text-align: center;
+  top: 42%;
+  left: 45%;
+  z-index: 9999;
+  width: 130px;
+  height: 130px;
+}
 
 .btnn {
   @extend .transition:;
@@ -399,7 +408,7 @@ pre {
   width: 100%;
   margin: 0;
   padding: 0;
-  color:white;
+  color: white;
 }
 
 .searchh:focus + .searchbuttonn {
@@ -445,18 +454,17 @@ pre {
 }
 
 pre {
-
- color: #c4bcda !important;
- font-family: monospace!important;
- letter-spacing: .10em!important;
- font-size: 75%!important;
- font-weight: 500!important;
- line-height: 1.5!important;
- display: block!important;
- white-space: pre!important;
- margin:10px 10px!important;
- text-align: lef!important;
- overflow: auto!important;
+  color: #c4bcda !important;
+  font-family: monospace !important;
+  letter-spacing: 0.1em !important;
+  font-size: 75% !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  display: block !important;
+  white-space: pre !important;
+  margin: 10px 10px !important;
+  text-align: lef !important;
+  overflow: auto !important;
 }
 
 /* ++++++++++++++++ Media++++++++++++++++       */
@@ -502,7 +510,7 @@ pre {
     width: 50%;
     margin: 0;
     padding: 0;
-    color:white;
+    color: white;
   }
   .searchh:focus {
     width: 250px; /* Bar width+1px */
@@ -569,7 +577,7 @@ pre {
     width: 50%;
     margin: 0;
     padding: 0;
-    color:white;
+    color: white;
   }
   .searchh:focus {
     width: 150px; /* Bar width+1px */
@@ -606,6 +614,3 @@ pre {
     color: #e9e4d4;
   }
 }
-
-
-
