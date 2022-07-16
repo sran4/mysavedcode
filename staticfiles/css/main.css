@@ -338,7 +338,12 @@ a .myP:hover {
 .card p {
   margin-right: 0px;
   line-height: 13px;
-  margin: 0;
+  margin: 0px;
+}
+.cardd p {
+  margin-right: 0px;
+  line-height: 13px;
+  margin-bottom: 3rem;
 }
 
 pre {
