@@ -16,7 +16,7 @@ html {
 
 main {
   color: #aabbcb !important;
-  font-family: monospace !important;
+  font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
@@ -134,7 +134,7 @@ body {
   height: 100%;
   width: 100%;
   color: #aabbcb !important;
-  font-family: monospace !important;
+  font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
@@ -148,7 +148,7 @@ body {
   background-repeat: no-repeat;
   background-color: rgba(40, 38, 38, 0.9) !important;
   color: #c4bcda !important;
-  font-family: monospace !important;
+  font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
@@ -461,7 +461,7 @@ pre {
 
 pre {
   color: #c4bcda !important;
-  font-family: monospace !important;
+  font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
@@ -545,7 +545,7 @@ pre {
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-size: 25px;
     color: darkred;
   }
@@ -611,7 +611,7 @@ pre {
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif !important;
     font-size: 20px;
     color: darkred;
   }
