@@ -1,11 +1,10 @@
-{% load static %}
-{% if request.user.is_authenticated %}
+{% load static %} {% if request.user.is_authenticated %}
 <div class="text-center">
   {% if note.fav %}
   <form action="{% url 'notes_detail' note.pk %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
-      <button id="fav" value="{{ note.pk }}" class="btn btn-info btn-block" style="background: #265b25; color: ashwhite">
+      <button id="fav" value="{{ note.pk }}" class="btnnn btn-info btn-block" style="background: #265b25; color: ashwhite">
         Remove from Favourites <i class="far fa-heart fa-lg"></i>
       </button>
     </div>
@@ -14,12 +13,11 @@
   <form action="{% url 'notes_detail' note.pk %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
-      <button id="fav" value="{{ note.pk }}" class="btn btn-danger btn-block" style="background: #962323; color: ashwhite">
+      <button id="fav" value="{{ note.pk }}" class="btnnn btn-danger btn-block" style="background: #962323; color: ashwhite">
         Add To Favourites <i class="fas fa-heart-broken fa-lg"></i>
       </button>
     </div>
   </form>
   {% endif %}
 </div>
-  {% endif %}
- 
+{% endif %}
