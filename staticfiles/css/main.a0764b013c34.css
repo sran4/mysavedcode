@@ -52,7 +52,8 @@ footer {
   background-color: #56636c !important;
 }
 .cardd {
-  box-shadow: 2px 2px 2px 2px rgb(114 105 105);
+  box-shadow: 5px 5px 5px rgb(0 0 0);
+  background-color: #56636c !important;
 }
 
 .custom-header:hover {

@@ -1,7 +1,7 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}
 <section style="background-color: #212529; margin-top: 0; padding-top: 0; border-radius: 2em">
   <div id="fav-section">{% include 'dashboard/fav_section.html' %}</div>
-  <div class="content-section p-0 mt-1" style="background-color: #212529; border-radius: 2em; border: None">
+  <div class="content-section p-0 mt-1 cardd" style="background-color: #212529; border-radius: 2em; border: None">
     <div class="m-3" style="background-color: #212529; color: ashwhite">
       <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 30px; margin-top: 10px; float: left; color: #b8af61"></i> </a>
       <p class="font-weight-bold" style="font-size: 8px; float: right; padding-top: 5px; color: ashwhite">{{ note.updated_at|date:"F d, Y" }}</p>
@@ -37,32 +37,24 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script type="text/javascript" language="javascript">
-
   $(document).on('click', '#fav', function (event) {
-  event.preventDefault();
-  var pk = $(this).attr('value'); 
-  $.ajax({
-    type: 'POST',
-    url: '{% url "notes_detail"  note.pk %}',
-    data: { 'code_id': pk, 'csrfmiddlewaretoken': '{{ csrf_token }}' },    
-    dataType: 'json',
-    success: function (response) {     
-      $('#fav-section').html(response['form']);
-      console.log($('Success', '#fav-section').html(response['form']));
-    },
-    error: function (rs, e) {
-      console.log('error', rs.responseText);
-    },
+    event.preventDefault()
+    var pk = $(this).attr('value')
+    $.ajax({
+      type: 'POST',
+      url: '{% url "notes_detail"  note.pk %}',
+      data: { code_id: pk, csrfmiddlewaretoken: '{{ csrf_token }}' },
+      dataType: 'json',
+      success: function (response) {
+        $('#fav-section').html(response['form'])
+        console.log($('Success', '#fav-section').html(response['form']))
+      },
+      error: function (rs, e) {
+        console.log('error', rs.responseText)
+      },
+    })
+  })
+</script>
 
-
-  });
-
-
-});
-
-    </script>
-
-{% endblock content %}
-
- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">/script
-script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">/script
+{% endblock content %} script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">/script script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">/script
