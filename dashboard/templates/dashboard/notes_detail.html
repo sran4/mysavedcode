@@ -4,7 +4,7 @@
   <div class="content-section p-0 mt-1 cardd" style="background-color: #212529; border: None">
     <div class="m-3" style="background-color: #212529; color: ashwhite">
       <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 25px; margin-top: 10px; float: left; color: #b8af61"></i> </a>
-      <p class="font-weight-bold" style="font-size: 8px; float: right; padding-top: 5px; color: ashwhite">{{ note.updated_at|date:"F d, Y" }}</p>
+      <p class="font-weight-bold" style="font-size: 8px; float: right; padding-top: 15px; color: ashwhite">{{ note.updated_at|date:"F d, Y" }}</p>
       <h2 class="myh2 text-center" style="letter-spacing: 0.1em; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">{{note.language|upper}}</h2>
 
       <div class="row">
