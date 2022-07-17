@@ -353,7 +353,7 @@ a .myP:hover {
 
 .card p {
   margin-right: 0px;
-  line-height: 13px;
+  line-height: 11px;
   margin: 0px;
 }
 .cardd p {
@@ -406,7 +406,7 @@ pre {
   user-select: none;
 }
 .buttonnn {
-background-color: rgb(24 38 40);
+  background-color: rgb(24 38 40);
 }
 .buttonn:hover {
   transition-duration: 0.4s;
