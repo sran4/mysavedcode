@@ -21,7 +21,7 @@ main {
   font-weight: 500 !important;
   line-height: 1.5 !important;
   font-size: 1em !important;
-  margin: 10px 30px;
+  margin: 10px 10px;
 }
 .loader {
   position: fixed;
@@ -659,5 +659,8 @@ pre {
     color: rgb(20, 19, 19);
     letter-spacing: 0.1em;
     text-transform: uppercase;
+  }
+  main {
+    margin: 10px 0px;
   }
 }
