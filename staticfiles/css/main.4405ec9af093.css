@@ -387,7 +387,7 @@ pre {
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
-  background-color: rgb(24 38 40);
+  background-color: rgb(28 21 21 / 90%) !important;
   font-size: 14px;
   padding-left: 32px;
   padding-right: 32px;

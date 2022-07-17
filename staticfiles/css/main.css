@@ -387,7 +387,7 @@ pre {
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
-  background-color: rgb(28 21 21 / 90%) !important;
+  background-color: rgb(24 38 40);
   font-size: 14px;
   padding-left: 32px;
   padding-right: 32px;
@@ -664,6 +664,6 @@ pre {
     margin: 10px 0px;
   }
   .myP {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 }
