@@ -663,4 +663,7 @@ pre {
   main {
     margin: 10px 0px;
   }
+  .myP {
+    font-size: 1.3rem;
+  }
 }
