@@ -328,8 +328,8 @@ a .myP:hover {
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
 .alert-success {
-  color: #6e0c0c;
-  background-color: #07230d;
+  color: #f9eeee;
+  background-color: #18013f;
   border-color: #b9d610;
 }
 
