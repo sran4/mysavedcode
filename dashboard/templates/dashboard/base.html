@@ -30,8 +30,8 @@
     {% include "dashboard/navbar.html" %}
     <center>
       {% if messages %} {% for msg in messages %}
-      <div id="alert" class="container alert alert-{{msg.tags}}  alert-dismissible fade show margin-bottom:30px;">
-        <p style="font-size: 18px; text-align: center; font-weight: bold">{{msg}}</p>
+      <div id="alert" class="container alert alert-{{msg.tags}}  alert-dismissible fade show margin-bottom:20px;">
+        <p style="font-size: 16px; text-align: center; font-weight: bold">{{msg}}</p>
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

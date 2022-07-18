@@ -336,7 +336,11 @@ def youtube(request):
 
 @login_required
 def todo(request):
-    todos = Todo.objects.filter(user=request.user).order_by('-pk')
+    todos = Todo.objects.filter(
+        user=request.user, is_finished=False).order_by('-pk')
+    todos_completed = Todo.objects.filter(
+        user=request.user, is_finished=True).order_by('-pk')
+    print(todos)
     if len(todos) == 0:
         todos_done = True
     else:
@@ -367,6 +371,7 @@ def todo(request):
     context = {
         'todos': todos,
         'todos_done':   todos_done,
+        'todos_completed': todos_completed,
         'form': form
     }
     return render(request, 'dashboard/todo.html', context)
