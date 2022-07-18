@@ -31,7 +31,7 @@
           </td>
 
           <td>
-            <a href="{% url 'delete-todo' obj.pk %}"><i class="fa fa-trash fa-2x"></i></a>
+            <a href="{% url 'delete-todo' obj.pk %}"><i class="fa fa-trash fa-1x" style="font-size: 20px; float: center; color: DarkRed"></i></a>
           </td>
         </tr>
         {% endfor%}
@@ -41,7 +41,7 @@
     <h3>All To dos are completed!!!!</h3>
     {% endif %}
     <a href="{% url 'todo' %}" class="btn btn-danger">To Do</a>
-    <br /><br />
+    <br /><br /><br /><br />
     {% if homeworks %}
     <h2>In Process Assemblies</h2>
     <table class="table table-striped table-bordered table-hover table-dark">
@@ -82,10 +82,10 @@
           <td>{{obj.created_at|date:"F d, Y"}}</td>
           <td>{{ obj.comments }}</td>
           <td>
-            <a href="{% url 'update-homework' obj.pk %}"><i class="fa fa-edit fa-1x"></i></a>
+            <a href="{% url 'update-homework' obj.pk %}"><i class="fa fa-edit fa-1x" style="font-size: 20px; float: center; color: DarkGreen"></i></a>
           </td>
           <td>
-            <a href="{% url 'delete-homework' obj.pk %}"><i class="fa fa-trash fa-1x"></i></a>
+            <a href="{% url 'delete-homework' obj.pk %}"><i class="fa fa-trash fa-1x" style="font-size: 20px; float: center; color: DarkRed"></i></a>
           </td>
         </tr>
         {% endfor %}
