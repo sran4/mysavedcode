@@ -70,7 +70,7 @@ a {
   color: rgb(225, 221, 221);
 }
 input {
-  caret-color: chartreuse;
+  caret-color: rgb(247, 26, 26);
 }
 a:hover {
   color: rgb(16, 11, 11) !important;
