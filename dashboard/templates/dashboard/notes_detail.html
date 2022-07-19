@@ -5,7 +5,9 @@
     <div class="m-3" style="background-color: #212529; color: ashwhite; padding-top: 15px">
       <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: #b8af61"></i> </a>
       <p class="font-weight-bold" style="font-size: 8px; float: right; padding-top: 5px; color: ashwhite">{{ note.updated_at|date:"F d, Y" }}</p>
-      <h2 class="myh2 text-center" style="letter-spacing: 0.1em; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">{{note.language|upper}}</h2>
+      <h2 class="myh2 text-center" style="letter-spacing: 0.1em; color: dodgerblue; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">
+        {{note.language|upper}}
+      </h2>
 
       <div class="row">
         <div class="col">
@@ -27,7 +29,7 @@
     </div>
 
     <div class="m-3" style="background-color: #212529; color: ashwhite">
-      <h2 style="font-size: 16px;color: ashwhite text-transform: capitalize">{{note.notes_for_yourself | safe}}</h2>
+      <h2 style="font-size: 16px; color: dodgerblue; text-transform: capitalize">{{note.notes_for_yourself | safe}}</h2>
       <hr style="background-color: #f0dfe7" />
       <p class="myh2" style="font-size: 16px; color: ashwhite">{{note.code_here | safe}}</p>
     </div>
