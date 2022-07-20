@@ -13,8 +13,8 @@
             <i class="fa fa-heart fa-1x" style="font-size: 25px; float: left; margin: 15px; color: #ee3d07"></i>
           </a>
         </div>
-        <div class="col">
-          <a href="{% url 'create-note' %}"><i class="myPlusD fa fa-plus d-inline-flex align-items-center" style="vertical-align: middle"></i></a>
+        <div class="col" style="display: flex; justify-content: center">
+          <a href="{% url 'create-note' %}"><i class="myPlusD fa fa-plus d-inline-flex align-items-center"></i></a>
         </div>
         <div class="col">
           <a href="{% url 'delete-note' note.pk %}">
@@ -31,6 +31,7 @@
         {{note.language|upper}}
       </h2>
     </div>
+    <br />
     <div class="m-3" style="background-color: #212529; color: ashwhite">
       <h2 style="font-size: 16px; color: #d97cee; text-transform: capitalize">{{note.notes_for_yourself | safe}}</h2>
       <hr style="background-color: #f0dfe7" />

@@ -318,13 +318,14 @@ a .myP:hover {
 
 .myPlusD {
   background-color: DodgerBlue;
+  display: flex;
   border: none;
   color: white;
-  padding: 8px 11px;
-  font-size: 15px;
+  padding: 10px 16px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 50%;
- 
+  justify-content: center;
 }
 .myPlusD:hover {
   opacity: 0.9;
