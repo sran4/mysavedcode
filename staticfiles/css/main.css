@@ -199,7 +199,7 @@ body {
   white-space: nowrap;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   color: rgb(20, 19, 19);
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -575,7 +575,7 @@ pre {
     white-space: nowrap;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 25px;
+    font-size: 14px;
     color: darkred;
   }
   .PNF {
@@ -645,7 +645,7 @@ pre {
     white-space: nowrap;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 20px;
+    font-size: 12px;
     color: darkred;
   }
   .PNF {
