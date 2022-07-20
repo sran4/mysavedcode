@@ -320,11 +320,11 @@ a .myP:hover {
   background-color: DodgerBlue;
   border: none;
   color: white;
-  padding: 8px 11px;
-  font-size: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 50%;
-  float: right;
+  float: center;
 }
 .myPlusD:hover {
   opacity: 0.9;

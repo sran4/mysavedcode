@@ -316,6 +316,23 @@ a .myP:hover {
   color: rgb(26, 81, 136) !important;
 }
 
+.myPlusD {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 8px 11px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  float: right;
+}
+.myPlusD:hover {
+  opacity: 0.9;
+  transform: scale(1.5);
+  transition: 0.8s ease;
+  background-color: rgb(34, 57, 125);
+}
+
 .alert {
   positition: relative;
   opacity: 1;
