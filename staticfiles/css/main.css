@@ -232,6 +232,10 @@ body {
   transition: 0.8s ease;
   cursor: pointer;
 }
+.btnnn:hover {
+  border: 1px solid rgb(241, 241, 245);
+  cursor: pointer;
+}
 
 .fa:hover {
   color: rgb(26, 80, 89);
