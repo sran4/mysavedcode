@@ -578,6 +578,22 @@ pre {
     font-size: 14px;
     color: darkred;
   }
+  .btnnn {
+    @extend .transition:;
+    position: relative;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 0.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    background-color: #739600;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px;
+    color: darkred;
+  }
   .PNF {
     font-size: 30px;
     color: #e9e4d4;
