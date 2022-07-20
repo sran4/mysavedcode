@@ -324,7 +324,7 @@ a .myP:hover {
   font-size: 15px;
   cursor: pointer;
   border-radius: 50%;
-  float: right;
+ 
 }
 .myPlusD:hover {
   opacity: 0.9;

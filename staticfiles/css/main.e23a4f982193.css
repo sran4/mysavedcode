@@ -317,6 +317,7 @@ a .myP:hover {
 }
 
 .myPlusD {
+  display: inline-block;
   background-color: DodgerBlue;
   border: none;
   color: white;
@@ -324,7 +325,9 @@ a .myP:hover {
   font-size: 15px;
   cursor: pointer;
   border-radius: 50%;
- 
+  text-align: center;
+  vertical-align: bottom;
+  text-align: center;
 }
 .myPlusD:hover {
   opacity: 0.9;
