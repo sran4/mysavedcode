@@ -71,7 +71,7 @@ a:hover {
 }
 
 .card-header {
-  color: rgb(145, 143, 143) !important;
+  color: rgb(190, 189, 189) !important;
   background: rgb(3 78 91) !important;
   transition: 0.8s ease-in;
 }
@@ -619,6 +619,11 @@ pre {
     font-size: 30px;
     color: #e9e4d4;
   }
+}
+.btn-info {
+  color: #fff;
+  background-color: #576b6e;
+  border-color: #17a2b8;
 }
 
 @media (max-width: 499px) {
