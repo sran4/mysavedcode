@@ -59,12 +59,6 @@ footer {
   background-color: rgb(44 145 162) !important;
 }
 
-.card-header:hover {
-  background: rgb(26, 80, 89) !important;
-  color: whitesmoke !important;
-  transition: 0.8s ease-in;
-}
-
 a {
   text-decoration: none !important;
   color: rgb(225, 221, 221);
@@ -77,8 +71,14 @@ a:hover {
 }
 
 .card-header {
-  color: black !important;
-  background: rgb(44 145 162) !important;
+  color: rgb(145, 143, 143) !important;
+  background: rgb(3 78 91) !important;
+  transition: 0.8s ease-in;
+}
+
+.card-header:hover {
+  background: rgb(3, 35, 41) !important;
+  color: whitesmoke !important;
   transition: 0.8s ease-in;
 }
 
