@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'admin_honeypot',
+    
+    'django.contrib.humanize'#date format in Code detail page
 
 
 ]

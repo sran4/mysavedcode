@@ -1,4 +1,4 @@
-{% extends 'dashboard/base.html' %} {% load static %} {% block content %}
+{% extends 'dashboard/base.html' %} {% load static %} {% block content %}{% load humanize %}
 <section style="background-color: #212529; margin-top: 0; padding-top: 0; border-radius: 2em">
   <div id="fav-section">{% include 'dashboard/fav_section.html' %}</div>
 
@@ -26,7 +26,7 @@
         </div>
       </div>
       <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: #b8af61"></i> </a>
-      <p class="myD font-weight-bold" style="font-size: 12px; float: right; padding-top: 5px; color: #b8af61">{{ note.updated_at|date:"F d, Y" }}</p>
+      <p class="myD font-weight-bold" style="font-size: 12px; float: right; padding-top: 5px; color: #b8af61">{{ note.updated_at| naturaltime }}</p>
       <h2 class="myh2 text-center" style="letter-spacing: 0.1em; color: dodgerblue; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">
         {{note.language|upper}}
       </h2>
