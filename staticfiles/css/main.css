@@ -202,7 +202,7 @@ body {
   color: rgb(178, 174, 174);
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  border-color: rgb(12, 9, 9);
+  border-color: rgb(12, 9, 9) !important;
 }
 
 .myimage {
@@ -524,6 +524,11 @@ pre {
   overflow: auto !important;
 }
 
+.btn-info {
+  color: #fff;
+  background-color: #0891a5 !important;
+  border-color: #17a2b8;
+}
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
