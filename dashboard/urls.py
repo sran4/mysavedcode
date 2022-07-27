@@ -4,15 +4,15 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('codes-examples/', views.notes, name='notes'),
-    path('favourites-codes-examples/', views.favs_notes, name='favs-notes'),
-    path('add_code/', views.create_note, name='create-note'),
-    path('update_code/<int:pk>', views.update_note, name='update-note'),
-    path('delete_code/<int:pk>', views.delete_note, name='delete-note'),
+    path('codes-lists/', views.notes, name='notes'),
+    path('favourites-codes-lists/', views.favs_notes, name='favs-notes'),
+    path('add-code/', views.create_note, name='create-note'),
+    path('update-code/<int:pk>', views.update_note, name='update-note'),
+    path('delete-code/<int:pk>', views.delete_note, name='delete-note'),
     # path('notes_detail/<int:pk>',
     #      views.NotesDetailView.as_view(), name='notes_detail'),
 
-    path('Code_Detail/<int:code_id>/',
+    path('Code-Detail/<int:code_id>/',
          views.NotesDetailView, name='notes_detail'),
 
     path('assemblies/', views.homework, name='home-work'),
