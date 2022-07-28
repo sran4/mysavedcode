@@ -276,7 +276,7 @@ CKEDITOR_CONFIGS = {
 STATIC_ROOT = os.path.join(BASE_DIRR, 'staticfiles')
 # collectstatic will make folder statifiles and save all files to the folder
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIRR, 'staticfiles/images')
+MEDIA_ROOT = os.path.join(BASE_DIRR, 'images')
 
 # Heroku local settings
 django_heroku.settings(locals())
