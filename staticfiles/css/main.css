@@ -529,6 +529,11 @@ pre {
   background-color: #2b7734 !important;
   border-color: #17a2b8;
 }
+
+.cke_chrome {
+  width: 920px !important;
+}
+
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {

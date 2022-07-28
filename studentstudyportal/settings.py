@@ -174,7 +174,6 @@ CKEDITOR_CONFIGS = {
         'width': 'full',
         'height': 'full',
         # 'autoParagraph': False,
-        # 'height': 'full',
         # 'toolbar_Custom': [
         #     ['Bold', 'Italic', 'Underline'],
         #     ['NumberedList', 'BulletedList'],
@@ -248,7 +247,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
         # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
         # 'height': 291,
-        # 'width': '100%',
+        'width': '100%',
         # 'filebrowserWindowHeight': 725,
         # 'filebrowserWindowWidth': 940,
         # 'toolbarCanCollapse': True,
