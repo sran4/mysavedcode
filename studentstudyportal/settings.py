@@ -20,11 +20,11 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 #print("BASE_DIR: ", BASE_DIR)
-#BASE_DIR:  C: \Users\satwa\Desktop\React_Django\My github\Online_Projects\dJango_Code_Dashboard\src
+# BASE_DIR:  C: \Users\satwa\Desktop\React_Django\My github\Online_Projects\dJango_Code_Dashboard\src
 
 BASE_DIRR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #print("BASE_DIRR: ", BASE_DIRR)
-#BASE_DIRR:  C: \Users\satwa\Desktop\React_Django\My github\Online_Projects\dJango_Code_Dashboard\src
+# BASE_DIRR:  C: \Users\satwa\Desktop\React_Django\My github\Online_Projects\dJango_Code_Dashboard\src
 env = environ.Env(SECRET_KEY=str,)
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
@@ -56,8 +56,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'admin_honeypot',
-    
-    'django.contrib.humanize'#date format in Code detail page
+
+    'django.contrib.humanize'  # date format in Code detail page
 
 
 ]
@@ -273,12 +273,14 @@ CKEDITOR_CONFIGS = {
     }
 }
 
+STATIC_ROOT = os.path.join(BASE_DIRR, 'staticfiles')
+# collectstatic will make folder statifiles and save all files to the folder
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIRR, 'static/images')
 
 # Heroku local settings
 django_heroku.settings(locals())
 SITE_ID = 1
 
-STATIC_ROOT = os.path.join(BASE_DIRR, 'staticfiles')
-# collectstatic will make folder statifiles and save all files to the folder
 
 DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
