@@ -534,6 +534,12 @@ pre {
   width: 1100px !important;
 }
 
+.btn-info {
+  color: #fff;
+  background-color: #576b6e;
+  border-color: #17a2b8;
+}
+
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
@@ -629,11 +635,10 @@ pre {
     font-size: 30px;
     color: #e9e4d4;
   }
-}
-.btn-info {
-  color: #fff;
-  background-color: #576b6e;
-  border-color: #17a2b8;
+
+  .cke_chrome {
+    width: 600px !important;
+  }
 }
 
 @media (max-width: 499px) {
@@ -724,5 +729,8 @@ pre {
   }
   .myP {
     font-size: 1.5rem;
+  }
+  .cke_chrome {
+    width: 300px !important;
   }
 }
