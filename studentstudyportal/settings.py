@@ -39,7 +39,7 @@ SECRET_KEY = env('DJANGO_SECRET_KEY')
 #DEBUG = True
 DEBUG = env('DJANGO_DEBUG')
 
-# ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
 ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
 
 # Application definition
@@ -276,7 +276,7 @@ CKEDITOR_CONFIGS = {
 STATIC_ROOT = os.path.join(BASE_DIRR, 'staticfiles')
 # collectstatic will make folder statifiles and save all files to the folder
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIRR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIRR, 'staticfiles/images')
 
 # Heroku local settings
 django_heroku.settings(locals())
