@@ -66,14 +66,14 @@ function perfomSearch() {
   displaySearching()
   var query = searchInput.val()
   setTimeout(function () {
-    window.location.href = '/codes-examples/?q=' + query
+    window.location.href = '/codes-lists/?q=' + query
   }, 1000)
 }
 // timeout 1 sec means take 1 sec to display search result
 //Displaying Loading text on every page
 $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>')
 $(window).on('load', function () {
-  setTimeout(removeLoader, 200) //wait for page load PLUS two seconds.
+  setTimeout(removeLoader, 150) //wait for page load PLUS two seconds.
 })
 function removeLoader() {
   $('#loadingDiv').fadeOut(500, function () {
