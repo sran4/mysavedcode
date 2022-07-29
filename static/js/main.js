@@ -66,7 +66,7 @@ function perfomSearch() {
   displaySearching()
   var query = searchInput.val()
   setTimeout(function () {
-    window.location.href = '/codes-examples/?q=' + query
+    window.location.href = '/codes-lists/?q=' + query
   }, 1000)
 }
 // timeout 1 sec means take 1 sec to display search result
