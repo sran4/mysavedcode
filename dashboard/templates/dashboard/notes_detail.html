@@ -1,9 +1,21 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}{% load humanize %}
 <section style="background-color: #212529; margin-top: 0; padding-top: 0; border-radius: 2em">
-  <div id="fav-section">{% include 'dashboard/fav_section.html' %}</div>
-
   <div class="content-section p-0 mt-1 cardd" style="background-color: #212529; border: None">
-    <div class="m-3" style="background-color: #212529; color: ashwhite; padding-top: 15px">
+    <div id="fav-section">{% include 'dashboard/fav_section.html' %}</div>
+    <div>
+      <h2 class="myh2 text-center" style="letter-spacing: 0.1em; color: dodgerblue; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">
+        {{note.language|upper}}
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col">
+        <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 29px; margin: 10px 30px; float: left; color: #b8af61"></i> </a>
+      </div>
+      <div class="col">
+        <p class="myD font-weight-bold" style="font-size: 12px; float: right; color: #b8af61">{{ note.updated_at| naturaltime }}</p>
+      </div>
+    </div>
+    <div class="m-1" style="background-color: #212529; color: ashwhite; padding-top: 2px">
       <div class="row mydetailRow">
         <div class="col">
           <a href="{% url 'notes' %}">
@@ -25,11 +37,6 @@
           </a>
         </div>
       </div>
-      <a href="{% url 'notes' %}"> <i class="fa fa-arrow-left" style="font-size: 35px; margin-top: 10px; float: left; color: #b8af61"></i> </a>
-      <p class="myD font-weight-bold" style="font-size: 12px; float: right; padding-top: 5px; color: #b8af61">{{ note.updated_at| naturaltime }}</p>
-      <h2 class="myh2 text-center" style="letter-spacing: 0.1em; color: dodgerblue; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">
-        {{note.language|upper}}
-      </h2>
     </div>
     <br />
     <div class="m-3" style="background-color: #212529; color: ashwhite">
@@ -62,5 +69,7 @@
   })
 </script>
 
-{% endblock content %} script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">/script script
-src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">/script
+{% endblock content %}
+
+<!-- script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">/script script
+src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">/script -->
