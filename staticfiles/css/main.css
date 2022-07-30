@@ -545,6 +545,9 @@ pre {
   display: block;
   width: 95%;
 }
+.mydetailRow {
+  margin-bottom: 25px;
+}
 
 /* ++++++++++++++++ Media++++++++++++++++       */
 
