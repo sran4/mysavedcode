@@ -196,6 +196,7 @@ body {
   border-radius: 30px;
   text-align: center;
   white-space: nowrap;
+  margin: 0 auto;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
