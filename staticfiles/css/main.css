@@ -645,6 +645,10 @@ pre {
   .cke_chrome {
     width: 600px !important;
   }
+
+  .mybu {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 499px) {
@@ -726,6 +730,9 @@ pre {
     color: rgb(255 251 251);
     letter-spacing: 0.1em;
     text-transform: uppercase;
+  }
+  .mybu {
+    font-size: 12px;
   }
   main {
     margin: 10px 0px;
