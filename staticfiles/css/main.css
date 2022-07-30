@@ -545,6 +545,10 @@ pre {
   display: block;
   width: 95%;
 }
+.mybu {
+  font-size: 16px;
+  padding: 10px 100px;
+}
 
 /* ++++++++++++++++ Media++++++++++++++++       */
 
