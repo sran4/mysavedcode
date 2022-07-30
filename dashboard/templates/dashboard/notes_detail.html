@@ -1,6 +1,6 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}{% load humanize %}
-<section style="background-color: #212529; margin-top: 0; padding-top: 0; border-radius: 2em">
-  <div class="content-section p-0 mt-1 cardd" style="background-color: #212529; border: None">
+<section style="background-color: #212529; margin: 0.5rem; padding-top: 0; border-radius: 2em">
+  <div class="content-section p-1 mt-1 cardd" style="background-color: #212529; border: None">
     <div id="fav-section">{% include 'dashboard/fav_section.html' %}</div>
     <div>
       <h2 class="myh2 text-center" style="letter-spacing: 0.1em; color: dodgerblue; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">
@@ -39,7 +39,7 @@
       </div>
     </div>
     <br />
-    <div class="m-1" style="background-color: #212529; color: ashwhite">
+    <div class="m-1" style="background-color: #212529; padding-left: 10px; color: ashwhite">
       <h2 style="font-size: 16px; color: #d97cee; text-transform: capitalize">{{note.notes_for_yourself | safe}}</h2>
       <hr style="background-color: #f0dfe7" />
       <p class="myh2" style="font-size: 16px; color: ashwhite">{{note.code_here | safe}}</p>
