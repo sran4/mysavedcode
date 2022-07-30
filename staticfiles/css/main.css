@@ -648,6 +648,7 @@ pre {
 
   .mybu {
     font-size: 16px;
+    padding: 10px 30px;
   }
 }
 
@@ -733,6 +734,7 @@ pre {
   }
   .mybu {
     font-size: 12px;
+    padding: 10px 20px;
   }
   main {
     margin: 10px 0px;
