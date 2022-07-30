@@ -1,0 +1,741 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+.container {
+  margin-bottom: 40px !important;
+}
+.container1 {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+main {
+  color: #a49abf !important;
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 0.12em !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  font-size: 1em !important;
+  margin: 10px 10px;
+}
+.loader {
+  position: fixed;
+  text-align: center;
+  font-size: 30px;
+  color: rgb(244, 236, 10);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+footer {
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(86, 93, 112, 0.2);
+}
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  background-color: rgb(6 8 13) !important;
+  /* background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%) !important; */
+}
+
+.card {
+  box-shadow: 5px 5px 5px rgb(0 0 0);
+  background-color: #56636c !important;
+}
+.cardd {
+  box-shadow: 0px 0px 5px 5px rgb(6 5 5);
+}
+
+.custom-header:hover {
+  background-color: rgb(44 145 162) !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: rgb(225, 221, 221);
+}
+input {
+  caret-color: rgb(129, 252, 6);
+}
+a:hover {
+  color: rgb(16, 11, 11) !important;
+}
+
+.card-header {
+  color: rgb(190, 189, 189) !important;
+  background: rgb(3 78 91) !important;
+  transition: 0.8s ease-in;
+}
+
+.card-header:hover {
+  background: rgb(3, 35, 41) !important;
+  color: whitesmoke !important;
+  transition: 0.8s ease-in;
+}
+
+.nav-link:hover {
+  background: dodgerblue !important;
+  color: rgb(15, 10, 10) !important;
+  transition: 0.8s ease;
+}
+
+.dropdown-menu {
+  color: #212529;
+  background-color: #9b8daf;
+}
+
+.icon-bar {
+  color: black;
+}
+
+.card h4 {
+  margin: 40px 40px 0 40px;
+  text-align: left;
+}
+
+.card h6 {
+  margin: 25px 40px 0 40px;
+  text-align: left;
+}
+
+.card p {
+  text-align: right;
+  margin-right: 50px;
+  line-height: 10px;
+}
+
+.button {
+  display: inline-block;
+  font-family: 'Montserrat', 'Trebuchet MS', Helvetica, sans-serif;
+  padding: 0.8em 1.4em;
+  padding-right: 4.7em;
+  background: #009ed8;
+  border: none;
+  color: rgb(21, 18, 18);
+}
+
+.card img {
+  height: 120px;
+}
+
+/* .card:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: 0.5s ease;
+} */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  color: #a49abf !important;
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  font-size: 1em !important;
+}
+
+body {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5)); */
+  /*background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)*/
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-color: rgb(0 0 0 / 90%) !important;
+  color: #a49abf !important;
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  font-size: 1em !important;
+}
+
+/* bootrap spinner on every page div in base.html */
+#loading {
+  position: fixed;
+  text-align: center;
+  top: 42%;
+  left: 45%;
+  z-index: 9999;
+  width: 130px;
+  height: 130px;
+}
+
+.btnn {
+  @extend .transition:;
+  position: relative;
+  display: inline-block;
+  margin: 0.5em;
+  padding: 0.5em 0.5em;
+  border: 1px solid;
+  border-radius: 30px;
+  background-color: #739600;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 32px;
+  color: darkred;
+}
+.btnnn {
+  @extend .transition:;
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 0.5em;
+  border-radius: 30px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+  color: rgb(178, 174, 174);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  border-color: rgb(12, 9, 9) !important;
+}
+
+.myimage {
+  opacity: 1;
+  display: block;
+  transition: 0.8s ease;
+  backface-visibility: hidden;
+}
+
+.card:hover {
+  opacity: 1.1;
+  transform: scale(1.2);
+  transition: 0.8s ease;
+  cursor: pointer;
+}
+
+/* .col-md-3 .card {
+  width: 100%;
+  height: 100%;
+} */
+
+.btn:hover {
+  background: rgb(26, 80, 89);
+  color: white;
+  border: 1px solid rgb(241, 241, 245);
+  opacity: 1.1;
+  transform: scale(1.2);
+  transition: 0.8s ease;
+  cursor: pointer;
+}
+.btnnn:hover {
+  border: 1px solid rgb(241, 241, 245);
+  cursor: pointer;
+}
+
+.fa:hover {
+  color: rgb(26, 80, 89);
+}
+
+.profa {
+  color: black;
+}
+
+footer .container-fluid {
+  padding: 10vmin 10vmin;
+}
+
+footer .column a + a {
+  padding: 0 0.7em;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+/* 
+.content-section a:hover {
+    background: red;
+} */
+
+.account-img {
+  height: 125px !important;
+  width: 125px !important;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.add1 {
+  float: right !important;
+  margin-left: 25px;
+  /* margin-top: 20px; */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgb(203, 202, 215);
+}
+.add1:hover {
+  opacity: 0.9;
+  transform: scale(1.25);
+  transition: 0.8s ease;
+}
+.myPlus {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  float: right;
+}
+.myPlus:hover {
+  opacity: 0.9;
+  transform: scale(1.5);
+  transition: 0.8s ease;
+  background-color: rgb(34, 57, 125);
+}
+a .myP:hover {
+  opacity: 0.9;
+  transform: scale(1);
+  transition: 0.8s ease;
+  color: rgb(26, 81, 136) !important;
+}
+
+.myPlusD {
+  background-color: DodgerBlue;
+  display: flex;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  justify-content: center;
+}
+.myPlusD:hover {
+  opacity: 0.9;
+  transform: scale(1.5);
+  transition: 0.8s ease;
+  background-color: rgb(34, 57, 125);
+}
+
+.alert {
+  positition: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0px);
+  transition: visibility 0s, opacity 250ms, transform 250ms;
+  padding: 0rem 0rem !important;
+}
+.alert.hide {
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px); // translateX, translateY, translateZ works well
+  transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
+}
+.alert-success {
+  color: ashwhite;
+  background-color: #18013f;
+  border-color: #b9d610;
+}
+
+.searchRounded {
+  border-radius: 25px;
+  border: 2px solid #609;
+  padding: 15px;
+  width: 350px;
+  height: 20px;
+  background: rgb(70 65 72);
+}
+
+.btn-group-sm > .btn,
+.btn-sm {
+  padding: 0.2rem 0.2rem;
+  font-size: 0.275rem;
+  line-height: 0.9;
+  border-radius: 1rem;
+}
+.fa {
+  color: #ecdfdf;
+}
+
+.card p {
+  margin-right: 0px;
+  line-height: 11px;
+  margin: 0px;
+}
+.cardd p {
+  margin-right: 0px;
+  line-height: 16px;
+  margin-bottom: 3rem;
+}
+
+pre {
+  color: #b1aac5 !important;
+}
+
+.clock {
+  position: absolute;
+  top: 90%;
+  left: 18%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #ffffff;
+  font-size: 12px;
+  font-family: Orbitron;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.mb-5,
+.my-5 {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Search Button */
+
+.buttonn {
+  display: inline-block;
+  margin: 4px 2px;
+  background-color: rgb(24 38 40);
+  font-size: 14px;
+  padding-left: 32px;
+  padding-right: 32px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.buttonnn {
+  background-color: rgb(24 38 40);
+}
+.buttonn:hover {
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  background-color: rgb(24 38 40);
+  color: black;
+}
+
+.search-containerr {
+  position: relative;
+  display: inline-block;
+  margin: 4px 200px 50px;
+  height: 50px;
+  width: 50px;
+  vertical-align: bottom;
+}
+
+.mglass {
+  display: inline-block;
+  pointer-events: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+}
+
+.searchbuttonn {
+  position: absolute;
+  font-size: 22px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.searchh:focus + .searchbuttonn {
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  background-color: rgb(24 38 40);
+  color: black;
+}
+
+.searchh {
+  position: absolute;
+  left: 49px; /* Button width-1px (Not 50px/100% because that will sometimes show a 1px line between the search box and button) */
+  background-color: rgb(24 38 40);
+  outline: none;
+  color: whitesmoke !important;
+  border: none;
+  padding: 0;
+  width: 0;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  height: 100%;
+  z-index: 10;
+  transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+}
+
+.searchh:focus {
+  width: 400px; /* Bar width+1px */
+  padding: 0 16px 0 0;
+}
+
+.expandright {
+  left: auto;
+  right: 49px; /* Button width-1px */
+}
+
+.expandright:focus {
+  padding: 0 0 0 16px;
+}
+
+pre {
+  color: #a49abf !important;
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 0.1em !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  font-size: 1em !important;
+  display: block !important;
+  white-space: pre !important;
+  margin: 10px 10px !important;
+  text-align: lef !important;
+  overflow: auto !important;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #2b7734 !important;
+  border-color: #17a2b8;
+}
+
+.cke_chrome {
+  width: 1100px !important;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #576b6e;
+  border-color: #17a2b8;
+}
+
+.btn-block {
+  display: block;
+  width: 95%;
+}
+
+/* ++++++++++++++++ Media++++++++++++++++       */
+
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  .container1 {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  html {
+    /* font-size: 8px; */
+    font-size: 90%;
+  }
+  .searchRounded {
+    padding: 15px;
+    width: 210px;
+    height: 10px;
+  }
+  .clock {
+    left: 30%;
+    top: 90%;
+  }
+  .myPlus {
+    font-size: 15px;
+  }
+  .codeCount {
+    font-size: 20px;
+  }
+
+  .search-containerr {
+    margin: 5px 50px 40px;
+    height: 50px;
+    width: 100px;
+  }
+  .searchbuttonn {
+    position: absolute;
+    font-size: 20px;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  .searchh:focus {
+    width: 250px; /* Bar width+1px */
+    padding: 0 16px 0 0;
+  }
+
+  .font-weight-bold {
+    font-weight: 400 !important;
+  }
+  element.style {
+    font-size: 8px;
+  }
+  .myh2 {
+    font-size: 20px;
+  }
+
+  .btnn {
+    @extend .transition:;
+    position: relative;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 0.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    background-color: #739600;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px;
+    color: darkred;
+  }
+  .btnnn {
+    @extend .transition:;
+    position: relative;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 0.5em;
+    border-radius: 30px;
+    background-color: #739600;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 16px;
+    color: rgb(178, 174, 174);
+  }
+  .PNF {
+    font-size: 30px;
+    color: #e9e4d4;
+  }
+
+  .cke_chrome {
+    width: 600px !important;
+  }
+}
+
+@media (max-width: 499px) {
+  .searchRounded {
+    padding: 15px;
+    width: 150px;
+    height: 10px;
+  }
+  .codeCount {
+    font-size: 12px;
+  }
+  .clock {
+    left: 40%;
+    top: 93%;
+  }
+  .myPlus {
+    font-size: 10px;
+  }
+
+  .search-containerr {
+    margin: 5px 10px 50px;
+    height: 50px;
+    width: 100px;
+  }
+  .searchbuttonn {
+    position: absolute;
+    font-size: 20px;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    color: white;
+  }
+  .searchh:focus {
+    width: 150px; /* Bar width+1px */
+    padding: 0 16px 0 0;
+  }
+
+  .font-weight-bold {
+    font-weight: 400 !important;
+  }
+  .myh2 {
+    font-size: 16px;
+  }
+  .myD {
+    display: none;
+  }
+
+  element.style {
+    font-size: 8px;
+  }
+  .btnn {
+    @extend .transition:;
+    position: relative;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em 0.5em;
+    border: 1px solid;
+    border-radius: 30px;
+    background-color: #739600;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 12px;
+    color: darkred;
+  }
+  .PNF {
+    font-size: 20px;
+    color: #e9e4d4;
+  }
+  .btnnn {
+    @extend .transition:;
+    position: relative;
+    display: inline-block;
+    padding: 0.5em 0.5em;
+    border-radius: 30px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: rgb(178, 174, 174);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  main {
+    margin: 10px 0px;
+  }
+  .myP {
+    font-size: 1.5rem;
+  }
+  .cke_chrome {
+    width: 300px !important;
+  }
+}

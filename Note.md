@@ -1,4 +1,5 @@
 Updated Site in 4 steps First Activate Virtual environment\_ VENV\Scripts\activate
+NOTE .env File \_ MAKE SURE NO SPACES BEFORE OR AFTER =
 cd src
 git add .
 git commit -m "message"

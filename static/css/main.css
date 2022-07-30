@@ -540,6 +540,11 @@ pre {
   border-color: #17a2b8;
 }
 
+.btn-block {
+  display: block;
+  width: 95%;
+}
+
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
