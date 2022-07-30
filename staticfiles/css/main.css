@@ -200,7 +200,7 @@ body {
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
-  color: rgb(178, 174, 174);
+  color: rgb(247, 247, 247);
   letter-spacing: 0.13em;
   text-transform: uppercase;
   border-color: rgb(12, 9, 9) !important;
@@ -546,7 +546,6 @@ pre {
   width: 95%;
 }
 
-
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
@@ -636,7 +635,7 @@ pre {
     cursor: pointer;
     font-family: 'Montserrat', sans-serif !important;
     font-size: 16px;
-    color: rgb(178, 174, 174);
+    color: rgb(255 251 251);
   }
   .PNF {
     font-size: 30px;
@@ -724,7 +723,7 @@ pre {
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
-    color: rgb(178, 174, 174);
+    color: rgb(255 251 251);
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
