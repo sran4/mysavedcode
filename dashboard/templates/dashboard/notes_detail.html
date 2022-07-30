@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="m-1" style="background-color: #212529; color: ashwhite; padding-top: 2px">
-      <div class="row mydetailRow">
+      <div class="row">
         <div class="col">
           <a href="{% url 'notes' %}">
             <i class="fa fa-home fa-1x" style="font-size: 25px; float: left; margin: 15px; color: #d97cee"></i>
@@ -39,7 +39,7 @@
       </div>
     </div>
     <br />
-    <div class="m-3" style="background-color: #212529; color: ashwhite">
+    <div class="m-1" style="background-color: #212529; color: ashwhite">
       <h2 style="font-size: 16px; color: #d97cee; text-transform: capitalize">{{note.notes_for_yourself | safe}}</h2>
       <hr style="background-color: #f0dfe7" />
       <p class="myh2" style="font-size: 16px; color: ashwhite">{{note.code_here | safe}}</p>
