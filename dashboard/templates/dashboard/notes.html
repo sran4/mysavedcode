@@ -37,10 +37,17 @@
               {{note.language|striptags|upper|truncatechars:22}} 
             </div>
             <div class="card-body pt-2 pb-2" style="font-size: 11px; padding: 0.5rem; text-transform: capitalize">{{note.noted|striptags }}</div>
-            <div class="card-footer mt-auto pt-2 pb-2 myh2" style="padding: 1rem">
-              <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: DarkGreen"></i></a>
-              <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: #3f0000"></i></a>
-              <a class="font-weight-bold" style="font-size: 8px; float: right; padding-right: 60px; color: #f8f9fa;">{{ note.updated_at|date:"F d, Y" }}</a>
+
+            <div class="row card-footer mt-auto pt-2 pb-2" >
+              <div class='col-2'>
+              <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px;  color: DarkGreen"></i></a>
+              </div>
+              <div class='col-8' style="text-align: center">
+                 <a class="font-weight-bold" style="font-size: 8px;  color: #f8f9fa;">{{ note.updated_at|date:"F d, Y" }}</a>            
+              </div>
+              <div class='col-2'>
+               <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px;  color: #3f0000"></i></a>
+              </div>
             </div>
           </div>
         </a>
