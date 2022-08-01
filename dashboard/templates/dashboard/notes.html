@@ -38,11 +38,11 @@
             </div>
             <div class="card-body pt-2 pb-2" style="font-size: 11px; padding: 0.5rem; text-transform: capitalize">{{note.noted|striptags }}</div>
 
-            <div class="row card-footer mt-auto pt-2 pb-2" >
+            <div class="row card-footer mt-auto p-3" style="text-align: center">
               <div class='col-2'>
               <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px;  color: DarkGreen"></i></a>
               </div>
-              <div class='col-8' style="text-align: center">
+              <div class='col-7'>
                  <a class="font-weight-bold" style="font-size: 8px;  color: #f8f9fa;">{{ note.updated_at|date:"F d, Y" }}</a>            
               </div>
               <div class='col-2'>
