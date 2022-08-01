@@ -749,4 +749,9 @@ pre {
   .cke_chrome {
     width: 300px !important;
   }
+
+  .myCol {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
