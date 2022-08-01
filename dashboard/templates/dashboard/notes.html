@@ -40,7 +40,7 @@
             <div class="card-footer mt-auto pt-2 pb-2 myh2" style="padding: 1rem">
               <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; float: left; color: DarkGreen"></i></a>
               <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; float: right; color: #3f0000"></i></a>
-              <a class="font-weight-bold" style="font-size: 8px; float: right; padding-right: 60px; color: black">{{ note.updated_at|date:"F d, Y" }}</a>
+              <a class="font-weight-bold" style="font-size: 8px; float: right; padding-right: 60px; color: #f8f9fa;">{{ note.updated_at|date:"F d, Y" }}</a>
             </div>
           </div>
         </a>
