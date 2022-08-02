@@ -7,7 +7,7 @@ from django.conf.urls.static import static
 from django.conf.urls import (
     handler400, handler403, handler404, handler500
 )
-
+from ckeditor_uploader.views import ImageUploadView
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
@@ -17,6 +17,8 @@ urlpatterns = [
     path('securelogin/', admin.site.urls),
     path('', include('dashboard.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('images/',ImageUploadView.as_view(),name='image-upload'),
+    
     path('register/', dash_views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name="dashboard/login.html"), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name="dashboard/logout.html"), name='logout'),
