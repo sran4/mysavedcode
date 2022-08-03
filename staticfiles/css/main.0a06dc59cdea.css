@@ -152,7 +152,7 @@ body {
   /*background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%)*/
   overflow-x: hidden;
   background-repeat: no-repeat;
-  background-color: rgb(35 36 45 / 90%) !important;
+  background-color: rgb(34 34 34 / 90%) !important;
   color: #a49abf !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
