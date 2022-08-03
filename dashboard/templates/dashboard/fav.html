@@ -12,8 +12,8 @@
     {% endfor %}
   </datalist>
   <a href="{% url 'notes' %}"
-    ><button type="button" class="btn" style="border-radius: 20px; background: rgb(7 62 71); color: #e9e4d4">
-      ({{allNotes_count}}) <i class="fa fa-home fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: white"></i> Codes
+    ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
+      ( {{allNotes_count}} ) <i class="fa fa-home fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkgreen"></i> Codes
     </button>
   </a>
 
@@ -34,7 +34,7 @@
           <div class="card-body" style="padding: 0.2em">
             <p style="text-align: center; padding: 0.2em; font-weight: bold; font-size: 11px">{{note.language|upper|truncatechars:16}}</p>
             <hr style="margin: 1px" />
-            <p class="textControl" style="text-align: left; text-transform: capitalize;padding-top:8px; font-size: 11px">{{note.notes_for_yourself|safe }}</p>
+            <p class="textControl" style="text-align: left; text-transform: capitalize; padding-top: 8px; font-size: 11px">{{note.notes_for_yourself|safe }}</p>
           </div>
         </div>
       </a>
