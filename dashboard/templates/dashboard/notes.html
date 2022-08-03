@@ -36,7 +36,7 @@
              {% if note.fav %} <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: #3f0000"></i> {% endif %}
               {{note.language|striptags|upper|truncatechars:22}} 
             </div>
-            <div class="card-body pt-2 pb-2 textControl" style="font-size: 11px; padding: 0.5rem; text-transform: capitalize">{{note|striptags }}</div>
+            <div class="card-body pt-2 pb-2 textControl" style="font-size: 11px; padding: 0.5rem; text-transform: capitalize">{{note.notes_for_yourself|striptags }}</div>
 
             <div class="row  mt-auto" style="text-align: center; background-color: #5995bf; margin:0;">
               <div class='col-2'>
