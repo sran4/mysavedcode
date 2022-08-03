@@ -4,7 +4,7 @@ from .models import Homework, Notes, Todo
 
 
 class NoteAdmin(admin.ModelAdmin):
-    list_display = ('id', 'language ', 'slug', 'created_at', 'updated_at')
+    list_display = ('id', 'language', 'slug', 'created_at', 'updated_at')
 
 
 admin.site.register(Notes, NoteAdmin)
