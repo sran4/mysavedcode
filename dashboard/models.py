@@ -19,8 +19,8 @@ class Notes(models.Model):
         verbose_name = "notes"
         verbose_name_plural = "notes"
 
-    def noted(self):
-        return self.notes_for_yourself[:80]
+    # def noted(self):
+    #     return self.notes_for_yourself[:80]
 
     def __str__(self):
         return self.language

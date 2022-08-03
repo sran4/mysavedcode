@@ -15,7 +15,7 @@
 
     <a href="{% url 'favs-notes' %}"
       ><button type="button" class="btn" style="border-radius: 20px; background: rgb(7 62 71); color:#E9E4D4">({{favNotes_count}})
-        <i class="fa fa-heart fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: #3f0000"></i> Codes
+        <i class="fa fa-heart fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color:white"></i> Codes
       </button>
     </a>
 
@@ -31,19 +31,19 @@
       {% for note in notes %}
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
         <a href="{% url 'notes_detail' note.id %}">
-          <div class="card myh2" style="height: 192px">
+          <div class="card myh2" style="height: 152px">
             <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; font-weight: bold; text-align: center; font-size: 11px">
              {% if note.fav %} <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: #3f0000"></i> {% endif %}
               {{note.language|striptags|upper|truncatechars:22}} 
             </div>
-            <div class="card-body pt-2 pb-2" style="font-size: 11px; padding: 0.5rem; text-transform: capitalize">{{note.noted|striptags }}</div>
+            <div class="card-body pt-2 pb-2 textControl" style="font-size: 11px; padding: 0.5rem; text-transform: capitalize">{{note|striptags }}</div>
 
-            <div class="row card-footer mt-auto p-3" style="text-align: center">
+            <div class="row  mt-auto" style="text-align: center; background-color: #5995bf; margin:0;">
               <div class='col-2'>
               <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px;  color: DarkGreen"></i></a>
               </div>
               <div class='col-7'>
-                 <a class="font-weight-bold" style="font-size: 8px;  color: #f8f9fa;">{{ note.updated_at|date:"F d, Y" }}</a>            
+                 <a class="font-weight-bold" style="font-size: 6px;  color: #f8f9fa;">{{ note.updated_at|date:"F D, Y" }}</a>            
               </div>
               <div class='col-2'>
                <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px;  color: #3f0000"></i></a>

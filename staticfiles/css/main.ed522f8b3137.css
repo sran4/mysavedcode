@@ -551,9 +551,8 @@ pre {
 }
 
 .textControl {
-   overflow: hidden;       
+   overflow: auto;       
    text-overflow: ellipsis;
-   
    display: -webkit-box;
    -webkit-line-clamp: 4; /* number of lines to show */           
    -webkit-box-orient: vertical;
