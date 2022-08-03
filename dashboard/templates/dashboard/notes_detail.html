@@ -52,11 +52,11 @@
 <script type="text/javascript" language="javascript">
   $(document).on('click', '#fav', function (event) {
     event.preventDefault()
-    var pk = $(this).attr('value')
+    var slug = $(this).attr('value')
     $.ajax({
       type: 'POST',
-      url: '{% url "notes_detail"  note.pk %}',
-      data: { code_id: pk, csrfmiddlewaretoken: '{{ csrf_token }}' },
+      url: '{% url "notes_detail"  note.slug %}',
+      data: { slug: slug, csrfmiddlewaretoken: '{{ csrf_token }}' },
       dataType: 'json',
       success: function (response) {
         $('#fav-section').html(response['form'])

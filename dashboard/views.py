@@ -77,8 +77,8 @@ def favs_notes(request):
     # '''
 
 
-def NotesDetailView(request, code_id):
-    note = get_object_or_404(Notes, pk=code_id)
+def NotesDetailView(request, slug):
+    note = get_object_or_404(Notes, slug=slug)
     print('notes', notes)
     if request.method == "POST" and request.is_ajax():
         print("passed post test")
@@ -88,7 +88,7 @@ def NotesDetailView(request, code_id):
         else:
             note.fav = True
             note.save()
-        return redirect('notes_detail', note.pk)
+        return redirect('notes_detail', note.slug)
     context = {'note': note}
     if request.is_ajax():
         html = render_to_string('dashboard/fav_section.html',
@@ -97,20 +97,20 @@ def NotesDetailView(request, code_id):
     return render(request, 'dashboard/notes_detail.html', context)
 
 
-@login_required
-def NotesDetailViewT(request, code_id):
-    note = get_object_or_404(Notes, pk=code_id)
-    print('note', note)
-    if request.method == "POST":
-        if note.fav == True:
-            note.fav = False
-            note.save()
-        else:
-            note.fav = True
-            note.save()
-        return redirect('notes_detail', note.pk)
-    context = {'note': note}
-    return render(request, 'dashboard/notes_detail.html', context)
+# @login_required
+# def NotesDetailViewT(request, code_id):
+#     note = get_object_or_404(Notes, pk=code_id)
+#     print('note', note)
+#     if request.method == "POST":
+#         if note.fav == True:
+#             note.fav = False
+#             note.save()
+#         else:
+#             note.fav = True
+#             note.save()
+#         return redirect('notes_detail', note.pk)
+#     context = {'note': note}
+#     return render(request, 'dashboard/notes_detail.html', context)
 
 
 @login_required

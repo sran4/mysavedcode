@@ -1,12 +1,12 @@
 {% load static %} {% if request.user.is_authenticated %}
 <div class="text-center">
   {% if note.fav %}
-  <form action="{% url 'notes_detail' note.pk %}" method="POST">
+  <form action="{% url 'notes_detail' note.slug %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
       <button
         id="fav"
-        value="{{ note.pk }}"
+        value="{{ note.slug }}"
         class="btn btn-info btn-large mybu"
         style="background: #265b25; letter-spacing: 0.1rem; text-transform: uppercase; margin-top: 10px; border-radius: 30px; color: ashwhite"
       >
@@ -15,12 +15,12 @@
     </div>
   </form>
   {% else %}
-  <form action="{% url 'notes_detail' note.pk %}" method="POST">
+  <form action="{% url 'notes_detail' note.slug %}" method="POST">
     {% csrf_token %}
     <div class="form-group">
       <button
         id="fav"
-        value="{{ note.pk }}"
+        value="{{ note.slug }}"
         class="btn btn-danger btn-large mybu"
         style="background: #3f0000; letter-spacing: 0.1rem; text-transform: uppercase; margin-top: 10px; border-radius: 30px; color: ashwhite"
       >

@@ -12,7 +12,7 @@ urlpatterns = [
     # path('notes_detail/<int:pk>',
     #      views.NotesDetailView.as_view(), name='notes_detail'),
 
-    path('Code-Detail/<int:code_id>/',
+    path('Code-Detail/<slug:slug>/',
          views.NotesDetailView, name='notes_detail'),
 
     path('assemblies/', views.homework, name='home-work'),
