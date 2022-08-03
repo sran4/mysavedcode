@@ -5,8 +5,42 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
+import random
+import string
+from django.utils.text import slugify
+from django.db.models.signals import pre_save
+
+
+def random_string_generator(size=10, chars=string.ascii_lowercase + string.ascii_uppercase + string.digits):
+    return ''.join(random.choice(chars) for _ in range(size))
+
+
+def unique_slug_generator(instance, new_slug=None):
+    """
+    This is for a Django project and it assumes your instance
+    has a model with a slug field and a title character (char) field.
+    Just change the '_name' line below to fit your needs.
+    """
+    if new_slug is not None:
+        slug = new_slug
+    else:
+        slug = slugify(instance.language)
+
+    Klass = instance.__class__
+    qs_exists = Klass.objects.filter(slug=slug).exists()
+    if qs_exists:
+        new_slug = "{slug}-{randstr}".format(
+            slug=slug,
+            randstr=random_string_generator(size=4)
+        )
+        return unique_slug_generator(instance, new_slug=new_slug)
+
+    return slug
+
+
 class Notes(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    slug = models.CharField(max_length=130, blank=True, null=True)
     language = models.CharField(max_length=200)
     # code_here = RichTextField(blank=True)
     code_here = RichTextUploadingField(config_name='portal_config')
@@ -24,6 +58,14 @@ class Notes(models.Model):
 
     def __str__(self):
         return self.language
+
+
+def Notes_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
+
+
+pre_save.connect(Notes_pre_save_receiver, sender=Notes)
 
 
 class Homework(models.Model):
