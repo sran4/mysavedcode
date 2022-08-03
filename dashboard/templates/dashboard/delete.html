@@ -1,12 +1,12 @@
 {% extends 'dashboard/base.html' %} {% load static %}  {% block content %}
 <br><br><br>
-<div class="container1 card text-center mt-5 mb-5">    
+<div class="container1 card text-center text-dark mt-5 mb-5">    
   <form method="POST" action="">
     {% csrf_token %}
     <p><h3>Are you sure you want to delete "{{obj}}"?</h3></p>
-
-    <a class="btn btn-outline-info mb-5" href="{{request.META.HTTP_REFERER}}">Cancel</a><br>
-    <input class="btn btn-danger mb-5" type="submit" value="Confirm" />
+<div class="d-grid gap-2 d-md-flex" style="justify-content: center; padding-left:20px; margin-left:3rem;">
+    <a class="btn btn-success m-1" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+   <input class="btn btn-warning m-1" type="submit" value="Confirm" /></div>
   </form>
 
 
