@@ -40,8 +40,7 @@ def notes(request, c_slug=None):
         q = request.GET.get('q') if request.GET.get('q') != None else ''
         notes = Notes.objects.filter(user=request.user).filter(
             Q(language__icontains=q) |
-            Q(notes_for_yourself__icontains=q) |
-            Q(code_here__icontains=q)).order_by('-updated_at')
+            Q(notes_for_yourself__icontains=q)).order_by('-updated_at')
 
     favNotes_count = Notes.objects.filter(
         user=request.user, fav=True).count()
@@ -83,7 +82,7 @@ def favs_notes(request):
 @login_required
 def top_notes(request):
     top_page = 'top'
-    
+
     allNotes_count = Notes.objects.filter(user=request.user).count()
     top = Notes.objects.filter(user=request.user, top=True)
 
@@ -92,8 +91,7 @@ def top_notes(request):
     paginator = Paginator(top, 40)
     page = request.GET.get('page')
     top = paginator.get_page(page)
- 
-    
+
     context = {'favs': top,
                'favs_count': top_count,
                'allNotes_count': allNotes_count,
