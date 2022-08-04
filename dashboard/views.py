@@ -82,12 +82,9 @@ def favs_notes(request):
 @login_required
 def top_notes(request):
     top_page = 'top'
-
     allNotes_count = Notes.objects.filter(user=request.user).count()
     top = Notes.objects.filter(user=request.user, top=True)
-
     top_count = top.count()
-
     paginator = Paginator(top, 40)
     page = request.GET.get('page')
     top = paginator.get_page(page)
@@ -98,6 +95,32 @@ def top_notes(request):
                'page': top_page,
                }
     return render(request, 'dashboard/fav.html', context)
+
+
+@login_required
+def tag_notes(request, slug=None):
+
+    allNotes_count = Notes.objects.filter(user=request.user).count()
+
+    tags_Notes = None
+    if slug != None:
+        tags_Notes = Notes.objects.filter(tags__slug=slug)
+    else:
+        tags_Notes = Notes.objects.filter(user=request.user)
+    tags = Tag.objects.all()
+
+    top_count = tags.count()
+    paginator = Paginator(tags_Notes, 40)
+    page = request.GET.get('page')
+    tags_Notes = paginator.get_page(page)
+
+    context = {'favs': tags_Notes,
+               'tags': tags,
+               'favs_count': top_count,
+               'allNotes_count': allNotes_count,
+
+               }
+    return render(request, 'dashboard/tags.html', context)
 
 
 # class NotesDetailView(LoginRequiredMixin, generic.DetailView):

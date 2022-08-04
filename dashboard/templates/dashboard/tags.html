@@ -1,0 +1,75 @@
+{% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+
+<div class="container myh2">
+  <div style="margin-bottom: 20px">
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Tags by File Names Page</h3>
+
+    {% for note in tags %}
+    <a href="{% url 'tag' note.slug %}">
+      <button class="btn-xs pt-0 pb-0 mr-1 mb-1 text-light" style="border-radius: 50px; background-color: #4b86af; text-transform: uppercase; font-size: 10px">{{note.name}}</button>
+    </a>
+    {% endfor %}
+  </div>
+  <form class="search-form" style="margin: auto; appearance: none; max-width: fit-content" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
+    <input type="text" class="searchRounded form-control" list="favs" name="q" placeholder="Search Snippets..." />
+    <label class="buttonnn searchbuttonnF" for="searchleft"></label>
+  </form>
+
+  <datalist id="favs">
+    {% for note in favs %}
+    <option value="{{note.language}}"></option>
+    {% endfor %}
+  </datalist>
+  <a href="{% url 'notes' %}"
+    ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
+      ( {{allNotes_count}} ) <i class="fa fa-home fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkgreen"></i> Codes
+    </button>
+  </a>
+
+  <a href="{% url 'create-note' %}"
+    ><button class="myPlus"><i class="fa fa-plus"></i></button
+  ></a>
+  {% if page == "top" %}
+  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} {{page}}saved snippets in your Top Favourites</h4>
+  {% else %}
+  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Favourites</h4>
+  {% endif %}
+  <div class="row">
+    {% if favs %} {% for note in favs %}
+    <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4">
+      <a href="{% url 'notes_detail' note.slug %}">
+        <div
+          class="card"
+          style="margin-right: 0px; background-color: ashwhite; color: DarkBrown; height: 90px"
+          onmouseover="this.style.color='white';"
+          onmouseout="this.style.color='';"
+        >
+          <div class="card-body" style="padding: 0.2em">
+            <p style="text-align: center; padding: 0.2em; font-weight: bold; font-size: 11px">{{note.language|upper|truncatechars:16}}</p>
+            <hr style="margin: 1px" />
+            <p class="textControl" style="text-align: left; text-transform: capitalize; padding-top: 8px; font-size: 11px">{{note.notes_for_yourself|safe }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %} {% endif %}
+    <br /><br />
+  </div>
+  <div class="row">
+    <div class="mx-auto">
+      {% if favs.has_previous %}
+      <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
+      <a class="btn btn-outline-info mb-5" href="?page={{favs.previous_page_number }}">Previous</a>
+      {% endif %} {% for num in favs.paginator.page_range %} {% if favs.number == num %}
+      <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
+      {% elif num > favs.number|add:'-3' and num < favs.number|add:'3' %}
+      <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
+      {% endif %} {% endfor %} {% if favs.has_next %}
+      <a class="btn btn-outline-info mb-5" href="?page={{ favs.next_page_number }}">Next</a>
+      <a class="btn btn-outline-info mb-5" href="?page={{ favs.paginator.num_pages }}">Last</a>
+      {% endif %}
+    </div>
+  </div>
+
+  {% endblock content %}
+</div>
