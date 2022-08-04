@@ -29,11 +29,9 @@
   <a href="{% url 'create-note' %}"
     ><button class="myPlus"><i class="fa fa-plus"></i></button
   ></a>
-  {% if page == "top" %}
-  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} {{page}}saved snippets in your Top Favourites</h4>
-  {% else %}
-  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Favourites</h4>
-  {% endif %}
+
+  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Tags page</h4>
+
   <div class="row">
     {% if favs %} {% for note in favs %}
     <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4">
