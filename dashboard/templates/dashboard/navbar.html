@@ -44,16 +44,13 @@
             </ul>
           </div>
 
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile'%}">Profile</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Options </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href='{% url "notes" %}'>Code Snippets</a>
               <a class="dropdown-item" href='{% url "todo" %}'>To-do</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href='{% url "conversion" %}'>Conversion</a>
+              <a class="dropdown-item" href='{% url "password" %}'>Generate Password</a>
               <a class="dropdown-item" href='{% url "home-work" %}'>Assemblies</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'dictionary'%}">Dictionary</a>
@@ -62,8 +59,10 @@
               <a class="dropdown-item" href='{% url "books" %}'>Books</a>
               <a class="dropdown-item" href='{% url "wiki" %}'>Wikipedia</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href='{% url "password" %}'>Generate Password</a>
               <a class="dropdown-item" href='{% url "password" %}'>Find your Age</a>
+              <a class="dropdown-item" href='{% url "conversion" %}'>Conversion</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'profile'%}">Profile</a>
             </div>
           </li>
           <li class="nav-item nav-link">Welcome {{ request.user.username|capfirst}}!</li>
