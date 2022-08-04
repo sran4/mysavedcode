@@ -60,10 +60,12 @@ class Notes(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True)
     language = models.CharField(max_length=200,)
+    tags = models.ManyToManyField('Tag', blank=True, null=True)
     # code_here = RichTextField(blank=True)
     code_here = RichTextUploadingField(config_name='portal_config')
     notes_for_yourself = models.TextField()
     fav = models.BooleanField(default=False)
+    top = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -87,6 +89,15 @@ def Notes_pre_save_receiver(sender, instance, *args, **kwargs):
 
 
 pre_save.connect(Notes_pre_save_receiver, sender=Notes)
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=250, unique=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Homework(models.Model):
