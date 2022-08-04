@@ -1,7 +1,7 @@
 {% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
 <div class="container">
-  <div  class="search-containerr">
-    <form class="search-form action="{% url 'notes' %}" method="GET">
+  <div class="search-containerr">
+    <form class="search-form" action="{% url 'notes' %}" method="GET">
       <input class="searchh" id="searchleft" type="text" name="q" list="notes" placeholder="Search" />
       <label class="buttonn searchbuttonn searchbuttonnF" for="searchleft"><span class="mglass">&#9906;</span></label>
     </form>
@@ -14,43 +14,45 @@
     </datalist>
 
     <a href="{% url 'favs-notes' %}"
-      ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue; ">( {{favNotes_count}} )
-        <i class="fa fa-heart fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color:darkred"></i> Codes
+      ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
+        ( {{favNotes_count}} ) <i class="fa fa-heart fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkred"></i> Codes
       </button>
     </a>
 
     <a href="{% url 'create-note' %}"
       ><button class="myPlus"><i class="fa fa-plus"></i></button
     ></a>
-     {% if not Q %} 
-    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px"> {{notes_count}} saved snippets in your home </h3>
+    {% if not Q %}
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{notes_count}} saved snippets in your home</h3>
     {% else %}
-    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Your Search * {{Q}} * <br> Found {{notes_count}} Snippets</h3>
- {% endif %}
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">
+      Your Search * {{Q}} * <br />
+      Found {{notes_count}} Snippets
+    </h3>
+    {% endif %}
     <div class="row">
       {% for note in notes %}
       <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <a href="{% url 'notes_detail' note.slug %}">
-          <div class="card myh2" style="height: 132px">
+        <div class="card myh2" style="height: 132px">
+          <a href="{% url 'notes_detail' note.slug %}">
             <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; font-weight: bold; text-align: center; font-size: 11px">
-             {% if note.fav %} <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: #3f0000"></i> {% endif %}
-              {{note.language|striptags|upper|truncatechars:22}} 
+              {% if note.fav %}
+              <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: #3f0000"></i> {% endif %} {{note.language|striptags|upper|truncatechars:22}}
             </div>
-            <div class="textControl" style="text-align: left; text-transform: capitalize;padding-top:8px; padding-left:8px; font-size: 11px">{{note.notes_for_yourself }}</div>
-
-            <div class="row  mt-auto" style="text-align: center; background-color: #5995bf; margin:0;">
-              <div class='col-2'>
-              <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px;  color: DarkGreen"></i></a>
-              </div>
-              <div class='col-7'>
-                 <a class="font-weight-bold" style="font-size: 8px;  color: #f8f9fa;">{{ note.updated_at|date:"N d, y" }}</a>            
-              </div>
-              <div class='col-2'>
-               <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px;  color: #3f0000"></i></a>
-              </div>
+            <div class="textControl" style="text-align: left; text-transform: capitalize; padding-top: 8px; padding-left: 8px; font-size: 11px">{{note.notes_for_yourself }}</div>
+          </a>
+          <div class="row mt-auto" style="text-align: center; background-color: #5995bf; margin: 0">
+            <div class="col-2">
+              <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; color: DarkGreen"></i></a>
+            </div>
+            <div class="col-7">
+              <a class="font-weight-bold" style="font-size: 8px; color: #f8f9fa">{{ note.updated_at|date:"N d, y" }}</a>
+            </div>
+            <div class="col-2">
+              <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; color: #3f0000"></i></a>
             </div>
           </div>
-        </a>
+        </div>
       </div>
       {% endfor %}
       <br /><br />
@@ -71,5 +73,5 @@
       {% endif %}
     </div>
   </div>
-  {% endblock content %}
 </div>
+{% endblock content %}

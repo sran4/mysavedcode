@@ -5,7 +5,7 @@ from django.core.checks import messages
 from django.forms.widgets import FileInput
 from django.http import HttpResponseRedirect, JsonResponse, Http404
 from django.shortcuts import get_object_or_404, render, redirect
-# from .models import Notes, Homework
+from .models import Notes, Homework, Category
 from .forms import *
 from django.contrib import messages
 from django.views import generic
@@ -28,14 +28,25 @@ def handle404(request, exception):
 
 
 @login_required
-def notes(request):
-    q = request.GET.get('q') if request.GET.get('q') != None else ''
-    favNotes_count = Notes.objects.filter(user=request.user, fav=True).count()
-    notes = Notes.objects.filter(user=request.user).filter(
-        Q(language__icontains=q) |
-        Q(notes_for_yourself__icontains=q) |
-        Q(code_here__icontains=q)).order_by('-updated_at')
+def notes(request, c_slug=None):
+    c_page = None
+    notes = None
+    if c_slug != None:
+        c_page = get_object_or_404(Category, slug=c_slug)
+        q = c_page
+        notes = Notes.objects.filter(category=c_page)
+
+    else:
+        q = request.GET.get('q') if request.GET.get('q') != None else ''
+        notes = Notes.objects.filter(user=request.user).filter(
+            Q(language__icontains=q) |
+            Q(notes_for_yourself__icontains=q) |
+            Q(code_here__icontains=q)).order_by('-updated_at')
+
+    favNotes_count = Notes.objects.filter(
+        user=request.user, fav=True).count()
     notes_count = notes.count()
+    print('notes_count', notes_count, notes)
     paginator = Paginator(notes, 36)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
@@ -77,8 +88,12 @@ def favs_notes(request):
     # '''
 
 
-def NotesDetailView(request, slug):
-    note = get_object_or_404(Notes, slug=slug)
+def NotesDetailView(request,  note_slug):
+    try:
+        note = Notes.objects.get(slug=note_slug)
+    except Exception as e:
+        raise e
+
     print('notes', notes)
     if request.method == "POST" and request.is_ajax():
         print("passed post test")
@@ -142,7 +157,7 @@ def update_note(request, pk):
             form.save()
             messages.success(
                 request, f"{request.user.username.upper()} **{obj}** Code has been Updated Succcessfully!!!")
-            return redirect("notes_detail", obj.id)
+            return redirect("notes_detail", obj.slug)
         # return HttpResponseRedirect(request.path_info)
     else:
         form = NotesForm(instance=obj)

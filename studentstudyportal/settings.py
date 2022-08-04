@@ -34,14 +34,14 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# SECRET_KEY = 'django-insecure-x&ak@(!vbmv1_$p1feb0_k*m!c-9z&!(6zefx9#qr6^g41&i@^'
-# DEBUG = True
-# ALLOWED_HOSTS = []
+SECRET_KEY = 'django-insecure-x&ak@(!vbmv1_$p1feb0_k*m!c-9z&!(6zefx9#qr6^g41&i@^'
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 
 
-SECRET_KEY = env('DJANGO_SECRET_KEY')
-DEBUG = env('DJANGO_DEBUG')
-ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
+# SECRET_KEY = env('DJANGO_SECRET_KEY')
+# DEBUG = env('DJANGO_DEBUG')
+# ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
 
 
 # Application definition
@@ -58,9 +58,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'admin_honeypot',
-
     'django.contrib.humanize',  # date format in Code detail page
-
     'storages',
 
 
@@ -91,6 +89,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'dashboard.context_processors.menu_links',  # menu links
             ],
         },
     },
@@ -156,7 +155,7 @@ STATICFILES_DIRS = [BASE_DIR/'static']
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -282,7 +281,7 @@ MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIRR, 'images')
 
 
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
+#DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
 
 
 AWS_ACCESS_KEY_ID = os.environ.get('DJANGO_AWS_ACCESS_KEY_ID')

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from django.urls import reverse
 
 import random
 import string
@@ -38,10 +38,28 @@ def unique_slug_generator(instance, new_slug=None):
     return slug
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=250, unique=True, null=True)
+    slug = models.SlugField(max_length=250, unique=True, null=True)
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
+
+    def get_url(self):
+        return reverse('notes_by_category', args=[self.slug])
+
+    def __str__(self):
+        return '{}'.format(self.name)
+
+
 class Notes(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    slug = models.CharField(max_length=130, blank=True, null=True)
-    language = models.CharField(max_length=200)
+    slug = models.CharField(max_length=130, blank=True, null=True, unique=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True)
+    language = models.CharField(max_length=200,)
     # code_here = RichTextField(blank=True)
     code_here = RichTextUploadingField(config_name='portal_config')
     notes_for_yourself = models.TextField()
@@ -50,11 +68,14 @@ class Notes(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
+        ordering = ['-updated_at', '-created_at']
         verbose_name = "notes"
         verbose_name_plural = "notes"
 
     # def noted(self):
     #     return self.notes_for_yourself[:80]
+    def get_url(self):
+        return reverse('notes_detail', args=[self.category.slug, self.slug])
 
     def __str__(self):
         return self.language

@@ -6,6 +6,9 @@ from ckeditor.fields import RichTextFormField
 from django.contrib.auth.forms import UserCreationForm
 
 
+
+
+
 class NotesForm(forms.ModelForm):
     class Meta:
         model = Notes
