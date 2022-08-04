@@ -109,7 +109,7 @@ def tag_notes(request, slug=None):
         tags_Notes = Notes.objects.filter(user=request.user)
     tags = Tag.objects.all()
 
-    top_count = tags.count()
+    top_count = tags_Notes.count()
     paginator = Paginator(tags_Notes, 40)
     page = request.GET.get('page')
     tags_Notes = paginator.get_page(page)
