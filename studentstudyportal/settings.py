@@ -281,7 +281,7 @@ MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIRR, 'images')
 
 
-#DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
 
 
 AWS_ACCESS_KEY_ID = os.environ.get('DJANGO_AWS_ACCESS_KEY_ID')
