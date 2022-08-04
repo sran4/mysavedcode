@@ -20,7 +20,11 @@
   <a href="{% url 'create-note' %}"
     ><button class="myPlus"><i class="fa fa-plus"></i></button
   ></a>
-  <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Favourites</h3>
+  {% if page == "top" %}
+  <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} {{page}}saved snippets in your Top Favourites</h3>
+  {% else %}
+  <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} {{page}}saved snippets in your Favourites</h3>
+  {% endif %}
   <div class="row">
     {% for note in favs %}
     <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4">

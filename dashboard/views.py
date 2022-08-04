@@ -34,7 +34,7 @@ def notes(request, c_slug=None):
     if c_slug != None:
         c_page = get_object_or_404(Category, slug=c_slug)
         q = c_page
-        notes = Notes.objects.filter(user=request.user,category=c_page)
+        notes = Notes.objects.filter(user=request.user, category=c_page)
 
     else:
         q = request.GET.get('q') if request.GET.get('q') != None else ''
@@ -81,7 +81,9 @@ def favs_notes(request):
 
 
 @login_required
-def top_notes(request):   
+def top_notes(request):
+    top_page = 'top'
+    
     allNotes_count = Notes.objects.filter(user=request.user).count()
     top = Notes.objects.filter(user=request.user, top=True)
 
@@ -89,11 +91,13 @@ def top_notes(request):
 
     paginator = Paginator(top, 40)
     page = request.GET.get('page')
-    favs = paginator.get_page(page)
-
+    top = paginator.get_page(page)
+ 
+    
     context = {'favs': top,
                'favs_count': top_count,
-               'allNotes_count': allNotes_count
+               'allNotes_count': allNotes_count,
+               'page': top_page,
                }
     return render(request, 'dashboard/fav.html', context)
 
