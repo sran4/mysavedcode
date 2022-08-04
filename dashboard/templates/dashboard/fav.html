@@ -2,8 +2,11 @@
 
 <div class="container myh2">
   <div style="margin-bottom: 20px">
-    <h3 class="text-center">Favourites Page</h3>
-    {% for note in favs %}
+    {% if page == "top" %}
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Top Favourites Page</h3>
+    {% else %}
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Favourites Page</h3>
+    {% endif %} {% for note in favs %}
     <a href="{% url 'notes_detail' note.slug %}">
       <button class="btn-xs pt-0 pb-0 mr-1 mb-1 text-light" style="border-radius: 50px; background-color: #4b86af; text-transform: uppercase; font-size: 10px">{{note.language}}</button>
     </a>
@@ -29,9 +32,9 @@
     ><button class="myPlus"><i class="fa fa-plus"></i></button
   ></a>
   {% if page == "top" %}
-  <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} {{page}}saved snippets in your Top Favourites</h3>
+  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} {{page}}saved snippets in your Top Favourites</h4>
   {% else %}
-  <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} {{page}}saved snippets in your Favourites</h3>
+  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Favourites</h4>
   {% endif %}
   <div class="row">
     {% for note in favs %}
