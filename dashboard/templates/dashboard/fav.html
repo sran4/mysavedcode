@@ -1,7 +1,7 @@
 {% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
 
 <div class="container myh2">
-  <div>
+  <div style="margin-bottom: 20px">
     <h3 class="text-center">Favourites Page</h3>
     {% for note in favs %}
     <a href="{% url 'notes_detail' note.slug %}">
