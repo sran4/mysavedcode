@@ -44,7 +44,7 @@ def notes(request, c_slug=None):
 
     favNotes_count = Notes.objects.filter(
         user=request.user, fav=True).count()
-    notes_count = notes.count()   
+    notes_count = notes.count()
     paginator = Paginator(notes, 36)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
@@ -135,8 +135,8 @@ def NotesDetailView(request,  note_slug):
         note = Notes.objects.get(slug=note_slug)
     except Exception as e:
         raise e
-   
-    if request.method == "POST" and request.is_ajax():        
+
+    if request.method == "POST" and request.is_ajax():
         if note.fav == True:
             note.fav = False
             note.save()
@@ -150,6 +150,50 @@ def NotesDetailView(request,  note_slug):
                                 context, request=request)
         return JsonResponse({'form': html})
     return render(request, 'dashboard/notes/notes_detail.html', context)
+
+
+def NotesDetailView1(request,  note_slug):
+    try:
+        note = Notes.objects.get(slug=note_slug)
+    except Exception as e:
+        raise e
+
+    if request.method == "POST" and request.is_ajax():
+        if note.top == True:
+            note.top = False
+            note.save()
+        else:
+            note.top = True
+            note.save()
+        return redirect('notes_detail1', note.slug)
+    context = {'note': note}
+    if request.is_ajax():
+        html = render_to_string('dashboard/notes/top_section.html',
+                                context, request=request)
+        return JsonResponse({'form': html})
+    return render(request, 'dashboard/notes/notes_detail.html', context)
+
+
+# def NotesDetailView(request,  note_slug):
+#     try:
+#         note = Notes.objects.get(slug=note_slug)
+#     except Exception as e:
+#         raise e
+
+#     if request.method == "POST" and request.is_ajax():
+#         if note.fav == True:
+#             note.fav = False
+#             note.save()
+#         else:
+#             note.fav = True
+#             note.save()
+#         return redirect('notes_detail', note.slug)
+#     context = {'note': note}
+#     if request.is_ajax():
+#         html = render_to_string('dashboard/notes/fav_section.html',
+#                                 context, request=request)
+#         return JsonResponse({'form': html})
+#     return render(request, 'dashboard/notes/notes_detail.html', context)
 
 
 # @login_required
@@ -221,10 +265,6 @@ def delete_note(request, pk=None):
     context = {'obj': note,
                }
     return render(request, 'dashboard/delete.html', context)
-
-
-
-
 
 
 @login_required
@@ -457,9 +497,6 @@ def delete_todo(request, pk=None):
     return redirect("todo")
 
 
-
-
-
 def books(request):
     if request.method == "POST":
         form = DashboardForm(request.POST)
@@ -622,7 +659,6 @@ def conversion(request):
     return render(request, 'dashboard/misc/conversion.html', context)
 
 
-
 @login_required
 def profile(request):
     homeworks = Homework.objects.filter(is_finished=False, user=request.user)
@@ -649,8 +685,6 @@ def profile(request):
 
 def generatePassword(request):
     return render(request, 'dashboard/misc/password.html')
-
-
 
 
 def register(request):

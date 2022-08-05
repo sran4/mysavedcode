@@ -18,8 +18,11 @@ urlpatterns = [
 
     # path('notes_detail/<int:pk>',
     #      views.NotesDetailView.as_view(), name='notes_detail'),
+    path('detail1/<slug:note_slug>/',
+         views.NotesDetailView1, name='notes_detail1'),
     path('detail/<slug:note_slug>/',
          views.NotesDetailView, name='notes_detail'),
+
 
     path('assemblies/', views.homework, name='home-work'),
     path('create-assembly/', views.create_assembly, name='create-assembly'),

@@ -1,7 +1,8 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}{% load humanize %}
-<section style="background-color: #212529; margin: 0.5rem; padding-top: 0; border-radius: 2em">
-  <div class="content-section p-1 mt-1 cardd" style="background-color: #212529; border: None">
+<section style="background-color: #212529; margin: 1rem; padding-top: 10px; border-radius: 2em">
+  <div class="content-section p-3 mt-3" style="background-color: #212529; border: None">
     <div id="fav-section">{% include 'dashboard/notes/fav_section.html' %}</div>
+    <div id="top-section">{% include 'dashboard/notes/top_section.html' %}</div>
     <div>
       <h2 class="myh2 text-center" style="letter-spacing: 0.1em; color: dodgerblue; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">
         {{note.language|upper}}
@@ -61,6 +62,25 @@
       success: function (response) {
         $('#fav-section').html(response['form'])
         console.log($('Success', '#fav-section').html(response['form']))
+      },
+      error: function (rs, e) {
+        console.log('error', rs.responseText)
+      },
+    })
+  })
+</script>
+<script type="text/javascript" language="javascript">
+  $(document).on('click', '#top', function (event) {
+    event.preventDefault()
+    var slug = $(this).attr('value')
+    $.ajax({
+      type: 'POST',
+      url: '{% url "notes_detail1"  note.slug %}',
+      data: { slug: slug, csrfmiddlewaretoken: '{{ csrf_token }}' },
+      dataType: 'json',
+      success: function (response) {
+        $('#top-section').html(response['form'])
+        console.log($('Success', '#top-section').html(response['form']))
       },
       error: function (rs, e) {
         console.log('error', rs.responseText)
