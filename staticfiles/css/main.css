@@ -531,18 +531,13 @@ pre {
 .btn-info {
   color: #fff;
   background-color: #2b7734 !important;
-  border-color: #17a2b8;
+  border-color: #2b7734 
 }
 
 .cke_chrome {
   width: 1100px !important;
 }
 
-.btn-info {
-  color: #fff;
-  background-color: #576b6e;
-  border-color: #17a2b8;
-}
 
 .btn-block {
   display: block;
@@ -564,7 +559,7 @@ pre {
 }
 
 .btn-danger {
-    color: rgb(170, 165, 165);
+    color: #fff;
     background-color: #c1091b;
     border-color: #c1091b;
     

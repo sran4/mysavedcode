@@ -559,7 +559,7 @@ pre {
 }
 
 .btn-danger {
-    color: #fff;
+    color: rgb(170, 165, 165);
     background-color: #c1091b;
     border-color: #c1091b;
     
