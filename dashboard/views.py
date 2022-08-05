@@ -44,8 +44,7 @@ def notes(request, c_slug=None):
 
     favNotes_count = Notes.objects.filter(
         user=request.user, fav=True).count()
-    notes_count = notes.count()
-    print('notes_count', notes_count, notes)
+    notes_count = notes.count()   
     paginator = Paginator(notes, 36)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
@@ -54,7 +53,7 @@ def notes(request, c_slug=None):
                'notes_count': notes_count,
                'favNotes_count': favNotes_count,
                }
-    return render(request, 'dashboard/notes.html', context)
+    return render(request, 'dashboard/notes/notes.html', context)
 
 
 @login_required
@@ -76,7 +75,7 @@ def favs_notes(request):
                'favs_count': favs_count,
                'allNotes_count': allNotes_count
                }
-    return render(request, 'dashboard/fav.html', context)
+    return render(request, 'dashboard/notes/fav.html', context)
 
 
 @login_required
@@ -94,7 +93,7 @@ def top_notes(request):
                'allNotes_count': allNotes_count,
                'page': top_page,
                }
-    return render(request, 'dashboard/fav.html', context)
+    return render(request, 'dashboard/notes/fav.html', context)
 
 
 @login_required
@@ -120,7 +119,7 @@ def tag_notes(request, slug=None):
                'allNotes_count': allNotes_count,
 
                }
-    return render(request, 'dashboard/tags.html', context)
+    return render(request, 'dashboard/notes/tags.html', context)
 
 
 # class NotesDetailView(LoginRequiredMixin, generic.DetailView):
@@ -136,10 +135,8 @@ def NotesDetailView(request,  note_slug):
         note = Notes.objects.get(slug=note_slug)
     except Exception as e:
         raise e
-
-    print('notes', notes)
-    if request.method == "POST" and request.is_ajax():
-        print("passed post test")
+   
+    if request.method == "POST" and request.is_ajax():        
         if note.fav == True:
             note.fav = False
             note.save()
@@ -149,10 +146,10 @@ def NotesDetailView(request,  note_slug):
         return redirect('notes_detail', note.slug)
     context = {'note': note}
     if request.is_ajax():
-        html = render_to_string('dashboard/fav_section.html',
+        html = render_to_string('dashboard/notes/fav_section.html',
                                 context, request=request)
         return JsonResponse({'form': html})
-    return render(request, 'dashboard/notes_detail.html', context)
+    return render(request, 'dashboard/notes/notes_detail.html', context)
 
 
 # @login_required
@@ -168,7 +165,7 @@ def NotesDetailView(request,  note_slug):
 #             note.save()
 #         return redirect('notes_detail', note.pk)
 #     context = {'note': note}
-#     return render(request, 'dashboard/notes_detail.html', context)
+#     return render(request, 'dashboard/notes/notes_detail.html', context)
 
 
 @login_required
@@ -226,6 +223,10 @@ def delete_note(request, pk=None):
     return render(request, 'dashboard/delete.html', context)
 
 
+
+
+
+
 @login_required
 def homework(request):
     page = 'create'
@@ -269,7 +270,7 @@ def homework(request):
                'page': page,
                'homeworks_completed': homeworks_completed
                }
-    return render(request, 'dashboard/homework.html', context)
+    return render(request, 'dashboard/misc/homework.html', context)
 
 
 @login_required
@@ -382,14 +383,14 @@ def youtube(request):
                 'form': form,
                 'results': result_list
             }
-        return render(request, 'dashboard/youtube.html', context)
+        return render(request, 'dashboard/misc/youtube.html', context)
 
     else:
         form = DashboardForm()
     context = {
         'form': form,
     }
-    return render(request, 'dashboard/youtube.html', context)
+    return render(request, 'dashboard/misc/youtube.html', context)
 
 
 @login_required
@@ -432,7 +433,7 @@ def todo(request):
         'todos_completed': todos_completed,
         'form': form
     }
-    return render(request, 'dashboard/todo.html', context)
+    return render(request, 'dashboard/misc/todo.html', context)
 
 
 @login_required
@@ -454,6 +455,9 @@ def delete_todo(request, pk=None):
     messages.success(
         request, f"{request.user.username.upper()} Todo has beed deleted Succcessfully!!!")
     return redirect("todo")
+
+
+
 
 
 def books(request):
@@ -481,14 +485,14 @@ def books(request):
                 'form': form,
                 'results': result_list
             }
-        return render(request, 'dashboard/books.html', context)
+        return render(request, 'dashboard/misc/books.html', context)
 
     else:
         form = DashboardForm()
     context = {
         'form': form,
     }
-    return render(request, 'dashboard/books.html', context)
+    return render(request, 'dashboard/misc/books.html', context)
 
 
 def dictionary(request):
@@ -519,13 +523,13 @@ def dictionary(request):
                 'input': ''
 
             }
-        return render(request, 'dashboard/dictionary.html', context)
+        return render(request, 'dashboard/misc/dictionary.html', context)
 
     form = DashboardForm()
     context = {
         'form': form,
     }
-    return render(request, 'dashboard/dictionary.html', context)
+    return render(request, 'dashboard/misc/dictionary.html', context)
 
 
 def wiki(request):
@@ -539,12 +543,12 @@ def wiki(request):
             "link": search.url,
             "details": search.summary
         }
-        return render(request, 'dashboard/wiki.html', context)
+        return render(request, 'dashboard/misc/wiki.html', context)
     form = DashboardForm()
     context = {
         'form': form,
     }
-    return render(request, 'dashboard/wiki.html', context)
+    return render(request, 'dashboard/misc/wiki.html', context)
 
 
 def conversion(request):
@@ -615,29 +619,8 @@ def conversion(request):
             'form': form,
             'input': False
         }
-    return render(request, 'dashboard/conversion.html', context)
+    return render(request, 'dashboard/misc/conversion.html', context)
 
-
-def register(request):
-    if request.method == "POST":
-        form = UserRegistrationForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
-            user.username = user.username.capitalize()
-            form.save()
-            username = form.cleaned_data.get('username')
-            messages.success(
-                request, f"{username.upper()}  Account has been created!!!")
-            return redirect('login')
-        else:
-            messages.error(request, f"Some thing went wrong. pls try again")
-    else:
-        form = UserRegistrationForm()
-    context = {
-        'form': form
-    }
-
-    return render(request, 'dashboard/register.html', context)
 
 
 @login_required
@@ -661,8 +644,32 @@ def profile(request):
         'todos_done': todos_done
 
     }
-    return render(request, 'dashboard/profile.html', context)
+    return render(request, 'dashboard/misc/profile.html', context)
 
 
 def generatePassword(request):
-    return render(request, 'dashboard/password.html')
+    return render(request, 'dashboard/misc/password.html')
+
+
+
+
+def register(request):
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.capitalize()
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(
+                request, f"{username.upper()}  Account has been created!!!")
+            return redirect('login')
+        else:
+            messages.error(request, f"Some thing went wrong. pls try again")
+    else:
+        form = UserRegistrationForm()
+    context = {
+        'form': form
+    }
+
+    return render(request, 'dashboard/auth/register.html', context)

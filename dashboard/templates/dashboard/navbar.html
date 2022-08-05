@@ -1,6 +1,6 @@
 {% load static %}
 <header style="margin-bottom: 8px">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0.2rem 2rem">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" style="padding: 0.2rem 2rem">
     <div class="container-fluid">
       <a class="navbar-brand myP" style="color: #8fa0b1" href="{% url 'home' %}"
         ><h3 style="margin: 0; padding: 0; font-size: 2.3rem; text-transform: uppercase">
@@ -22,20 +22,26 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
+          {% if user.is_authenticated %}
+
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'top-notes' %}">Main Notes</a>
           </li>
 
-          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'favs-notes' %}">Fav Notes</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'tags' %}">File Notes</a>
+          </li>
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown {% if 'codes-lists' in request.path %}active{% endif %}">
                 <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Notes </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{% url 'notes' %}">All Notes</a>
-                  <a class="dropdown-item" href="{% url 'top-notes' %}">Top Notes</a>
-                  <a class="dropdown-item" href="{% url 'tags' %}">Tag Notes</a>
-                  <a class="dropdown-item" href="{% url 'favs-notes' %}">Fav Notes</a>
 
                   {% for cat in links %}
                   <a class="dropdown-item" href="{{cat.get_url}}">{{cat.name}}</a>

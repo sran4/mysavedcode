@@ -1,5 +1,5 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
-<br><br><br>
+<br>
 <div class="container1">
   <form method="POST">
     <fieldset class="form-group">
@@ -16,6 +16,7 @@
       <a class="ml-2 text-danger" href="{% url 'login' %}">Sign In</a>
     </small>
   </div>
+  <br><br>
 </div>
 
 {% endblock content %}

@@ -8,7 +8,6 @@ urlpatterns = [
          views.notes, name='notes_by_category'),
     path('codes-lists/', views.notes, name='notes'),
 
-
     path('favourites-codes-lists/', views.favs_notes, name='favs-notes'),
     path('top-codes-lists/', views.top_notes, name='top-notes'),
     path('tags/', views.tag_notes, name='tags'),
@@ -16,7 +15,6 @@ urlpatterns = [
     path('add-code/', views.create_note, name='create-note'),
     path('update-code/<int:pk>/', views.update_note, name='update-note'),
     path('delete-code/<int:pk>/', views.delete_note, name='delete-note'),
-
 
     # path('notes_detail/<int:pk>',
     #      views.NotesDetailView.as_view(), name='notes_detail'),
@@ -38,7 +36,6 @@ urlpatterns = [
 
     path('books/', views.books, name='books'),
     path('dictionary/', views.dictionary, name='dictionary'),
-
     path('wikipedia/', views.wiki, name='wiki'),
     path('conversion/', views.conversion, name='conversion'),
     path('generate-password/', views.generatePassword, name='password'),
