@@ -21,7 +21,7 @@ main {
   font-weight: 500 !important;
   line-height: 1.5 !important;
   font-size: 1em !important;
-  margin: 100px 10px;
+  margin: 20px 10px;
 }
 .loader {
   position: fixed;
@@ -550,7 +550,7 @@ pre {
 }
 .mybu {
   font-size: 16px;
-  padding: 5px 100px;
+  padding: 1px 20px;
 }
 
 .textControl {  
@@ -667,7 +667,7 @@ pre {
 
   .mybu {
     font-size: 16px;
-    padding: 5px 40px;
+    padding: 1px 20px;
   }
 }
 
@@ -753,7 +753,7 @@ pre {
   }
   .mybu {
     font-size: 12px;
-    padding: 2px 15px;
+    padding: 1px 15px;
   }
   main {
     margin: 10px 0px;

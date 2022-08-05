@@ -1,13 +1,21 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% block content %}{% load humanize %}
-<section style="background-color: #212529; margin: 1rem; padding-top: 10px; border-radius: 2em">
-  <div class="content-section p-3 mt-3" style="background-color: #212529; border: None">
-    <div id="fav-section">{% include 'dashboard/notes/fav_section.html' %}</div>
-    <div id="top-section">{% include 'dashboard/notes/top_section.html' %}</div>
+<section style="background-color: #212529; margin: .5rem; padding-top: 5px; border-radius: 2em">
+  
+    <div  class="p-1 mt-1 text-center">
+      <div class="btn-group text-center">
+      <div id="fav-section">{% include 'dashboard/notes/fav_section.html' %}</div>
+      <div class="ml-3" id="top-section">{% include 'dashboard/notes/top_section.html' %}</div>
+      </div>
     <div>
+
+      <div>
       <h2 class="myh2 text-center" style="letter-spacing: 0.1em; color: dodgerblue; font-weight: bold; text-decoration: underline; text-underline-offset: 3px">
         {{note.language|upper}}
       </h2>
     </div>
+
+
+
     <div class="row">
       <div class="col">
         <a href="{% url 'notes' %}"> <i class="btn fa fa-arrow-left" style="font-size: 29px; margin: 10px 30px; float: left; color: #b8af61"></i> </a>
@@ -16,8 +24,12 @@
         <p class="myD font-weight-bold" style="font-size: 12px; float: right; margin-right: 20px; color: #b8af61">{{ note.updated_at| naturaltime }}</p>
       </div>
     </div>
+
+
     <div class="m-1" style="background-color: #212529; color: ashwhite; padding-top: 2px">
+
       <div class="row">
+
         <div class="col">
           <a href="{% url 'notes' %}">
             <i class="btn fa fa-home fa-1x" style="font-size: 25px; float: left; margin: 15px; color: #d97cee"></i>
@@ -26,9 +38,11 @@
             <i class="btn fa fa-heart fa-1x" style="font-size: 25px; float: left; margin: 15px; color: #ee3d07"></i>
           </a>
         </div>
+
         <div class="col myCol" style="display: flex; justify-content: center; align-items: center">
           <a href="{% url 'create-note' %}"><i class="myPlusD fa fa-plus d-inline-flex align-items-center"></i></a>
         </div>
+
         <div class="col">
           <a href="{% url 'delete-note' note.pk %}">
             <i class="btn fa fa-trash fa-1x" style="font-size: 25px; float: right; margin: 15px; color: #962323"></i>
@@ -37,15 +51,24 @@
             <i class="btn fa fa-edit fa-1x" style="font-size: 25px; float: right; margin: 15px; color: darkgreen"></i>
           </a>
         </div>
+
       </div>
+
+
     </div>
+
+
     <br />
     <div class="m-1" style="background-color: #212529; padding-left: 10px; color: ashwhite">
       <h2 style="font-size: 16px; color: #d97cee; text-transform: capitalize">{{note.notes_for_yourself | safe}}</h2>
       <hr style="background-color: #f0dfe7" />
       <p class="myh2" style="font-size: 16px; color: ashwhite">{{note.code_here | safe}}</p>
     </div>
-  </div>
+
+ 
+
+
+
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
