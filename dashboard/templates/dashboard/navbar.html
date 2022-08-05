@@ -24,22 +24,22 @@
         <ul class="navbar-nav mb-2 mb-lg-0">
           {% if user.is_authenticated %}
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'top-notes' %}">Main Notes</a>
+          <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %}">
+            <a class="nav-link" aria-current="page" href="{% url 'top-notes' %}">Main</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'favs-notes' %}">Fav Notes</a>
+          <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %}">
+            <a class="nav-link" aria-current="page" href="{% url 'tags' %}">File </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'tags' %}">File Notes</a>
+          <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %}">
+            <a class="nav-link" aria-current="page" href="{% url 'favs-notes' %}">Fav</a>
           </li>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown {% if 'codes-lists' in request.path %}active{% endif %}">
-                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Notes </a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Notes </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{% url 'notes' %}">All Notes</a>
 
