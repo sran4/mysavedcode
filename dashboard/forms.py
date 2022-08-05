@@ -10,11 +10,11 @@ class NotesForm(forms.ModelForm):
     class Meta:
         model = Notes
         labels = {
-            "language": "Type Language of code",
-            "notes_for_yourself": "Notes for yourself and for search",
-            "code_here": "Copy and Paste Raw Data from Github",
-            "fav": "Mark it if wants to add in your Favourite code",
-            "top": "Mark it if wants to add in your Main code"
+            "language": "Title",
+            "notes_for_yourself": "Notes to search",
+            "code_here": "Better with Copy and Paste Raw Data from Github",
+            "fav": "Check it if wants to add in your Favourite code Pages",
+            "top": "Check it if wants to add in your Main code pages"
         }
 
         # widgets = {
@@ -22,7 +22,7 @@ class NotesForm(forms.ModelForm):
 
         # }
         fields = ['language', 'category', 'notes_for_yourself',
-                  'code_here', 'fav', 'top',]
+                  'code_here', 'fav', 'top', ]
 # widgets may not need it here
 
 
