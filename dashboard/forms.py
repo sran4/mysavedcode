@@ -6,9 +6,6 @@ from ckeditor.fields import RichTextFormField
 from django.contrib.auth.forms import UserCreationForm
 
 
-
-
-
 class NotesForm(forms.ModelForm):
     class Meta:
         model = Notes
@@ -16,14 +13,16 @@ class NotesForm(forms.ModelForm):
             "language": "Type Language of code",
             "notes_for_yourself": "Notes for yourself and for search",
             "code_here": "Copy and Paste Raw Data from Github",
-            "fav": "Mark it if wants to add in your Favourite code"
+            "fav": "Mark it if wants to add in your Favourite code",
+            "top": "Mark it if wants to add in your Main code"
         }
 
         # widgets = {
         #     'code_here': RichTextFormField(),
 
         # }
-        fields = ['language', 'notes_for_yourself', 'code_here', 'fav', ]
+        fields = ['language', 'category', 'notes_for_yourself',
+                  'code_here', 'fav', 'top',]
 # widgets may not need it here
 
 

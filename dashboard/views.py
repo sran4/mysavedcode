@@ -215,10 +215,20 @@ def NotesDetailView1(request,  note_slug):
 @login_required
 def create_note(request):
     if request.method == 'POST':
+        data = request.POST
+        category = Category.objects.get(id=data['category'])
         form = NotesForm(request.POST)
         if form.is_valid():
             notes = Notes(
-                user=request.user, language=request.POST['language'], code_here=form.cleaned_data['code_here'], notes_for_yourself=request.POST['notes_for_yourself'],)
+                user=request.user,
+                language=request.POST['language'],
+                code_here=form.cleaned_data['code_here'],
+                notes_for_yourself=request.POST['notes_for_yourself'],
+                fav=form.cleaned_data['fav'],
+                top=form.cleaned_data['top'],
+                category=category,
+            )
+
             notes.save()
             messages.success(
                 request, f"{request.user.username.upper()} **{request.POST['language']}** Code  Added  Succcessfully!!!")

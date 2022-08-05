@@ -549,8 +549,8 @@ pre {
   width: 95%;
 }
 .mybu {
-  font-size: 16px;
-  padding: 1px 20px;
+  font-size: 14px;
+  padding: 1px 18px;
 }
 
 .textControl {  
@@ -666,8 +666,8 @@ pre {
   }
 
   .mybu {
-    font-size: 16px;
-    padding: 1px 20px;
+    font-size: 14px;
+    padding: 1px 16px;
   }
 }
 
@@ -752,8 +752,8 @@ pre {
     text-transform: uppercase;
   }
   .mybu {
-    font-size: 12px;
-    padding: 1px 15px;
+    font-size: 10px;
+    padding: .5px 10px;
   }
   main {
     margin: 10px 0px;
