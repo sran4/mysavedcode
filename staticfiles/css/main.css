@@ -317,10 +317,10 @@ a .myP:hover {
   color: dodgerblue  !important;
 }
 .myP {
-  color:rgb(45, 146, 248) !important;
+  color:rgb(44, 143, 243) !important;
 }
 .myP:hover {
-  color:dodgerblue !important;
+  color:rgb(20, 109, 199) !important;
 }
 .myPlusD {
   background-color: DodgerBlue;
@@ -356,8 +356,8 @@ a .myP:hover {
   transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
 }
 .alert-success {
-  color: ashwhite;
-  background-color: #18013f;
+  color: white!important;
+  background-color:#cd5d8b;
   border-color: #b9d610;
 }
 
