@@ -61,17 +61,17 @@ footer {
 
 a {
   text-decoration: none !important;
-  color: rgb(42, 39, 39);
+  color: rgb(225, 221, 221);
 }
 input {
-  caret-color: rgb(43, 6, 252);/* cursor color*/
+  caret-color: rgb(129, 252, 6);
 }
 a:hover {
   color: rgb(16, 11, 11) !important;
 }
 
 .card-header {
-  color: black !important;
+  color: rgb(190, 189, 189) !important;
   background: #236ea2; !important;
   transition: 0.8s ease-in;
 }
@@ -316,9 +316,7 @@ a .myP:hover {
   transition: 0.8s ease;
   color: dodgerblue  !important;
 }
-.myP {
-  color:rgb(45, 146, 248) !important;
-}
+
 .myP:hover {
   color:dodgerblue !important;
 }
@@ -417,7 +415,7 @@ pre {
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
-  background-color: rgb(54 57 57);
+  background-color: rgb(24 38 40);
   font-size: 14px;
   padding-left: 32px;
   padding-right: 32px;
@@ -444,7 +442,7 @@ pre {
   -webkit-transition-duration: 0.4s;
   -o-transition-duration: 0.4s;
   background-color: rgb(24 38 40);
-  color: rgb(227, 222, 222);
+  color: black;
 }
 
 .search-containerr {
@@ -467,7 +465,7 @@ pre {
 
 .searchbuttonn {
   position: absolute;
-  font-size: 32px;
+  font-size: 22px;
   width: 100%;
   margin: 0;
   padding: 0;

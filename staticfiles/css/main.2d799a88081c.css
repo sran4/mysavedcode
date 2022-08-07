@@ -316,9 +316,7 @@ a .myP:hover {
   transition: 0.8s ease;
   color: dodgerblue  !important;
 }
-.myP {
-  color:rgb(45, 146, 248) !important;
-}
+
 .myP:hover {
   color:dodgerblue !important;
 }

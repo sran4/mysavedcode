@@ -61,10 +61,10 @@ footer {
 
 a {
   text-decoration: none !important;
-  color: rgb(42, 39, 39);
+  color: rgb(225, 221, 221);
 }
 input {
-  caret-color: rgb(43, 6, 252);/* cursor color*/
+  caret-color: rgb(129, 252, 6);
 }
 a:hover {
   color: rgb(16, 11, 11) !important;
@@ -316,9 +316,7 @@ a .myP:hover {
   transition: 0.8s ease;
   color: dodgerblue  !important;
 }
-.myP {
-  color:rgb(45, 146, 248) !important;
-}
+
 .myP:hover {
   color:dodgerblue !important;
 }

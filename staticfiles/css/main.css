@@ -15,7 +15,7 @@ html {
 }
 
 main {
-  color: #a49abf !important;
+  color: #dad8df !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.12em !important;
   font-weight: 500 !important;
@@ -61,17 +61,17 @@ footer {
 
 a {
   text-decoration: none !important;
-  color: rgb(225, 221, 221);
+  color: rgb(42, 39, 39);
 }
 input {
-  caret-color: rgb(129, 252, 6);
+  caret-color: rgb(43, 6, 252);/* cursor color*/
 }
 a:hover {
   color: rgb(16, 11, 11) !important;
 }
 
 .card-header {
-  color: rgb(190, 189, 189) !important;
+  color: black !important;
   background: #236ea2; !important;
   transition: 0.8s ease-in;
 }
@@ -139,7 +139,7 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
-  color: #a49abf !important;
+  color: #d5d4d6 !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
@@ -153,7 +153,7 @@ body {
   overflow-x: hidden;
   background-repeat: no-repeat;
   background-color: rgb(35 36 45 / 90%) !important;
-  color: #a49abf !important;
+  color: #d5d4d6 !important;
   font-family: 'Montserrat', sans-serif !important;
   letter-spacing: 0.1em !important;
   font-weight: 500 !important;
@@ -316,7 +316,9 @@ a .myP:hover {
   transition: 0.8s ease;
   color: dodgerblue  !important;
 }
-
+.myP {
+  color:rgb(45, 146, 248) !important;
+}
 .myP:hover {
   color:dodgerblue !important;
 }
@@ -415,7 +417,7 @@ pre {
 .buttonn {
   display: inline-block;
   margin: 4px 2px;
-  background-color: rgb(24 38 40);
+  background-color: rgb(54 57 57);
   font-size: 14px;
   padding-left: 32px;
   padding-right: 32px;
@@ -442,7 +444,7 @@ pre {
   -webkit-transition-duration: 0.4s;
   -o-transition-duration: 0.4s;
   background-color: rgb(24 38 40);
-  color: black;
+  color: rgb(227, 222, 222);
 }
 
 .search-containerr {
@@ -465,7 +467,7 @@ pre {
 
 .searchbuttonn {
   position: absolute;
-  font-size: 22px;
+  font-size: 32px;
   width: 100%;
   margin: 0;
   padding: 0;

@@ -92,7 +92,7 @@ pre_save.connect(Notes_pre_save_receiver, sender=Notes)
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, blank=True, null=True)
     slug = models.SlugField(max_length=250, unique=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
 

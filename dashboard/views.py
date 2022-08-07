@@ -215,11 +215,11 @@ def NotesDetailView1(request,  note_slug):
 @login_required
 def create_note(request):
     if request.method == 'POST':
+        form = NotesForm(request.POST)
         data = request.POST
         category = Category.objects.get(id=data['category'])
-        form = NotesForm(request.POST)
         if form.is_valid():
-            notes = Notes(
+            note = Notes(
                 user=request.user,
                 language=request.POST['language'],
                 code_here=form.cleaned_data['code_here'],
@@ -228,17 +228,50 @@ def create_note(request):
                 top=form.cleaned_data['top'],
                 category=category,
             )
-
-            notes.save()
+            note.save()
+            note = Notes.objects.get(id=note.id)
+            tags = form.cleaned_data['tags']
+            print(tags)
+            note.tags.add(*tags)
             messages.success(
                 request, f"{request.user.username.upper()} **{request.POST['language']}** Code  Added  Succcessfully!!!")
-            return redirect("notes")
+            return redirect('notes_detail', note.slug)
+
     else:
         form = NotesForm()
     context = {
         'form': form,
     }
     return render(request, 'dashboard/form.html', context)
+
+
+# @login_required
+# def create_note(request):
+#     if request.method == 'POST':
+#         data = request.POST
+#         category = Category.objects.get(id=data['category'])
+#         form = NotesForm(request.POST)
+#         if form.is_valid():
+#             notes = Notes(
+#                 user=request.user,
+#                 language=request.POST['language'],
+#                 code_here=form.cleaned_data['code_here'],
+#                 notes_for_yourself=request.POST['notes_for_yourself'],
+#                 fav=form.cleaned_data['fav'],
+#                 top=form.cleaned_data['top'],
+#                 category=category,
+#             )
+
+#             notes.save()
+#             messages.success(
+#                 request, f"{request.user.username.upper()} **{request.POST['language']}** Code  Added  Succcessfully!!!")
+#             return redirect("notes")
+#     else:
+#         form = NotesForm()
+#     context = {
+#         'form': form,
+#     }
+#     return render(request, 'dashboard/form.html', context)
 
 
 @login_required

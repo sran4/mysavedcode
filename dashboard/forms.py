@@ -7,11 +7,12 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class NotesForm(forms.ModelForm):
+    notes_for_yourself = forms.CharField(label="Notes to search", widget=forms.Textarea(
+        attrs={'class': 'form-control', 'placeholder': 'Add a keywords to search for this note!', 'rows': '1', 'cols': '150'}))
     class Meta:
         model = Notes
         labels = {
-            "language": "Title",
-            "notes_for_yourself": "Notes to search",
+            "language": "Title",           
             "code_here": "Better with Copy and Paste Raw Data from Github",
             "fav": "Check it if wants to add in your Favourite code Pages",
             "top": "Check it if wants to add in your Main code pages"
@@ -22,9 +23,8 @@ class NotesForm(forms.ModelForm):
 
         # }
         fields = ['language', 'category', 'notes_for_yourself',
-                  'code_here', 'fav', 'top', ]
-# widgets may not need it here
-
+                  'code_here', 'tags', 'fav', 'top', ]
+        exclude = ('slug', 'user')
 
 class DateInput(forms.DateInput):
     input_type = 'date'
