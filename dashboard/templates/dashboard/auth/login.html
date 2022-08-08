@@ -6,6 +6,7 @@
     </fieldset>
     <div class="form-group">
       {% csrf_token %} {{ form|crispy }}
+      <small class="float-right text-primary font-weight-bold text-bold py-3 showPasswordToggle">SHOW PASSWORD</small>
       <button href="" class="btn btn-outline-info" type="submit">Sign In</button>
     </div>
   </form>
@@ -17,5 +18,20 @@
   </div>
   <br /><br />
 </div>
+<script>
+  const showPasswordToggle = document.querySelector('.showPasswordToggle')
+
+  const handleToggleInput = (e) => {
+    if (showPasswordToggle.textContent === 'SHOW PASSWORD') {
+      showPasswordToggle.textContent = 'HIDE PASSWORD'
+      id_password.setAttribute('type', 'text')
+    } else {
+      showPasswordToggle.textContent = 'SHOW PASSWORD'
+      id_password.setAttribute('type', 'password')
+    }
+  }
+
+  showPasswordToggle.addEventListener('click', handleToggleInput)
+</script>
 
 {% endblock content %}
