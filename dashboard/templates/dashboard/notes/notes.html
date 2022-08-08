@@ -1,5 +1,18 @@
 {% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
 <div class="container">
+  <div class="row my-3">
+    <div class="col-md-2">
+      <h6 class="text-center">Categories</h6>
+      {% for cat in links %}
+      <a class="" href="{{cat.get_url}}">
+        <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
+          {{cat.name}}
+        </button>
+      </a>
+      {% endfor %}  
+    </div>
+
+    <div class="col-md-10">
   <div>  
   <h3 class="text-center"> Home Page </h3>
     {% for note in notes %}
@@ -38,53 +51,58 @@
       Found {{notes_count}} Snippets
     </h3>
     {% endif %}
-    <div class="row">
-      {% for note in notes %}
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-        <div class="card myh2" style="height: 132px">
-          <a href="{% url 'notes_detail' note.slug %}">
-            <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; text-dark font-weight: bold; text-align: center; font-size: 11px">
-              {% if note.fav %}
-              <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: darkred"></i> {% endif %} {{note.language|striptags|upper|truncatechars:22}}
+
+          <div class="row">
+            {% for note in notes %}
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
+              <div class="card myh2" style="height: 132px">
+                <a href="{% url 'notes_detail' note.slug %}">
+                  <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; text-dark font-weight: bold; text-align: center; font-size: 11px">
+                    {% if note.fav %}
+                    <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: darkred"></i> {% endif %} {{note.language|striptags|upper|truncatechars:22}}
+                  </div>
+                  <div class="textControl font-weight-bold text-dark" style="text-align: left; text-transform: capitalize; padding-top: 8px; padding-left: 8px; font-size: 11px">
+                    {{note.notes_for_yourself }}
+                  </div>
+                </a>
+                <div class="row mt-auto" style="text-align: center; background-color: #5995bf; margin: 0">
+                  <div class="col-2">
+                    <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; color: DarkGreen"></i></a>
+                  </div>
+                  <div class="col-8">
+                    <a class="font-weight-bold" style="font-size: 8px; color: black">{{ note.updated_at|date:"N d, y" }}</a>
+                  </div>
+                  <div class="col-2">
+                    <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; color: darkred"></i></a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="textControl font-weight-bold text-dark" style="text-align: left; text-transform: capitalize; padding-top: 8px; padding-left: 8px; font-size: 11px">{{note.notes_for_yourself }}</div>
-          </a>
-          <div class="row mt-auto" style="text-align: center; background-color: #5995bf; margin: 0">
-            <div class="col-2">
-              <a href="{% url 'update-note' note.pk %}"> <i class="fa fa-edit fa-1x" style="font-size: 18px; color: DarkGreen"></i></a>
-            </div>
-            <div class="col-8">
-              <a class="font-weight-bold" style="font-size: 8px; color:black">{{ note.updated_at|date:"N d, y" }}</a>
-            </div>
-            <div class="col-2">
-              <a href="{% url 'delete-note' note.pk %}"> <i class="fa fa-trash fa-1x" style="font-size: 18px; color: darkred"></i></a>
-            </div>
-          </div>
+            {% endfor %}
+            <br /><br />
+         
+        </div>
         </div>
       </div>
-      {% endfor %}
-      <br /><br />
     </div>
-  </div>
- 
-  
-   
-  </div>
-  <div class="row">
-    <div class="mx-auto">
-      {% if notes.has_previous %}
-      <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
-      <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
-      {% endif %} {% for num in notes.paginator.page_range %} {% if notes.number == num %}
-      <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
-      {% elif num > notes.number|add:'-3' and num < notes.number|add:'3' %}
-      <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
-      {% endif %} {% endfor %} {% if notes.has_next %}
-      <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
-      <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
-      {% endif %}
+
+      <div class="row text-center">
+        <div class="mx-auto">
+          {% if notes.has_previous %}
+          <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
+          <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
+          {% endif %} {% for num in notes.paginator.page_range %} {% if notes.number == num %}
+          <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
+          {% elif num > notes.number|add:'-3' and num < notes.number|add:'3' %}
+          <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
+          {% endif %} {% endfor %} {% if notes.has_next %}
+          <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
+          <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </div>
- <br /><br />
+<br /><br />
 {% endblock content %}
