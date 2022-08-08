@@ -1,5 +1,5 @@
 {% extends 'dashboard/base.html' %} {% load static %} {% load crispy_forms_tags %} {% block content %}
-<br>
+<br />
 <div class="container1">
   <form method="POST">
     <fieldset class="form-group">
@@ -7,16 +7,35 @@
     </fieldset>
     <div class="form-group">
       {% csrf_token %} {{ form|crispy }}
+      <small class="float-right text-primary font-weight-bold text-bold py-3 showPasswordToggle">SHOW PASSWORD</small>
+
       <button href="" class="btn btn-outline-info" type="submit">Sign Up</button>
     </div>
   </form>
   <div class="border-top pt-3">
     <small class="text-muted"
       >Already have an account?
-      <a class="ml-2 text-danger" href="{% url 'login' %}">Sign In</a>
+      <a class="ml-2 text-danger Font-weight-bold" href="{% url 'login' %}">SIGN IN</a>
     </small>
   </div>
-  <br><br>
+  <br /><br />
 </div>
+<script>
+  const showPasswordToggle = document.querySelector('.showPasswordToggle')
+
+  const handleToggleInput = (e) => {
+    if (showPasswordToggle.textContent === 'SHOW PASSWORD') {
+      showPasswordToggle.textContent = 'HIDE PASSWORD'
+      id_password1.setAttribute('type', 'text')
+      id_password2.setAttribute('type', 'text')
+    } else {
+      showPasswordToggle.textContent = 'SHOW PASSWORD'
+      id_password1.setAttribute('type', 'password')
+      id_password2.setAttribute('type', 'password')
+    }
+  }
+
+  showPasswordToggle.addEventListener('click', handleToggleInput)
+</script>
 
 {% endblock content %}
