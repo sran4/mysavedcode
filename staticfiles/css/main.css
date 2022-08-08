@@ -567,6 +567,9 @@ pre {
     
 }
 
+.text-muted {
+    color: #e7e9ec!important;
+}
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
