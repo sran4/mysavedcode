@@ -20,7 +20,7 @@
       <h6 class="text-center">Tags</h6>
       {% for note in tags %}
       <a href="{% url 'tag' note.slug %}">
-        <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
+        <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
           {{note.name}}
         </button>
       </a>

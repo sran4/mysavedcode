@@ -590,21 +590,7 @@ pre {
     padding-left: 1.25rem;
 }
 
-/* ++++++++++++++++ Media++++++++++++++++ ++++++++++++++++++++++++++++++++++++++++++++++++++      */
-
-@media (max-width: 992px) {
- .catB{
-  border:1px solid whtie; 
-  color: white;
-  display: inline-flex;
-  justify-content: center;
-  width: auto;
-  background-color:dodgerblue !important;
-  cursor: pointer;
-
-  }
-  
-}
+/* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
   .container {
@@ -707,16 +693,6 @@ pre {
   .mybu {
     font-size: 14px;
     padding: 1px 16px;
-  }
-  .catB{
-  border:1px solid whtie; 
-  color: white;
-  display: inline-flex;
-  justify-content: center;
-  width: auto;
-  background-color:dodgerblue !important;
-  cursor: pointer;
-
   }
 }
 
@@ -824,9 +800,8 @@ pre {
   .catB{
   border:1px solid whtie; 
   color: white;
-  display: inline-flex;
-  justify-content: center;
-  width: auto;
+  padding: 1.4rem 4rem;
+  border-radius: 3rem;
   background-color:dodgerblue !important;
   cursor: pointer;
 
