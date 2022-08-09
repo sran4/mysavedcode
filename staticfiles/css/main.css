@@ -570,6 +570,12 @@ pre {
 .text-muted {
     color: #babcc0!important;
 }
+
+
+.alert-dismissible .close {   
+    padding: 0rem 1.1rem!important;
+   
+}
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
