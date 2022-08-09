@@ -4,34 +4,34 @@ from . models import *
 from ckeditor.fields import RichTextFormField
 
 from django.contrib.auth.forms import UserCreationForm
+from django.forms import CheckboxInput, ModelChoiceField, Select, ModelMultipleChoiceField, SelectMultiple
 
 
 class NotesForm(forms.ModelForm):
     notes_for_yourself = forms.CharField(label="Notes to search", widget=forms.Textarea(
-        attrs={'class': 'form-control', 'placeholder': 'Add a keywords to search for this note!', 'rows': '1', 'cols': '150'}))
+        attrs={'class': 'form-control', 'placeholder': 'Add a keywords to search for this note!', 'rows': '2', 'cols': '150'}))
+
+    tags = forms.ModelMultipleChoiceField(queryset=Tag.objects.all(
+    ), widget=forms.CheckboxSelectMultiple, required=False, label="TAGS_If wants to tag,  Press 'Ctrl' to select multiple tags")
 
     class Meta:
         model = Notes
+
         labels = {
             "language": "Title",
             "code_here": "Better with Copy and Paste Raw Data from Github",
-            "fav": "Check it if wants to add in your Favourite code Pages",
-            "top": "Check it if wants to add in your Main code pages"
+            "fav": "Check if wants to add in your Favourite code Pages",
+            "top": "Check if wants to add in your Main code pages",
+
         }
 
-        # widgets = {
-        #     'code_here': RichTextFormField(),
-
-        # }
         fields = ['language', 'category', 'notes_for_yourself',
                   'code_here', 'tags', 'fav', 'top', ]
         exclude = ('slug', 'user')
 
     def __init__(self, *args, **kwargs):
         super(NotesForm, self).__init__(*args, **kwargs)
-        for f in self.fields:
-            self.fields[f].empty_label = "Please Select"
-            # or None  or "please select" etc
+        self.fields['category'].empty_label = "Please choose Category"
 
 
 class DateInput(forms.DateInput):
