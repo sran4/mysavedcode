@@ -576,6 +576,12 @@ pre {
     padding: 0rem 1.1rem!important;
    
 }
+.ckeditor p{
+  margin-bottom: 2px!important;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
 /* ++++++++++++++++ Media++++++++++++++++       */
 
 @media (max-width: 768px) {
