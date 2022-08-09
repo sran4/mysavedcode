@@ -581,6 +581,9 @@ pre {
   margin-block-start: 0em;
   margin-block-end: 0em;
 }
+
+
+/* To change form manytomany fileds input button to inline*/
 .form-check {
     position: relative;
     display: inline-block;

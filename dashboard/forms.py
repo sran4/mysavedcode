@@ -12,7 +12,7 @@ class NotesForm(forms.ModelForm):
         attrs={'class': 'form-control', 'placeholder': 'Add a keywords to search for this note!', 'rows': '2', 'cols': '150'}))
 
     tags = forms.ModelMultipleChoiceField(queryset=Tag.objects.all(
-    ), widget=forms.CheckboxSelectMultiple, required=False, label="TAGS_If wants to tag,  Press 'Ctrl' to select multiple tags")
+    ), widget=forms.CheckboxSelectMultiple, required=False, label="TAGS (If wants to tag,  Press 'Ctrl' to select multiple tags)")
 
     class Meta:
         model = Notes
@@ -26,7 +26,7 @@ class NotesForm(forms.ModelForm):
         }
 
         fields = ['language', 'category', 'notes_for_yourself',
-                  'code_here', 'tags', 'fav', 'top', ]
+                  'code_here',  'fav', 'top', 'tags', ]
         exclude = ('slug', 'user')
 
     def __init__(self, *args, **kwargs):
