@@ -9,10 +9,11 @@ from django.contrib.auth.forms import UserCreationForm
 class NotesForm(forms.ModelForm):
     notes_for_yourself = forms.CharField(label="Notes to search", widget=forms.Textarea(
         attrs={'class': 'form-control', 'placeholder': 'Add a keywords to search for this note!', 'rows': '1', 'cols': '150'}))
+
     class Meta:
         model = Notes
         labels = {
-            "language": "Title",           
+            "language": "Title",
             "code_here": "Better with Copy and Paste Raw Data from Github",
             "fav": "Check it if wants to add in your Favourite code Pages",
             "top": "Check it if wants to add in your Main code pages"
@@ -25,6 +26,13 @@ class NotesForm(forms.ModelForm):
         fields = ['language', 'category', 'notes_for_yourself',
                   'code_here', 'tags', 'fav', 'top', ]
         exclude = ('slug', 'user')
+
+    def __init__(self, *args, **kwargs):
+        super(NotesForm, self).__init__(*args, **kwargs)
+        for f in self.fields:
+            self.fields[f].empty_label = "Please Select"
+            # or None  or "please select" etc
+
 
 class DateInput(forms.DateInput):
     input_type = 'date'
