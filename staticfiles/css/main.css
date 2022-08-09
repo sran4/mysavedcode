@@ -597,8 +597,7 @@ pre {
   border:1px solid whtie; 
   color: white;
   display: inline-flex;
-  justify-content: center;
-  width: auto;
+  justify-content: center; 
   background-color:dodgerblue !important;
   cursor: pointer;
 
