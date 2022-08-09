@@ -8,11 +8,30 @@
     <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Favourites Page</h3>
     {% endif %} {% for note in favs %}
     <a href="{% url 'notes_detail' note.slug %}">
-      <button class="btn btn-xs pl-3 pr-3 pt-1 pb-1 mr-1 mb-1 font-weight-bold text-dark" style="border-radius: 50px; background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
+      <button
+        class="btn btn-xs pl-3 pr-3 pt-1 pb-1 mr-1 mb-1 font-weight-bold text-dark"
+        style="border-radius: 50px; background-color: #3f9cdc; text-transform: uppercase; font-size: 12px"
+      >
         {{note.language}}
       </button>
     </a>
     {% endfor %}
+
+    <div class="row my-4">
+      <div class="mx-auto">
+        {% if favs.has_previous %}
+        <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-5" href="?page={{favs.previous_page_number }}">Previous</a>
+        {% endif %} {% for num in favs.paginator.page_range %} {% if favs.number == num %}
+        <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > favs.number|add:'-3' and num < favs.number|add:'3' %}
+        <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
+        {% endif %} {% endfor %} {% if favs.has_next %}
+        <a class="btn btn-outline-info mb-5" href="?page={{ favs.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-5" href="?page={{ favs.paginator.num_pages }}">Last</a>
+        {% endif %}
+      </div>
+    </div>
   </div>
   <form class="search-form" style="margin: auto; appearance: none; max-width: fit-content" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
     <input type="text" class="searchRounded form-control" list="favs" name="q" placeholder="Search Snippets..." />

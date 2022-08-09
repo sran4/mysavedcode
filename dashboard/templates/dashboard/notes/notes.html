@@ -19,7 +19,25 @@
     <a href="{% url 'notes_detail' note.slug %}">
       <button class="btn btn-xs pl-3 pr-3 pt-1 pb-1  mb-1 mr-1  font-weight-bold text-dark" style="border-radius: 50px;background-color:#3f9cdc;; text-transform: uppercase;font-size: 12px"> {{note.language}}</button>
     </a>
-{% endfor %}</div>
+{% endfor %}
+
+ <div class="row text-center my-4">
+        <div class="mx-auto">
+          {% if notes.has_previous %}
+          <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
+          <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
+          {% endif %} {% for num in notes.paginator.page_range %} {% if notes.number == num %}
+          <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
+          {% elif num > notes.number|add:'-3' and num < notes.number|add:'3' %}
+          <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
+          {% endif %} {% endfor %} {% if notes.has_next %}
+          <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
+          <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
+          {% endif %}
+        </div>
+      </div>
+
+</div>
 <hr />  
   <div class="search-containerr">
     <form class="search-form" action="{% url 'notes' %}" method="GET">
