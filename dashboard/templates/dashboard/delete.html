@@ -1,12 +1,12 @@
 {% extends 'dashboard/base.html' %} {% load static %}  {% block content %}
 <br><br><br>
-<div class="container1 text-center text-dark mt-5 mb-5">    
+<div class="container1 text-center text-light mt-5 mb-5" style='background-color:black;border:2px solid white;'>    
   <form method="POST" action="">
     {% csrf_token %}
     <p><h3>Are you sure you want to delete "{{obj}}"?</h3></p>
 <div class="d-grid gap-2 d-md-flex" style="justify-content: center; padding-left:20px; margin-left:3rem;">
-    <a class="btn btn-success m-1" href="{{request.META.HTTP_REFERER}}">Cancel</a>
-   <input class="btn btn-warning m-1" type="submit" value="Confirm" /></div>
+    <a class="btn btn-success m-3" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+   <input class="btn btn-warning m-3" type="submit" value="Confirm" /></div>
   </form>
 
 
