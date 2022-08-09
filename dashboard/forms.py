@@ -21,7 +21,7 @@ class NotesForm(forms.ModelForm):
             "language": "Title",
             "code_here": "Save code Here | Copy and Paste Raw Data from Github",
             "fav": "Add in your Favourite code Pages",
-            "top": "Add in your Main code pages",
+            "top": "Add in your Top code pages",
 
         }
 

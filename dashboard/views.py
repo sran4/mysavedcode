@@ -152,7 +152,7 @@ def NotesDetailView(request,  note_slug):
     return render(request, 'dashboard/notes/notes_detail.html', context)
 
 
-# for Top Main page notes details
+# for Top Top page notes details
 def NotesDetailView1(request,  note_slug):
     try:
         note = Notes.objects.get(slug=note_slug)
