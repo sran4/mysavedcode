@@ -75,7 +75,7 @@
               <a class="dropdown-item" href="{% url 'profile'%}">Profile</a>
             </div>
           </li>
-          <li class="nav-item nav-link {% if 'codes-lists' in request.path %}active{% endif %}">Welcome {{ request.user.username|capfirst}}!</li>
+          <li class="nav-item nav-link {% if 'codes-lists' in request.path %}active{% endif %}">Hi, {{ request.user.username|capfirst}}!</li>
 
           <li class="nav-item">
             <a class="nav-link" href='{% url "logout" %}'>Logout</a>
