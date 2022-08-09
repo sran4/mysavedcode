@@ -80,7 +80,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'templates'
+            BASE_DIR / 'templates'
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -295,4 +295,4 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 django_heroku.settings(locals())
 SITE_ID = 1
 
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
+#DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')

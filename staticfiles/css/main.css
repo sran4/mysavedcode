@@ -346,7 +346,7 @@ a .myP:hover {
   visibility: visible;
   transform: translateX(0px);
   transition: visibility 0s, opacity 250ms, transform 250ms;
-  padding: 0rem 0rem !important;
+  margin-top: 20px;
 }
 .alert.hide {
   position: relative;

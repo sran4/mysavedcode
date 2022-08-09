@@ -1,4 +1,4 @@
-{% extends 'dashboard/base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
+{% extends 'base.html' %} {% load static %}{% load crispy_forms_tags %} {% block content %}
 
 <div class="container myh2">
   <div style="margin-bottom: 20px">
@@ -18,6 +18,23 @@
       <option value="{{note.language}}"></option>
       {% endfor %}
     </datalist>
+    <div>
+  <a href="{% url 'notes' %}"
+    ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
+      ( {{allNotes_count}} ) <i class="fa fa-home fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkgreen"></i> Codes
+    </button>
+  </a>
+
+  <a href="{% url 'create-note' %}"
+    ><button class="myPlus"><i class="fa fa-plus"></i></button
+  ></a>
+  {% if page == "top" %}
+  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Main</h4>
+  {% else %}
+  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Favourites</h4>
+  {% endif %}
+
+    </div>
 
     {% for note in favs %}
     <a href="{% url 'notes_detail' note.slug %}">
@@ -47,20 +64,7 @@
     </div>
   </div>
 
-  <a href="{% url 'notes' %}"
-    ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
-      ( {{allNotes_count}} ) <i class="fa fa-home fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkgreen"></i> Codes
-    </button>
-  </a>
 
-  <a href="{% url 'create-note' %}"
-    ><button class="myPlus"><i class="fa fa-plus"></i></button
-  ></a>
-  {% if page == "top" %}
-  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Main</h4>
-  {% else %}
-  <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets in your Favourites</h4>
-  {% endif %}
   <div class="row">
     {% for note in favs %}
     <div class="col-12 col-sm-6 col-md-3 col-lg-3 mb-4">

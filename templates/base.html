@@ -26,20 +26,12 @@
 
   <body onload="myLoading()">
     <div id="loading" class="spinner-border text-success"></div>
-    {% include "dashboard/navbar.html" %}
-    <center>
-      {% if messages %} {% for msg in messages %}
-      <div id="alert" class="container alert alert-{{msg.tags}}  alert-dismissible fade show margin-bottom:20px;">
-        <span style="font-size: 16px; text-align: center; font-weight: bold">{{msg}}</span>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      {% endfor %} {% endif %}
-    </center>
+
+    {% include "navbar.html" %} {% include "alert.html" %}
+
     <main>{% block content %} {% endblock content %}</main>
 
-    {% include "dashboard/footer.html" %}
+    {% include "footer.html" %}
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

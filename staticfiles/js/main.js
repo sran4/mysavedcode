@@ -59,7 +59,7 @@ searchInput.keydown(function (event) {
 
 function displaySearching() {
   serchButton.addClass('disabled')
-  serchButton.html("<i class='fa fa-spin fa-spinner' style='border-radius: 8px'></i> Searching...")
+  serchButton.html("<i class='fa fa-spin fa-spinner text-light' style='border-radius: 8px;color:white;'></i> Searching...")
 }
 
 function perfomSearch() {

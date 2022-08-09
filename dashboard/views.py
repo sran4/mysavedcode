@@ -20,11 +20,11 @@ from django.template.loader import render_to_string
 
 
 def home(request):
-    return render(request, 'dashboard/home.html')
+    return render(request, 'home.html')
 
 
 def handle404(request, exception):
-    return render(request, 'dashboard/404.html', )
+    return render(request, '404.html', )
 
 
 @login_required
@@ -45,7 +45,7 @@ def notes(request, c_slug=None):
     favNotes_count = Notes.objects.filter(
         user=request.user, fav=True).count()
     notes_count = notes.count()
-    paginator = Paginator(notes, 48)
+    paginator = Paginator(notes, 96)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
     context = {'notes': notes,
@@ -67,7 +67,7 @@ def favs_notes(request):
 
     favs_count = favs.count()
 
-    paginator = Paginator(favs, 40)
+    paginator = Paginator(favs, 80)
     page = request.GET.get('page')
     favs = paginator.get_page(page)
 
@@ -242,7 +242,7 @@ def create_note(request):
     context = {
         'form': form,
     }
-    return render(request, 'dashboard/form.html', context)
+    return render(request, 'form.html', context)
 
 
 # @login_required
@@ -271,7 +271,7 @@ def create_note(request):
 #     context = {
 #         'form': form,
 #     }
-#     return render(request, 'dashboard/form.html', context)
+#     return render(request, 'form.html', context)
 
 
 @login_required
@@ -293,7 +293,7 @@ def update_note(request, pk):
                'form': form,
                'page': page,
                }
-    return render(request, 'dashboard/form.html', context)
+    return render(request, 'form.html', context)
 
 
 @login_required
@@ -307,7 +307,7 @@ def delete_note(request, pk=None):
 
     context = {'obj': note,
                }
-    return render(request, 'dashboard/delete.html', context)
+    return render(request, 'delete.html', context)
 
 
 @login_required
@@ -388,7 +388,7 @@ def create_assembly(request):
         'form': form,
 
     }
-    return render(request, 'dashboard/form.html', context)
+    return render(request, 'form.html', context)
 
 
 @login_required
@@ -408,7 +408,7 @@ def update_homework(request, pk=None):
         'form': form,
         'page': page
     }
-    return render(request, 'dashboard/form.html', context)
+    return render(request, 'form.html', context)
 
 
 @login_required
@@ -434,7 +434,7 @@ def delete_homework(request, pk=None):
         return redirect("home-work")
     context = {'obj': homework,
                }
-    return render(request, 'dashboard/delete.html', context)
+    return render(request, 'delete.html', context)
 
 
 @login_required
