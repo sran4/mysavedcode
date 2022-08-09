@@ -6,7 +6,20 @@
     <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Main Page</h3>
     {% else %}
     <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">Favourites Page</h3>
-    {% endif %} {% for note in favs %}
+    {% endif %}
+
+    <form class="search-form" style="margin: auto; appearance: none; max-width: fit-content" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
+      <input type="text" class="searchRounded form-control" list="favs" name="q" placeholder="Search Snippets..." />
+      <label class="buttonnn searchbuttonnF" for="searchleft"></label>
+    </form>
+
+    <datalist id="favs">
+      {% for note in favs %}
+      <option value="{{note.language}}"></option>
+      {% endfor %}
+    </datalist>
+
+    {% for note in favs %}
     <a href="{% url 'notes_detail' note.slug %}">
       <button
         class="btn btn-xs pl-3 pr-3 pt-1 pb-1 mr-1 mb-1 font-weight-bold text-dark"
@@ -33,16 +46,7 @@
       </div>
     </div>
   </div>
-  <form class="search-form" style="margin: auto; appearance: none; max-width: fit-content" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
-    <input type="text" class="searchRounded form-control" list="favs" name="q" placeholder="Search Snippets..." />
-    <label class="buttonnn searchbuttonnF" for="searchleft"></label>
-  </form>
 
-  <datalist id="favs">
-    {% for note in favs %}
-    <option value="{{note.language}}"></option>
-    {% endfor %}
-  </datalist>
   <a href="{% url 'notes' %}"
     ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
       ( {{allNotes_count}} ) <i class="fa fa-home fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkgreen"></i> Codes
