@@ -594,10 +594,10 @@ pre {
 
 @media (max-width: 768px) {
   .container {
-    width: 80%;
+    width: 100%;
   }
   .container1 {
-    width: 80%;
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
   }
