@@ -84,7 +84,7 @@ def top_notes(request):
     allNotes_count = Notes.objects.filter(user=request.user).count()
     top = Notes.objects.filter(user=request.user, top=True)
     top_count = top.count()
-    paginator = Paginator(top, 40)
+    paginator = Paginator(top, 80)
     page = request.GET.get('page')
     top = paginator.get_page(page)
 
@@ -109,7 +109,7 @@ def tag_notes(request, slug=None):
     tags = Tag.objects.all()
 
     top_count = tags_Notes.count()
-    paginator = Paginator(tags_Notes, 40)
+    paginator = Paginator(tags_Notes, 80)
     page = request.GET.get('page')
     tags_Notes = paginator.get_page(page)
 
@@ -129,7 +129,7 @@ def tag_notes(request, slug=None):
     # __iexact = fields is exactly this
     # '''
 
-
+# for favs notes details
 def NotesDetailView(request,  note_slug):
     try:
         note = Notes.objects.get(slug=note_slug)
@@ -152,6 +152,7 @@ def NotesDetailView(request,  note_slug):
     return render(request, 'dashboard/notes/notes_detail.html', context)
 
 
+# for Top Main page notes details
 def NotesDetailView1(request,  note_slug):
     try:
         note = Notes.objects.get(slug=note_slug)
