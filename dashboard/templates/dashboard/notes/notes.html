@@ -11,6 +11,26 @@
       {% endfor %}
     </datalist>
   </div>
+
+<div>  <a href="{% url 'favs-notes' %}"
+      ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
+        ( {{favNotes_count}} ) <i class="fa fa-heart fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkred"></i> Codes
+      </button>
+    </a>
+
+    <a href="{% url 'create-note' %}"
+      ><button class="myPlus"><i class="fa fa-plus"></i></button
+    ></a>
+    {% if not Q %}
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{notes_count}} saved snippets in your home</h3>
+    {% else %}
+    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">
+      Your Search * {{Q}} * <br />
+      Found {{notes_count}} Snippets
+    </h3>
+    {% endif %}
+</div>
+
   <div class="row my-1">
     <div class="col-md-2">
       <h6 class="text-center">Categories</h6>
@@ -49,32 +69,16 @@
       </div>
 
 </div>
+</div>
 
+<div class="container">
  
-  <div>
-    
+  <div>    
 
-    <a href="{% url 'favs-notes' %}"
-      ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">
-        ( {{favNotes_count}} ) <i class="fa fa-heart fa-0x" style="float: center; margin-top: 3px; margin-right: 10px; color: darkred"></i> Codes
-      </button>
-    </a>
-
-    <a href="{% url 'create-note' %}"
-      ><button class="myPlus"><i class="fa fa-plus"></i></button
-    ></a>
-    {% if not Q %}
-    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{notes_count}} saved snippets in your home</h3>
-    {% else %}
-    <h3 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">
-      Your Search * {{Q}} * <br />
-      Found {{notes_count}} Snippets
-    </h3>
-    {% endif %}
-
+   
           <div class="row">
             {% for note in notes %}
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
               <div class="card myh2" style="height: 132px">
                 <a href="{% url 'notes_detail' note.slug %}">
                   <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; text-dark font-weight: bold; text-align: center; font-size: 11px">
