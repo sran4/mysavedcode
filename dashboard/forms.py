@@ -8,7 +8,7 @@ from django.forms import CheckboxInput, ModelChoiceField, Select, ModelMultipleC
 
 
 class NotesForm(forms.ModelForm):
-    notes_for_yourself = forms.CharField(label="Notes to search", widget=forms.Textarea(
+    notes_for_yourself = forms.CharField(label="Notes", widget=forms.Textarea(
         attrs={'class': 'form-control', 'placeholder': 'Add a keywords to search for this note!', 'rows': '2', 'cols': '150'}))
 
     tags = forms.ModelMultipleChoiceField(queryset=Tag.objects.all(
@@ -19,9 +19,9 @@ class NotesForm(forms.ModelForm):
 
         labels = {
             "language": "Title",
-            "code_here": "Better with Copy and Paste Raw Data from Github",
-            "fav": "Check if wants to add in your Favourite code Pages",
-            "top": "Check if wants to add in your Main code pages",
+            "code_here": "Save code Here | Copy and Paste Raw Data from Github",
+            "fav": "Add in your Favourite code Pages",
+            "top": "Add in your Main code pages",
 
         }
 
@@ -31,7 +31,7 @@ class NotesForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(NotesForm, self).__init__(*args, **kwargs)
-        self.fields['category'].empty_label = "Please choose Category"
+        self.fields['category'].empty_label = "Please Choose Category"
 
 
 class DateInput(forms.DateInput):
