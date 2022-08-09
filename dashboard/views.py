@@ -45,7 +45,7 @@ def notes(request, c_slug=None):
     favNotes_count = Notes.objects.filter(
         user=request.user, fav=True).count()
     notes_count = notes.count()
-    paginator = Paginator(notes, 36)
+    paginator = Paginator(notes, 48)
     page = request.GET.get('page')
     notes = paginator.get_page(page)
     context = {'notes': notes,
