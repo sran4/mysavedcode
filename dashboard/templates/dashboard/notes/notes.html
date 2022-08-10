@@ -83,7 +83,7 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3 mb-4">
               <div class="card myh2" style="height: 132px">
                 <a href="{% url 'notes_detail' note.slug %}">
-                  <div class="card-header" style="letter-spacing: 0.05em; padding: 0.5rem; text-dark font-weight: bold; text-align: center; font-size: 11px">
+                  <div class="card-header font-weight-bold text-bold text-dark" style="letter-spacing: 0.05em; padding: 0.5rem; text-align: center; font-size: 11px">
                     {% if note.fav %}
                     <i class="fa fa-heart fa-0x" style="float: right; mb-0; mt-0;  color: darkred"></i> {% endif %} {{note.language|striptags|upper|truncatechars:22}}
                   </div>
