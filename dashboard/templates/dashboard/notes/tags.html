@@ -78,6 +78,7 @@
   </div>
   <div class="row">
     <div class="mx-auto">
+        {% if favs %}
       {% if favs.has_previous %}
       <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
       <a class="btn btn-outline-info mb-5" href="?page={{favs.previous_page_number }}">Previous</a>
@@ -88,6 +89,7 @@
       {% endif %} {% endfor %} {% if favs.has_next %}
       <a class="btn btn-outline-info mb-5" href="?page={{ favs.next_page_number }}">Next</a>
       <a class="btn btn-outline-info mb-5" href="?page={{ favs.paginator.num_pages }}">Last</a>
+      {% endif %}
       {% endif %}
     </div>
   </div>

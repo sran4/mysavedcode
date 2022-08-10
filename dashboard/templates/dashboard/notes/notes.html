@@ -55,6 +55,7 @@
 
  <div class="row text-center my-4">
         <div class="mx-auto">
+          {% if notes %}
           {% if notes.has_previous %}
           <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
           <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
@@ -65,6 +66,7 @@
           {% endif %} {% endfor %} {% if notes.has_next %}
           <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
           <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
+          {% endif %}
           {% endif %}
         </div>
       </div>
@@ -115,6 +117,7 @@
 
       <div class="row text-center">
         <div class="mx-auto">
+            {% if notes %}
           {% if notes.has_previous %}
           <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
           <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
@@ -125,6 +128,7 @@
           {% endif %} {% endfor %} {% if notes.has_next %}
           <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
           <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
+          {% endif %}
           {% endif %}
         </div>
 
