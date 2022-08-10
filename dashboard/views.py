@@ -103,7 +103,7 @@ def tag_notes(request, slug=None):
 
     tags_Notes = None
     if slug != None:
-        tags_Notes = Notes.objects.filter(tags__slug=slug)
+        tags_Notes = Notes.objects.filter(user=request.user, tags__slug=slug)
     else:
         tags_Notes = Notes.objects.filter(user=request.user)
     tags = Tag.objects.all()
