@@ -1,3 +1,4 @@
+
 from django import forms
 from django.forms import widgets
 from . models import *
@@ -100,3 +101,7 @@ class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'password1', 'password2']
+
+    def __init__(self, *args, **kwargs):
+        super(UserRegistrationForm, self).__init__(*args, **kwargs)
+        self.fields['username'].help_text = "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only. NO SPACES!"
