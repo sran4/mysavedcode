@@ -15,10 +15,9 @@ html {
 }
 
 main {
-  color: #dad8df !important;
-  font-family: 'Montserrat', sans-serif !important;
-  letter-spacing: 0.12em !important;
-  font-weight: 500 !important;
+  color: #9a979f !important;
+  font-family: 'Montserrat', sans-serif !important; 
+  font-weight: 400 !important;
   line-height: 1.5 !important;
   font-size: 1em !important;
   margin: 20px 0px 60px 0px;
