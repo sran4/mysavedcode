@@ -18,6 +18,8 @@ from django.core.paginator import Paginator
 
 from django.template.loader import render_to_string
 
+from django.contrib.auth.models import Group, User
+
 
 def home(request):
     return render(request, 'home.html')
@@ -739,6 +741,9 @@ def register(request):
             user.username = user.username.capitalize()
             form.save()
             username = form.cleaned_data.get('username')
+
+            group = Group.objects.get(name='Customer')
+            user.groups.add(group)
             messages.success(
                 request, f"{username.upper()}  Account has been created!!!")
             return redirect('login')
