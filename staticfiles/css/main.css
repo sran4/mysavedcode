@@ -518,8 +518,7 @@ pre {
 
 pre {
   color: #a1a1a4 !important;
-  /* font-family: 'Montserrat', sans-serif !important; */
-  letter-spacing: .01em !important;
+  /* font-family: 'Montserrat', sans-serif !important; */ 
   font-weight: 400 !important;
   line-height: 1.5 !important;
   font-size: 1.3em !important;
