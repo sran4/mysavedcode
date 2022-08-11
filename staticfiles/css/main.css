@@ -835,6 +835,11 @@ pre {
     width: 300px !important;
   }
 
+  .myS {
+    font-size: 2rem;
+    margin-left: 0px;
+  }
+
   .myCol {
     padding-left: 0px;
     padding-right: 0px;
@@ -853,3 +858,4 @@ pre {
 
   }
 }
+
