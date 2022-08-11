@@ -44,7 +44,7 @@ DEBUG = env('DJANGO_DEBUG')
 ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
 
 
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
+#DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
 # Application definition
 
 INSTALLED_APPS = [
