@@ -585,11 +585,11 @@ pre {
   margin-block-start: 0em;
   margin-block-end: 0em;
 
-  
+
 }/*   ck editor */
 .hljs {
-    background: #c8bbbb;
-    color: #0f0e0e;
+    background: #c8bbbb!important;
+    color: #0f0e0e!important;
 }
 
 
