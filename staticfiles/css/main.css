@@ -319,10 +319,10 @@ a .myP:hover {
 }
 
 .myS {
-  color:rgb(255, 255, 255) !important;
+  color:rgb(3, 124, 245) !important;
 }
 .myS:hover {
-  color:rgb(3, 124, 245) !important;
+  color:rgb(255, 255, 255) !important;
 }
 .myP:hover {
   color:rgb(20, 109, 199) !important;
