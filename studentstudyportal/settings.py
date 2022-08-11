@@ -185,15 +185,28 @@ CKEDITOR_CONFIGS = {
 }
 
 
-# to avoid <p> show up
+# # to avoid <p> show up
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'autoParagraph': False
+#     },
+# }
+
+
 CKEDITOR_CONFIGS = {
     'default': {
-        'autoParagraph': False
+        'toolbar': 'full',
     },
-}
+    'special': {
+        'toolbar': 'Special',
+        'toolbar_Special': [
+            ['Bold', 'CodeSnippet'],
+        ],
+        'extraPlugins': 'codesnippet',
+    },
 
 
-CKEDITOR_CONFIGS = {
+
     'portal_config': {
         # 'skin': 'moono',
         # 'skin': 'office2013',
