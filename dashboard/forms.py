@@ -13,7 +13,7 @@ class NotesForm(forms.ModelForm):
         attrs={'class': 'form-control', 'placeholder': 'Add a keywords to search for this note!', 'rows': '2', 'cols': '150'}))
 
     tags = forms.ModelMultipleChoiceField(queryset=Tag.objects.all(
-    ), widget=forms.CheckboxSelectMultiple, required=False, label="TAGS (If wants to tag,  Press 'Ctrl' to select multiple tags)")
+    ), widget=forms.CheckboxSelectMultiple, required=False, label="TAGS (Can select multiple tags)")
 
     class Meta:
         model = Notes
