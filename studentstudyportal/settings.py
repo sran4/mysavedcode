@@ -319,7 +319,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 # Heroku local settings had to disable django_heroku.settings throw error while debug mode ==False
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 
 SITE_ID = 1
