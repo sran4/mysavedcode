@@ -44,6 +44,7 @@ DEBUG = env('DJANGO_DEBUG')
 ALLOWED_HOSTS = [env('DJANGO_ALLOWED_HOSTS')]
 
 
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
 # Application definition
 
 INSTALLED_APPS = [
@@ -72,6 +73,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+
 ]
 
 ROOT_URLCONF = 'studentstudyportal.urls'
@@ -165,24 +168,36 @@ CRISPY_TEMPLATE_PACK = "bootstrap4"
 ##  CKEDITOR CONFIGURATION ##
 ####################################
 
-CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+# CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
 CKEDITOR_UPLOAD_PATH = 'images/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
 
 
 CKEDITOR_CONFIGS = {
+
     'default': {
-        'toolbar': 'Custom',
-        'width': 'full',
-        'height': 'full',
-        # 'autoParagraph': False,
-        # 'toolbar_Custom': [
-        #     ['Bold', 'Italic', 'Underline'],
-        #     ['NumberedList', 'BulletedList'],
-        # ],
-    }
+
+        'extraPlugins': 'codesnippet',
+
+        'toolbar': 'full',
+
+    },
+
 }
+
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'Custom',
+#         'width': 'full',
+#         'height': 'full',
+#         # 'autoParagraph': False,
+#         # 'toolbar_Custom': [
+#         #     ['Bold', 'Italic', 'Underline'],
+#         #     ['NumberedList', 'BulletedList'],
+#         # ],
+#     }
+# }
 
 
 # # to avoid <p> show up
@@ -193,100 +208,99 @@ CKEDITOR_CONFIGS = {
 # }
 
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'full',
-    },
-    'special': {
-        'toolbar': 'Special',
-        'toolbar_Special': [
-            ['Bold', 'CodeSnippet'],
-        ],
-        'extraPlugins': 'codesnippet',
-    },
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'toolbar': 'full',
+#     },
+#     'special': {
+#         'toolbar': 'Special',
+#         'toolbar_Special': [
+#             ['Bold', 'CodeSnippet'],
+#         ],
+#         'extraPlugins': 'codesnippet',
+#     },
 
 
+#     'portal_config': {
+#         # 'skin': 'moono',
+#         # 'skin': 'office2013',
+#         'toolbar_Basic': [
+#             ['Source', '-', 'Bold', 'Italic']
+#         ],
+#         'toolbar_YourCustomToolbarConfig': [
+#             {'name': 'document', 'items': [
+#                 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates'
+#             ]},
+#             {'name': 'clipboard', 'items': [
+#                 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'
+#             ]},
+#             {'name': 'editing', 'items': [
+#                 'Find', 'Replace', '-', 'SelectAll']},
+#             {'name': 'forms',
+#              'items': [
+#                  'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea',
+#                  'Select', 'Button', 'ImageButton', 'HiddenField'
+#              ]},
+#             '/',
+#             {'name': 'basicstyles',
+#              'items': [
+#                  'Bold', 'Italic', 'Underline', 'Strike', 'Subscript',
+#                  'Superscript', '-', 'RemoveFormat'
+#              ]},
+#             {'name': 'paragraph',
+#              'items': [
+#                  'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent',
+#                  '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft',
+#                  'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-',
+#                  'BidiLtr', 'BidiRtl', 'Language'
+#              ]},
+#             {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
+#             {'name': 'insert',
+#              'items': [
+#                  'Image', 'Table', 'HorizontalRule',
+#                  'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'
+#              ]},
+#             '/',
+#             {'name': 'styles', 'items': [
+#                 'Styles', 'Format', 'Font', 'FontSize']},
+#             {'name': 'colors', 'items': ['TextColor', 'BGColor']},
+#             {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
+#             {'name': 'about', 'items': ['About']},
+#             '/',  # put this to force next toolbar on new line
+#             {'name': 'yourcustomtools', 'items': [
+#                 # put the name of your editor.ui.addButton here
+#                 'Preview',
+#                 'Maximize',
 
-    'portal_config': {
-        # 'skin': 'moono',
-        # 'skin': 'office2013',
-        'toolbar_Basic': [
-            ['Source', '-', 'Bold', 'Italic']
-        ],
-        'toolbar_YourCustomToolbarConfig': [
-            {'name': 'document', 'items': [
-                'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates'
-            ]},
-            {'name': 'clipboard', 'items': [
-                'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'
-            ]},
-            {'name': 'editing', 'items': [
-                'Find', 'Replace', '-', 'SelectAll']},
-            {'name': 'forms',
-             'items': [
-                 'Form', 'Checkbox', 'Radio', 'TextField', 'Textarea',
-                 'Select', 'Button', 'ImageButton', 'HiddenField'
-             ]},
-            '/',
-            {'name': 'basicstyles',
-             'items': [
-                 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript',
-                 'Superscript', '-', 'RemoveFormat'
-             ]},
-            {'name': 'paragraph',
-             'items': [
-                 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent',
-                 '-', 'Blockquote', 'CreateDiv', '-', 'JustifyLeft',
-                 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-',
-                 'BidiLtr', 'BidiRtl', 'Language'
-             ]},
-            {'name': 'links', 'items': ['Link', 'Unlink', 'Anchor']},
-            {'name': 'insert',
-             'items': [
-                 'Image', 'Table', 'HorizontalRule',
-                 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'
-             ]},
-            '/',
-            {'name': 'styles', 'items': [
-                'Styles', 'Format', 'Font', 'FontSize']},
-            {'name': 'colors', 'items': ['TextColor', 'BGColor']},
-            {'name': 'tools', 'items': ['Maximize', 'ShowBlocks']},
-            {'name': 'about', 'items': ['About']},
-            '/',  # put this to force next toolbar on new line
-            {'name': 'yourcustomtools', 'items': [
-                # put the name of your editor.ui.addButton here
-                'Preview',
-                'Maximize',
-
-            ]},
-        ],
-        'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
-        # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
-        # 'height': 291,
-        'width': '100%',
-        # 'filebrowserWindowHeight': 725,
-        # 'filebrowserWindowWidth': 940,
-        # 'toolbarCanCollapse': True,
-        # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
-        'tabSpaces': 4,
-        'extraPlugins': ','.join([
-            'uploadimage',  # the upload image feature
-            # your extra plugins here
-            'div',
-            'autolink',
-            'autoembed',
-            'embedsemantic',
-            'autogrow',
-            # 'devtools',
-            'widget',
-            'lineutils',
-            'clipboard',
-            'dialog',
-            'dialogui',
-            'elementspath'
-        ]),
-    }
-}
+#             ]},
+#         ],
+#         'toolbar': 'YourCustomToolbarConfig',  # put selected toolbar config here
+#         # 'toolbarGroups': [{ 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] }],
+#         # 'height': 291,
+#         'width': '100%',
+#         # 'filebrowserWindowHeight': 725,
+#         # 'filebrowserWindowWidth': 940,
+#         # 'toolbarCanCollapse': True,
+#         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
+#         'tabSpaces': 4,
+#         'extraPlugins': ','.join([
+#             'uploadimage',  # the upload image feature
+#             # your extra plugins here
+#             'div',
+#             'autolink',
+#             'autoembed',
+#             'embedsemantic',
+#             'autogrow',
+#             # 'devtools',
+#             'widget',
+#             'lineutils',
+#             'clipboard',
+#             'dialog',
+#             'dialogui',
+#             'elementspath'
+#         ]),
+#     }
+# }
 
 STATIC_ROOT = os.path.join(BASE_DIRR, 'staticfiles')
 # collectstatic will make folder statifiles and save all files to the folder
@@ -304,8 +318,8 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
-# Heroku local settings
-django_heroku.settings(locals())
-SITE_ID = 1
+# Heroku local settings had to disable django_heroku.settings throw error while debug mode ==False
+# django_heroku.settings(locals())
 
-#DEBUG = (os.environ.get('DEBUG_VALUE') == 'False')
+
+SITE_ID = 1

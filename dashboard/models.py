@@ -60,11 +60,10 @@ class Notes(models.Model):
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True)
     language = models.CharField(max_length=200,)
-    tags = models.ManyToManyField('Tag', blank=True, null=True)
+    tags = models.ManyToManyField('Tag', blank=True)
     # code_here = RichTextField(blank=True)
     # code_here = RichTextUploadingField(config_name='portal_config')
-    code_here = RichTextUploadingField(
-        extra_plugins=['codesnippet'], blank=True, null=True)
+    code_here = RichTextUploadingField(blank=True, null=True)
     notes_for_yourself = models.TextField()
     fav = models.BooleanField(default=False)
     top = models.BooleanField(default=False)

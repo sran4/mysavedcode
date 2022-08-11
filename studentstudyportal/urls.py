@@ -34,3 +34,4 @@ if settings.DEBUG:
 
 
 handler404 = 'dashboard.views.handle404'
+
