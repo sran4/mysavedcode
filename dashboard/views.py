@@ -29,6 +29,10 @@ def handle404(request, exception):
     return render(request, '404.html', )
 
 
+def handle500(request):
+    return render(request, '404.html', )
+
+
 @login_required
 def notes(request, c_slug=None):
     c_page = None

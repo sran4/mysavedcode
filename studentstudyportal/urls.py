@@ -34,4 +34,4 @@ if settings.DEBUG:
 
 
 handler404 = 'dashboard.views.handle404'
-
+handler500 = 'dashboard.views.handle500'
