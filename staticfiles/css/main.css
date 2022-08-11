@@ -600,11 +600,11 @@ pre {
 
 .stretch {
     display:inline-block;
-    -webkit-transform:scale(2,1); /* Safari and Chrome */
-    -moz-transform:scale(2,1); /* Firefox */
-    -ms-transform:scale(2,1); /* IE 9 */
-    -o-transform:scale(2,1); /* Opera */
-    transform:scale(2,1); /* W3C */
+    -webkit-transform:scale(1.3,.8); /* Safari and Chrome */
+    -moz-transform:scale(1.3,.8); /* Firefox */
+    -ms-transform:scale(1.3,.8); /* IE 9 */
+    -o-transform:scale(1.3,.8); /* Opera */
+    transform:scale(1.3,.8); /* W3C */
 }
 /* ++++++++++++++++ Media++++++++++++++++ ++++++++++++++++++++++++++++++++++++++++++++++++++      */
 

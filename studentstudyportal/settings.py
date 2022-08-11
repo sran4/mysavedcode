@@ -181,6 +181,7 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': 'codesnippet',
 
         'toolbar': 'full',
+        'allowedContent': True
 
     },
 
