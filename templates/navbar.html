@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <a class="navbar-brand myP" href="{% url 'home' %}"
         ><h3 style="margin: 0; padding: 0; font-size: 3.3rem; text-bold text-transform: uppercase; font-family: Bradley Hand ITC, garamond, serif">
-          <b><em class="myP">Sran</em></b>
+          <b><em class="myP stretch ml-5">Sran</em></b>
         </h3>
       </a>
       <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
@@ -42,7 +42,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown {% if 'codes-lists' in request.path %}active{% endif %}">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categ.</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{% url 'notes' %}">All Notes</a>
 

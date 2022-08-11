@@ -49,6 +49,21 @@
         </button>
       </a>
       {% endfor %}
+      <div class="row mt-4">
+        <div class="mx-auto">
+          {% if favs %} {% if favs.has_previous %}
+          <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
+          <a class="btn btn-outline-info mb-5" href="?page={{favs.previous_page_number }}">Previous</a>
+          {% endif %} {% for num in favs.paginator.page_range %} {% if favs.number == num %}
+          <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
+          {% elif num > favs.number|add:'-3' and num < favs.number|add:'3' %}
+          <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
+          {% endif %} {% endfor %} {% if favs.has_next %}
+          <a class="btn btn-outline-info mb-5" href="?page={{ favs.next_page_number }}">Next</a>
+          <a class="btn btn-outline-info mb-5" href="?page={{ favs.paginator.num_pages }}">Last</a>
+          {% endif %} {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -76,23 +91,7 @@
     {% endfor %} {% endif %}
     <br /><br />
   </div>
-  <div class="row">
-    <div class="mx-auto">
-        {% if favs %}
-      {% if favs.has_previous %}
-      <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
-      <a class="btn btn-outline-info mb-5" href="?page={{favs.previous_page_number }}">Previous</a>
-      {% endif %} {% for num in favs.paginator.page_range %} {% if favs.number == num %}
-      <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
-      {% elif num > favs.number|add:'-3' and num < favs.number|add:'3' %}
-      <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
-      {% endif %} {% endfor %} {% if favs.has_next %}
-      <a class="btn btn-outline-info mb-5" href="?page={{ favs.next_page_number }}">Next</a>
-      <a class="btn btn-outline-info mb-5" href="?page={{ favs.paginator.num_pages }}">Last</a>
-      {% endif %}
-      {% endif %}
-    </div>
-  </div>
+  <br /><br />
 
   {% endblock content %}
 </div>
