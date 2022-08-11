@@ -837,7 +837,7 @@ pre {
 
   .myS {
     font-size: 2rem;
-    margin-left: 0px;
+    margin-left: 0px!important;
   }
 
   .myCol {
