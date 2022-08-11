@@ -20,9 +20,9 @@ class NotesForm(forms.ModelForm):
 
         labels = {
             "language": "Title",
-            "code_here": "Save code Here | Copy and Paste Raw Data from Github",
-            "fav": "Add in your Favourite code Pages",
-            "top": "Add in your Top code pages",
+            "code_here": "Save code Here",
+            "fav": "Add in Favourite code Pages",
+            "top": "Add in Top code pages",
 
         }
 
