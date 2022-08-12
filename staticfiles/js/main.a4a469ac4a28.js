@@ -59,7 +59,7 @@ searchInput.keydown(function (event) {
 
 function displaySearching() {
   serchButton.addClass('disabled')
-  serchButton.html("<i class='fa fa-spin fa-spinner fa-1x  text-light' style='border-radius: 6px; color:white;'></i>")
+  serchButton.html("<i class='fa fa-spin fa-spinner text-light' style='border-radius: 8px;color:white;'></i> Searching...")
 }
 
 function perfomSearch() {
@@ -72,34 +72,34 @@ function perfomSearch() {
 // timeout 1 sec means take 1 sec to display search result
 
 // for fav page Auto Search will trigger if user not press enter
-var searchForm1 = $('.search-form1')
-var serchButton1 = $('.searchbuttonnF1')
-var searchInput1 = searchForm1.find("[name='q1']") // input name='q1'
-var typingTimer1
+var searchForm = $('.search-form1')
+var serchButton = $('.searchbuttonnF1')
+var searchInput = searchForm.find("[name='q1']") // input name='q'
+var typingTimer
 var typingInterval = 2000 // 2 seconds
-var searchBtn1 = searchForm1.find("[type='submit']")
-searchInput1.keyup(function (event) {
+var searchBtn = searchForm.find("[type='submit']")
+searchInput.keyup(function (event) {
   // key released
-  clearTimeout(typingTimer1)
+  clearTimeout(typingTimer)
 
-  typingTimer1 = setTimeout(perfomSearch1, typingInterval)
+  typingTimer = setTimeout(perfomSearch, typingInterval)
 })
 
-searchInput1.keydown(function (event) {
+searchInput.keydown(function (event) {
   // key pressed
-  clearTimeout(typingTimer1)
+  clearTimeout(typingTimer)
 })
 
-function displaySearching1() {
-  serchButton1.addClass('disabled')
-  serchButton1.html("<i class='fa fa-spin fa-spinner fa-1x text-light' style='border-radius: 16px; color:white;'></i> Searching...")
+function displaySearching() {
+  serchButton.addClass('disabled')
+  serchButton.html("<i class='fa fa-spin fa-spinner text-light' style='border-radius: 8px;color:white;'></i> Searching...")
 }
 
-function perfomSearch1() {
-  displaySearching1()
-  var query = searchInput1.val()
+function perfomSearch() {
+  displaySearching()
+  var query = searchInput.val()
   setTimeout(function () {
-    window.location.href = '/favourites-codes-lists/?q1=' + query
+    window.location.href = '/favourites-codes-lists/?q=' + query
   }, 1000)
 }
 // timeout 1 sec means take 1 sec to display search result

@@ -25,54 +25,78 @@
 </div>
 
   <div class="row my-5 ">
-    <div class="col-md-2">
-      <h6 class="text-center">Categories</h6>
-      {% for cat in links %}
-      <a class="" href="{{cat.get_url}}">
-        <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
-          {{cat.name}}
-        </button>
-      </a>
-      {% endfor %}  
+        <div class="col-md-2">
+          <h6 class="text-center">Categories</h6>
+          {% for cat in links %}
+          <a class="" href="{{cat.get_url}}">
+            <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
+              {{cat.name}} &nbsp; ( {{cat.notes_set.all.count}} )
+            </button>
+          </a>
+          {% endfor %}  
+        </div>
+
+    <div class="col-md-8 my-1">
+      <div>  
+          {% if not Q %}
+          <h4 class="codeCount" style="text-align: center; color: ashwhite;">{{notes_count}} saved snippets in Home Page</h4>
+             {% else %}
+             <h4 class="codeCount" style="text-align: center; color: ashwhite;">
+               Your Search * {{Q}} * <br />
+                     Found {{notes_count}} Snippets
+                 </h4>
+              {% endif %}
+
+          {% for note in notes %}
+          <a href="{% url 'notes_detail' note.slug %}">
+                   <button class="btn btn-xs pl-3 pr-3 pt-1 pb-1  mb-2 mr-1   font-weight-bold text-dark" style="border-radius: 50px;background-color:#3f9cdc;; text-transform: uppercase;font-size: 12px"> {{note.language}}</button>
+                  </a>
+              {% endfor %}
+          </div>
+
+                  <div class="row text-center my-4">
+                      <div class="mx-auto">
+                        {% if notes %}
+                        {% if notes.has_previous %}
+                        <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
+                        <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
+                        {% endif %} {% for num in notes.paginator.page_range %} {% if notes.number == num %}
+                        <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
+                        {% elif num > notes.number|add:'-3' and num < notes.number|add:'3' %}
+                        <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %} {% endfor %} {% if notes.has_next %}
+                        <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
+                        <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                  </div>
+
+
     </div>
 
-    <div class="col-md-10 my-1">
-  <div>  
- {% if not Q %}
-    <h4 class="codeCount" style="text-align: center; color: ashwhite;">{{notes_count}} saved snippets in Home Page</h4>
-    {% else %}
-    <h4 class="codeCount" style="text-align: center; color: ashwhite;">
-      Your Search * {{Q}} * <br />
-      Found {{notes_count}} Snippets
-    </h4>
-    {% endif %}
+    <div class="col-md-2">
+        <h6 class="text-center">Tags</h6>
+       {% for tag in tags %}
+        <a class="" href="{% url 'tag' tag.slug %}">
+          <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
+            {{tag.name}}&nbsp; ( {{tag.notes_set.all.count}} )
+          </button>
+        </a>
+        {% endfor %}  
+        <a href="{% url 'all-tags' %}">
+        <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
+            More &nbsp;  &nbsp; >>>
+          </button>
+          </a>
+    </div>
 
-    {% for note in notes %}
-    <a href="{% url 'notes_detail' note.slug %}">
-      <button class="btn btn-xs pl-3 pr-3 pt-1 pb-1  mb-2 mr-1   font-weight-bold text-dark" style="border-radius: 50px;background-color:#3f9cdc;; text-transform: uppercase;font-size: 12px"> {{note.language}}</button>
-    </a>
-{% endfor %}
+ 
 
- <div class="row text-center my-4">
-        <div class="mx-auto">
-          {% if notes %}
-          {% if notes.has_previous %}
-          <a class="btn btn-outline-info mb-5" href="?page=1">First</a>
-          <a class="btn btn-outline-info mb-5" href="?page={{ notes.previous_page_number }}">Previous</a>
-          {% endif %} {% for num in notes.paginator.page_range %} {% if notes.number == num %}
-          <a class="btn btn-outline-info mb-5 active" href="?page={{ num }}">{{ num }}</a>
-          {% elif num > notes.number|add:'-3' and num < notes.number|add:'3' %}
-          <a class="btn btn-outline-info mb-5" href="?page={{ num }}">{{ num }}</a>
-          {% endif %} {% endfor %} {% if notes.has_next %}
-          <a class="btn btn-outline-info mb-5" href="?page={{ notes.next_page_number }}">Next</a>
-          <a class="btn btn-outline-info mb-5" href="?page={{ notes.paginator.num_pages }}">Last</a>
-          {% endif %}
-          {% endif %}
-        </div>
-      </div>
 
-</div>
-</div>
+
+
+
 
 <div class="container">
  

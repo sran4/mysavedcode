@@ -39,15 +39,17 @@ def notes(request, c_slug=None):
     notes = None
     if c_slug != None:
         c_page = get_object_or_404(Category, slug=c_slug)
-        q = c_page
         notes = Notes.objects.filter(user=request.user, category=c_page)
 
     else:
         q = request.GET.get('q') if request.GET.get('q') != None else ''
         notes = Notes.objects.filter(user=request.user).filter(
             Q(language__icontains=q) |
+            Q(category__name__icontains=q) |
+            Q(tags__name__icontains=q) |
             Q(notes_for_yourself__icontains=q)).order_by('-updated_at')
 
+    tags = Tag.objects.all()[0:15]
     favNotes_count = Notes.objects.filter(
         user=request.user, fav=True).count()
     notes_count = notes.count()
@@ -55,6 +57,7 @@ def notes(request, c_slug=None):
     page = request.GET.get('page')
     notes = paginator.get_page(page)
     context = {'notes': notes,
+               'tags': tags,
                'Q': q,
                'notes_count': notes_count,
                'favNotes_count': favNotes_count,
@@ -64,11 +67,12 @@ def notes(request, c_slug=None):
 
 @login_required
 def favs_notes(request):
-    q = request.GET.get('q') if request.GET.get('q') != None else ''
+    q = request.GET.get('q1') if request.GET.get('q1') != None else ''
     allNotes_count = Notes.objects.filter(user=request.user).count()
-    favs = Notes.objects.filter(user=request.user, fav=True).filter(
+    favs = Notes.objects.filter(user=request.user, fav=True, top=True).filter(
         Q(language__icontains=q) |
         Q(notes_for_yourself__icontains=q) |
+        Q(tags__name__icontains=q) |
         Q(code_here__icontains=q)).order_by('-updated_at')
 
     favs_count = favs.count()
@@ -128,6 +132,19 @@ def tag_notes(request, slug=None):
     return render(request, 'dashboard/notes/tags.html', context)
 
 
+@login_required
+def all_tags(request):
+    tags = Tag.objects.all().order_by('id')
+    paginator = Paginator(tags, 80)
+    page = request.GET.get('page')
+    tags = paginator.get_page(page)
+
+    context = {
+        'tags': tags,
+
+
+    }
+    return render(request, 'dashboard/notes/all_tags.html', context)
 # class NotesDetailView(LoginRequiredMixin, generic.DetailView):
 #     model = Notes
 
@@ -136,6 +153,8 @@ def tag_notes(request, slug=None):
     # '''
 
 # for favs notes details
+
+
 def NotesDetailView(request,  note_slug):
     try:
         note = Notes.objects.get(slug=note_slug)

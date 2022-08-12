@@ -36,13 +36,17 @@ footer {
   font-family: 'Montserrat', sans-serif;
   background-color: rgba(86, 93, 112, 0.2);
 }
-
-.example::-webkit-scrollbar {
-  display: none;
+.navbar-brand {
+    padding-top: 0rem!important;; 
+    padding-bottom: 0rem!important;
 }
 
 .navbar {
   background-color: rgb(43 43 43) !important;
+  /* background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%) !important; */
+}
+.navbar1 {
+  background-color: rgb(35 36 45) !important;
   /* background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%) !important; */
 }
 

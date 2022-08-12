@@ -36,9 +36,9 @@ footer {
   font-family: 'Montserrat', sans-serif;
   background-color: rgba(86, 93, 112, 0.2);
 }
-.navbar-brand {
-    padding-top: 0rem!important;; 
-    padding-bottom: 0rem!important;
+
+.example::-webkit-scrollbar {
+  display: none;
 }
 
 .navbar {

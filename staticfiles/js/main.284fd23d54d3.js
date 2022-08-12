@@ -59,7 +59,7 @@ searchInput.keydown(function (event) {
 
 function displaySearching() {
   serchButton.addClass('disabled')
-  serchButton.html("<i class='fa fa-spin fa-spinner fa-1x  text-light' style='border-radius: 6px; color:white;'></i>")
+  serchButton.html("<i class='fa fa-spin fa-spinner text-light' style='border-radius: 6px;color:white;'></i> Searching...")
 }
 
 function perfomSearch() {
@@ -92,7 +92,7 @@ searchInput1.keydown(function (event) {
 
 function displaySearching1() {
   serchButton1.addClass('disabled')
-  serchButton1.html("<i class='fa fa-spin fa-spinner fa-1x text-light' style='border-radius: 16px; color:white;'></i> Searching...")
+  serchButton1.html("<i class='fa fa-spin fa-spinner text-light' style='border-radius: 6px;color:white;'></i> Searching...")
 }
 
 function perfomSearch1() {

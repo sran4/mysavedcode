@@ -38,10 +38,12 @@ function showTime() {
 
 showTime()
 
-// for main notes page Auto Search will trigger if user not press enter
+// this funtion will trigger if type and not hit enter
+// Notes home page Auto Search
 var searchForm = $('.search-form')
 var serchButton = $('.searchbuttonnF')
 var searchInput = searchForm.find("[name='q']") // input name='q'
+
 var typingTimer
 var typingInterval = 2000 // 2 seconds
 var searchBtn = searchForm.find("[type='submit']")
@@ -59,7 +61,7 @@ searchInput.keydown(function (event) {
 
 function displaySearching() {
   serchButton.addClass('disabled')
-  serchButton.html("<i class='fa fa-spin fa-spinner fa-1x  text-light' style='border-radius: 6px; color:white;'></i>")
+  serchButton.html("<i class='fa fa-spin fa-spinner text-light' style='border-radius: 8px;color:white;'></i> Searching...")
 }
 
 function perfomSearch() {
@@ -70,40 +72,52 @@ function perfomSearch() {
   }, 1000)
 }
 // timeout 1 sec means take 1 sec to display search result
-
-// for fav page Auto Search will trigger if user not press enter
-var searchForm1 = $('.search-form1')
-var serchButton1 = $('.searchbuttonnF1')
-var searchInput1 = searchForm1.find("[name='q1']") // input name='q1'
-var typingTimer1
-var typingInterval = 2000 // 2 seconds
-var searchBtn1 = searchForm1.find("[type='submit']")
-searchInput1.keyup(function (event) {
-  // key released
-  clearTimeout(typingTimer1)
-
-  typingTimer1 = setTimeout(perfomSearch1, typingInterval)
+//Displaying Loading text on every page
+$('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>')
+$(window).on('load', function () {
+  setTimeout(removeLoader, 150) //wait for page load PLUS two seconds.
 })
-
-searchInput1.keydown(function (event) {
-  // key pressed
-  clearTimeout(typingTimer1)
-})
-
-function displaySearching1() {
-  serchButton1.addClass('disabled')
-  serchButton1.html("<i class='fa fa-spin fa-spinner fa-1x text-light' style='border-radius: 16px; color:white;'></i> Searching...")
+function removeLoader() {
+  $('#loadingDiv').fadeOut(500, function () {
+    // fadeOut complete. Remove the loading div
+    $('#loadingDiv').remove() //makes page more lightweight
+  })
 }
 
-function perfomSearch1() {
-  displaySearching1()
-  var query = searchInput1.val()
+// this funtion will trigger if type and not hit enter
+// Favourite page Auto Search
+var searchForm = $('.search-form1')
+var serchButton = $('.searchbuttonnF1')
+var searchInput = searchForm.find("[name='q1']") // input name='q'
+
+var typingTimer
+var typingInterval = 2000 // 2 seconds
+var searchBtn = searchForm.find("[type='submit']")
+searchInput.keyup(function (event) {
+  // key released
+  clearTimeout(typingTimer)
+
+  typingTimer = setTimeout(perfomSearch, typingInterval)
+})
+
+searchInput.keydown(function (event) {
+  // key pressed
+  clearTimeout(typingTimer)
+})
+
+function displaySearching() {
+  serchButton.addClass('disabled')
+  serchButton.html("<i class='fa fa-spin fa-spinner text-light' style='border-radius: 8px;color:white;'></i> Searching...")
+}
+
+function perfomSearch() {
+  displaySearching()
+  var query = searchInput.val()
   setTimeout(function () {
-    window.location.href = '/favourites-codes-lists/?q1=' + query
+    window.location.href = '/favourites-codes-lists/?q=' + query
   }, 1000)
 }
 // timeout 1 sec means take 1 sec to display search result
-
 //Displaying Loading text on every page
 $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading...</div></div>')
 $(window).on('load', function () {

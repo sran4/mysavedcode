@@ -3,9 +3,15 @@
 <div class="container myh2">
   <div>
     <h3 class="text-center">Tag Page</h3>
-    <form class="search-form" style="margin: auto; appearance: none; max-width: fit-content" class="row d-flex justify-content-center mb-5" method="GET" action="{% url 'notes' %}">
-      <input type="text" class="searchRounded form-control" list="favs" name="q" placeholder="Search Snippets..." />
-      <label class="buttonnn searchbuttonnF" for="searchleft"></label>
+    <form
+      class="search-form1"
+      style="margin: auto; appearance: none; max-width: fit-content"
+      class="row d-flex justify-content-center mb-5"
+      method="GET"
+      action="{% url 'favs-notes' %}"
+    >
+      <input type="text" class="searchRounded form-control" list="favs" name="q1" placeholder="Search Snippets..." />
+      <label class="buttonnn searchbuttonnF1" for="searchleft1"></label>
     </form>
 
     <datalist id="favs">
@@ -15,19 +21,8 @@
     </datalist>
   </div>
 
-  <div class="row my-1">
-    <div class="col-md-2">
-      <h6 class="text-center">Tags</h6>
-      {% for note in tags %}
-      <a href="{% url 'tag' note.slug %}">
-        <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
-          {{note.name}}
-        </button>
-      </a>
-      {% endfor %}
-    </div>
-
-    <div class="col-md-10 my-1">
+  <div>
+    <div>
       <div class="my-1">
         <a href="{% url 'notes' %}"
           ><button type="button" class="btn" style="border-radius: 20px; background: DodgerBlue">

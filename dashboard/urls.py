@@ -10,6 +10,7 @@ urlpatterns = [
 
     path('favourites-codes-lists/', views.favs_notes, name='favs-notes'),
     path('top-codes-lists/', views.top_notes, name='top-notes'),
+    path('all-tags/', views.all_tags, name='all-tags'),
     path('tags/', views.tag_notes, name='tags'),
     path('tags/<slug:slug>/', views.tag_notes, name='tag'),
     path('add-code/', views.create_note, name='create-note'),
