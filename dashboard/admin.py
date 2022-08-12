@@ -4,8 +4,11 @@ from .models import Homework, Notes, Category, Todo, Tag
 
 
 class NoteAdmin(admin.ModelAdmin):
-    list_display = ('id', 'language', 'slug', 'created_at', 'updated_at')
-    search_fields = ['id', 'language', 'slug', 'notes_for_yourself']
+    list_display = ('id', 'language', 'fav', 'top',
+                    'created_at', 'updated_at')
+    search_fields = ['id', 'language', ]
+    list_editable = ['fav', 'top', 'language', ]
+    list_filter = ('language', 'fav', 'top')
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -16,6 +19,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
+
 
 admin.site.register(Notes, NoteAdmin)
 admin.site.register(Category, CategoryAdmin)
