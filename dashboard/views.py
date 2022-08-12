@@ -99,7 +99,7 @@ def top_notes(request):
     top = paginator.get_page(page)
 
     context = {'favs': top,
-               'favs_count': top_count,
+               'top_count': top_count,
                'allNotes_count': allNotes_count,
                'page': top_page,
                }
