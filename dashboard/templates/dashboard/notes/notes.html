@@ -26,7 +26,7 @@
 
   <div class="row my-5 ">
         <div class="col-md-2">
-          <h6 class="text-center">Categories</h6>
+          <h6 class="text-center text-light font-weight-light">Categories</h6>
           {% for cat in links %}
           <a class="" href="{{cat.get_url}}">
             <button class="btn-xs pl-1 pr-1 pt-1 pb-1 mb-1 mr-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">
@@ -39,9 +39,9 @@
     <div class="col-md-8 my-1">
       <div>  
           {% if not Q %}
-          <h4 class="codeCount" style="text-align: center; color: ashwhite;">{{notes_count}} saved snippets in Home Page</h4>
+          <h4 class="codeCount text-light font-weight-light" style="text-align: center; color: ashwhite;">{{notes_count}} Snippets in Home Page</h4>
              {% else %}
-             <h4 class="codeCount" style="text-align: center; color: ashwhite;">
+             <h4 class="codeCount text-light font-weight-light" style="text-align: center; color: ashwhite;">
                Your Search * {{Q}} * <br />
                      Found {{notes_count}} Snippets
                  </h4>
@@ -76,7 +76,7 @@
     </div>
 
     <div class="col-md-2">
-        <h6 class="text-center">Tags</h6>
+        <h6 class="text-center text-light font-weight-light">Tags</h6>
        {% for tag in tags %}
         <a class="" href="{% url 'tag' tag.slug %}">
           <button class="btn-xs pl-1 pr-1 pt-1 pb-1 mb-1 btn-block font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">

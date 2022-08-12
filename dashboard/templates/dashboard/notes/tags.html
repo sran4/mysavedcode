@@ -2,7 +2,7 @@
 
 <div class="container myh2">
   <div>
-    <h3 class="text-center">Tag Page</h3>
+    <h3 class="text-center text-light">Tag Page</h3>
     <form
       class="search-form1"
       style="margin: auto; appearance: none; max-width: fit-content"
@@ -33,7 +33,7 @@
           ><button class="myPlus"><i class="fa fa-plus"></i></button
         ></a>
       </div>
-      <h4 class="codeCount" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets</h4>
+      <h4 class="codeCount text-light font-weight-light" style="text-align: center; color: ashwhite; margin-top: 10px; margin-bottom: 5px">{{favs_count}} saved snippets</h4>
       {% for note in favs %}
       <a href="{% url 'notes_detail' note.slug %}">
         <button
