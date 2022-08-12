@@ -2,7 +2,7 @@
 
 <div class="container myh2">
   <div>
-    <h6 class="text-center">Tags</h6>
+    <h6 class="text-center">Tags ({{count}})</h6>
     {% for tag in tags %}
     <a href="{% url 'tag' tag.slug %}">
       <button class="btn-xs pl-3 pr-3 pt-1 pb-1 mb-1 mr-1 font-weight-bold text-dark catB" style="background-color: #3f9cdc; text-transform: uppercase; font-size: 12px">

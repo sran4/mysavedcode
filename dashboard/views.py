@@ -135,12 +135,14 @@ def tag_notes(request, slug=None):
 @login_required
 def all_tags(request):
     tags = Tag.objects.all().order_by('id')
+    count= tags.count()
     paginator = Paginator(tags, 80)
     page = request.GET.get('page')
     tags = paginator.get_page(page)
 
     context = {
         'tags': tags,
+        'count':count,
 
 
     }
