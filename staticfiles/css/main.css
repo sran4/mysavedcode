@@ -674,7 +674,9 @@ pre {
     font-size: 90%;
   }
 
-
+.searchh{
+  width:550px;
+}
 
   .searchRounded {
     padding: 15px;
@@ -693,7 +695,7 @@ pre {
   }
 
   .search-containerr {
-    margin: 5px 50px 5px;
+    margin: 5px 60px 5px;
     height: 50px;
     width: 100px;
   }
@@ -718,6 +720,9 @@ pre {
   }
   .myh2 {
     font-size: 25px;
+  }
+  .mSearch{
+    margin-top:10px
   }
 
   .btnn {
@@ -791,9 +796,12 @@ pre {
   .myPlus {
     font-size: 10px;
   }
+  .searchh{
+  width:250px;
+}
 
   .search-containerr {
-    margin: 5px 10px 5px;
+    margin: 5px 20px 5px;
     height: 50px;
     width: 100px;
   }
