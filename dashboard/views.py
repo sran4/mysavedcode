@@ -58,7 +58,6 @@ def notes(request, c_slug=None):
     notes = paginator.get_page(page)
     context = {'notes': notes,
                'tags': tags,
-               'Q': q,
                'notes_count': notes_count,
                'favNotes_count': favNotes_count,
                }
@@ -135,14 +134,14 @@ def tag_notes(request, slug=None):
 @login_required
 def all_tags(request):
     tags = Tag.objects.all().order_by('id')
-    count= tags.count()
+    count = tags.count()
     paginator = Paginator(tags, 80)
     page = request.GET.get('page')
     tags = paginator.get_page(page)
 
     context = {
         'tags': tags,
-        'count':count,
+        'count': count,
 
 
     }
