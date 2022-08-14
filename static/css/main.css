@@ -616,6 +616,16 @@ pre {
     -o-transform:scale(1.3,.8); /* Opera */
     transform:scale(1.3,.8); /* W3C */
 }
+
+ .catB{
+  border:1px solid whtie; 
+  color: white; 
+  justify-content: center; 
+  background-color:dodgerblue !important;
+  cursor: pointer;
+
+  }
+
 /* ++++++++++++++++ Media++++++++++++++++ ++++++++++++++++++++++++++++++++++++++++++++++++++      */
 
 
@@ -758,8 +768,7 @@ pre {
   border:1px solid whtie; 
   color: white;
   display: inline-flex;
-  justify-content: center;
-  width: auto;
+  justify-content: center;  
   background-color:dodgerblue !important;
   cursor: pointer;
 
