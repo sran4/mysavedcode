@@ -799,7 +799,7 @@ pre {
     height: 50px;
     width: 100px;
   }
- 
+   
   .searchbuttonn {
     position: absolute;
     font-size: 20px;
@@ -812,6 +812,7 @@ pre {
     width: 150px; /* Bar width+1px */
     padding: 0 16px 0 0;
   }
+
 
   .font-weight-bold {
     font-weight: 600 !important;
@@ -894,26 +895,6 @@ pre {
   cursor: pointer;
 
   }
-  .buttonn {
-  display: inline-block;
-  margin: 4px 2px;
-  background-color: rgb(54 57 57);
-  font-size: 14px;
-  padding-left: 32px;
-  padding-right: 32px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+ 
 }
 
