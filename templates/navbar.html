@@ -33,7 +33,7 @@
           <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %}">
             <a class="nav-link" aria-current="page" href="{% url 'favs-notes' %}">Fav</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %} dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Tags </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="nav-link" aria-current="page" href="{% url 'tags' %}">Tags</a>
