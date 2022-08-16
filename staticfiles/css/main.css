@@ -607,11 +607,11 @@ code {
 .hljs-keyword, .hljs-literal, .hljs-name, .hljs-selector-tag, .hljs-strong, .hljs-tag {
     color: #17a2b8!important;
 }
- pre code.hljs {
-        overflow: auto;
-    }
+.cke_source {
+    white-space: pre-wrap !important;
+}
 
-    
+
 /* To change form manytomany fileds input button to inline*/
 .form-check {
     position: relative;
