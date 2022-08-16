@@ -47,7 +47,7 @@ def notes(request, c_slug=None):
             Q(language__icontains=q) |
             Q(category__name__icontains=q) |
             Q(tags__name__icontains=q) |
-            Q(notes_for_yourself__icontains=q)).order_by('-updated_at')
+            Q(notes_for_yourself__icontains=q)).order_by('-updated_at').distinct()
 
     tags = Tag.objects.all()[0:15]
     favNotes_count = Notes.objects.filter(
@@ -72,7 +72,7 @@ def favs_notes(request):
         Q(language__icontains=q) |
         Q(notes_for_yourself__icontains=q) |
         Q(tags__name__icontains=q) |
-        Q(code_here__icontains=q)).order_by('-updated_at')
+        Q(code_here__icontains=q)).order_by('-updated_at').distinct()
 
     favs_count = favs.count()
 
