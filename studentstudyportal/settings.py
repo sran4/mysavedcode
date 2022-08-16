@@ -175,6 +175,7 @@ CKEDITOR_IMAGE_BACKEND = "pillow"
 
 
 CKEDITOR_CONFIGS = {
+    'codeSnippet_theme': 'monokai',
 
     'default': {
 
