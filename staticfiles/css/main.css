@@ -600,6 +600,9 @@ code {
     color: #17a2b8!important;
     word-break: break-word!important;
 }
+.hljs-class .hljs-title, .hljs-title.class_ {
+    color: #bd5ad2!important;
+}
 /* To change form manytomany fileds input button to inline*/
 .form-check {
     position: relative;
