@@ -599,6 +599,7 @@ code {
     font-size: 87.5%;
     color: #17a2b8!important;
     word-break: break-word!important;
+    word-wrap: break-word!important;
 }
 .hljs-class .hljs-title, .hljs-title.class_ {
     color: #bd5ad2!important;
