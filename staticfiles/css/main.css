@@ -595,7 +595,11 @@ pre {
     background: #2e2e2e!important;
     color: #e2e2e2!important;
 }
-
+code {
+    font-size: 87.5%;
+    color: rgb(128, 10, 10)!important;
+    word-break: break-word!important;
+}
 /* To change form manytomany fileds input button to inline*/
 .form-check {
     position: relative;
