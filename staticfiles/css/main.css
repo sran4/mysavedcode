@@ -597,19 +597,17 @@ pre {
 }
 code {
     font-size: 87.5%;
-    color: #17a2b8!important;
+    color: #b744ac!important;
     word-break: break-word!important;
-    word-wrap: break-word!important;
+   
 }
 .hljs-class .hljs-title, .hljs-title.class_ {
-    color: #bd5ad2!important;
+    color: #4a787f!important;
 }
 .hljs-keyword, .hljs-literal, .hljs-name, .hljs-selector-tag, .hljs-strong, .hljs-tag {
     color: #17a2b8!important;
 }
-.cke_source {
-    white-space: pre-wrap !important;
-}
+
 
 
 /* To change form manytomany fileds input button to inline*/
