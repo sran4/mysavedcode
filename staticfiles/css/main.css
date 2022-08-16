@@ -592,10 +592,9 @@ pre {
 
 }/*   ck editor */
 .hljs {
-    background: #c8bbbb!important;
-    color: #0f0e0e!important;
+    background: #2e2e2e!important;
+    color: #e2e2e2!important;
 }
-
 
 /* To change form manytomany fileds input button to inline*/
 .form-check {
