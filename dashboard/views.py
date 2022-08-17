@@ -68,7 +68,7 @@ def notes(request, c_slug=None):
 def favs_notes(request):
     q = request.GET.get('q1') if request.GET.get('q1') != None else ''
     allNotes_count = Notes.objects.filter(user=request.user).count()
-    favs = Notes.objects.filter(user=request.user, fav=True).filter(
+    favs = Notes.objects.filter(user=request.user).filter(
         Q(language__icontains=q) |
         Q(category__name__icontains=q) |
         Q(notes_for_yourself__icontains=q) |
