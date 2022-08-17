@@ -619,7 +619,7 @@ code {
 }
 
 dropdown-divider {   
-     margin: 0rem 0;    
+     margin: 0 0 !important;    
 }
 
 .stretch {
