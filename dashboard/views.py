@@ -70,6 +70,7 @@ def favs_notes(request):
     allNotes_count = Notes.objects.filter(user=request.user).count()
     favs = Notes.objects.filter(user=request.user, fav=True).filter(
         Q(language__icontains=q) |
+        Q(category__name__icontains=q) |
         Q(notes_for_yourself__icontains=q) |
         Q(tags__name__icontains=q) |
         Q(code_here__icontains=q)).order_by('-updated_at').distinct()

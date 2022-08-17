@@ -36,8 +36,8 @@
           <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %} dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Tags </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="nav-link" aria-current="page" href="{% url 'tags' %}">Tags</a>
               <a class="nav-link" aria-current="page" href="{% url 'all-tags' %}">All Tags</a>
+              <a class="nav-link" aria-current="page" href="{% url 'tags' %}">Tags</a>
               <div class="dropdown-divider"></div>
               <a class="nav-link" aria-current="page" href="{% url 'tag' 'list-page' %}">List</a>
               <a class="nav-link" aria-current="page" href="{% url 'tag' 'Detail-Page' %}">Detail</a>
