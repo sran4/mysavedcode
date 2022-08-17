@@ -596,19 +596,17 @@ pre {
     color: #e2e2e2!important;
 }
 code {
-    font-size: 87.5%;
-    color: #b744ac!important;
-    word-break: break-word!important;
+    font-size: 87.5%;   
+   
    
 }
 .hljs-class .hljs-title, .hljs-title.class_ {
-    color: dodgerblue!important;
+    color: rgb(73, 150, 227)!important;
 }
 .hljs-keyword, .hljs-literal, .hljs-name, .hljs-selector-tag, .hljs-strong, .hljs-tag {
-    color: #17a2b8!important;
+    color: #f6a7a7!important;
+
 }
-
-
 
 /* To change form manytomany fileds input button to inline*/
 .form-check {
