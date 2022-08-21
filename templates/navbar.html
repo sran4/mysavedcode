@@ -24,7 +24,7 @@
         <ul class="navbar-nav mb-2 mb-lg-0">
           {% if user.is_authenticated %}
           <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %}">
-            <a class="nav-link" aria-current="page" href="{% url 'notes' %}"><i class="fa fa-home fa-1x" style="font-size: 18px; color: darkgreen"></i>All Codes</a>
+            <a class="nav-link" aria-current="page" href="{% url 'notes' %}"><i class="fa fa-home fa-1x" style="font-size: 18px; color: darkgreen"></i></a>
           </li>
 
           <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %}">
@@ -37,6 +37,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Tags </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="nav-link" aria-current="page" href="{% url 'all-tags' %}">All Tags</a>
+              <a class="nav-link" aria-current="page" href="{% url 'tag' 'create' %}">Create App</a>
               <div class="dropdown-divider"></div>
               <a class="nav-link" aria-current="page" href="{% url 'tag' 'list-page' %}">List</a>
               <a class="nav-link" aria-current="page" href="{% url 'tag' 'Detail-Page' %}">Detail</a>
@@ -60,12 +61,14 @@
               <a class="nav-link" aria-current="page" href="{% url 'tag' 'component' %}">Components</a>
               <div class="dropdown-divider"></div>
               <a class="nav-link" aria-current="page" href="{% url 'tag' 'cheat-sheet' %}">Cheat Sheet</a>
+              <a class="nav-link" aria-current="page" href="{% url 'tag' 'admin' %}">Admin</a>
+              <div class="dropdown-divider"></div>
               <a class="nav-link" aria-current="page" href="{% url 'tags' %}">Tags</a>
               <div class="dropdown-divider"></div>
             </div>
           </li>
           <li class="nav-item {% if 'codes-lists' in request.path %}active{% endif %}">
-            <a class="nav-link" aria-current="page" href="{% url 'create-note' %}">Create</a>
+            <a class="nav-link" aria-current="page" href="{% url 'create-note' %}">Add</a>
           </li>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
